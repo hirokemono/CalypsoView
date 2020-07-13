@@ -94,7 +94,8 @@ depends:
 		MHDDIR='$(MHDDIR)' \
 		MAKEDIR='$(MAKEDIR)' \
 		MAKENAME='$(MAKENAME)' \
-		CC="$(CC)"   \
+		F90_LOCAL='$(F90_LOCAL)'   \
+		CC="$(CC)"                 \
 		DEPFLAGS='$(DEPFLAGS)' \
 		OPTFLAGS_GL='$(OPTFLAGS_GL)' \
 		C_INCLUDE='$(C_INCLUDE)' \

@@ -74,10 +74,6 @@ X_LIBS= @X_LIBS@ -lm
 OPENGL_INC = @GL_INC@
 OPENGL_LIBS= @GL_LIBS@
 #
-#   PGPLOT settings (Requirement: pgplot, libpng)
-#
-PGPLOT_LIBS= @PGPLOT_LIBS@
-#
 #   GTK+ settings (Requirement: OpenGL, libpng)
 GTK3_CFLAGS= @GTK3_CFLAGS@
 GTK3_LIBS= @GTK3_LIBS@
@@ -111,7 +107,6 @@ depends:
 		X_CFLAGS="$(X_CFLAGS)" \
 		OPENGL_INC="$(OPENGL_INC)" \
 		OPENGL_LIBS="$(OPENGL_LIBS)" \
-		PGPLOT_LIBS="$(PGPLOT_LIBS)" \
 		GTK3_CFLAGS="$(GTK3_CFLAGS)" \
 		GTK3_LIBS="$(GTK3_LIBS)" \
 		COCOA_FLAG="$(COCOA_FLAG)" \
@@ -151,7 +146,6 @@ makemake:
 		X_CFLAGS="$(X_CFLAGS)" \
 		OPENGL_INC="$(OPENGL_INC)" \
 		OPENGL_LIBS="$(OPENGL_LIBS)" \
-		PGPLOT_LIBS="$(PGPLOT_LIBS)" \
 		GTK3_CFLAGS="$(GTK3_CFLAGS)" \
 		GTK3_LIBS="$(GTK3_LIBS)" \
 		GLFW_CFLAGS="$(GLFW_CFLAGS)" \

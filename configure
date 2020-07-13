@@ -760,10 +760,6 @@ ac_user_opts='
 enable_option_checking
 enable_silent_rules
 enable_cocoa
-enable_gl
-with_libpng
-with_gtk
-with_glfw
 enable_dependency_tracking
 with_zlib
 with_x
@@ -1417,7 +1413,6 @@ Optional Features:
   --enable-silent-rules   less verbose build output (undo: "make V=1")
   --disable-silent-rules  verbose build output (undo: "make V=0")
   --enable-cocoa          Use Cocoa framework
-  --enable-gl             Use OpenGL for viewer
   --enable-dependency-tracking
                           do not reject slow dependency extractors
   --disable-dependency-tracking
@@ -1426,9 +1421,6 @@ Optional Features:
 Optional Packages:
   --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
   --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
-  --with-libpng           Use libpng library
-  --with-gtk              Use gtk+ GUI framework
-  --with-glfw             Use GLFW GUI framework
   --with-zlib=DIR root directory path of zlib installation defaults to
                     /usr/local or /usr if not found in /usr/local
   --without-zlib to disable zlib usage completely
@@ -3197,58 +3189,14 @@ else
   USE_Cocoa='no'
 fi
 
-
-# Check whether --enable-gl was given.
-if test "${enable_gl+set}" = set; then :
-  enableval=$enable_gl; USE_gl='yes'
-else
-  USE_gl='no'
-fi
-
-
-
-
-# Check whether --with-libpng was given.
-if test "${with_libpng+set}" = set; then :
-  withval=$with_libpng; USE_libpng='yes'
-else
-  USE_libpng='no'
-fi
-
-
-
-# Check whether --with-gtk was given.
-if test "${with_gtk+set}" = set; then :
-  withval=$with_gtk; USE_gtk='yes'
-else
-  USE_gtk='no'
-fi
-
-
-
-# Check whether --with-glfw was given.
-if test "${with_glfw+set}" = set; then :
-  withval=$with_glfw; USE_glfw='yes'
-else
-  USE_glfw='no'
-fi
-
-
-
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: enable-cocoa... \"${USE_Cocoa}\"" >&5
 $as_echo "enable-cocoa... \"${USE_Cocoa}\"" >&6; }
-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: enable-OpenGL.. \"${USE_gl}\"" >&5
-$as_echo "enable-OpenGL.. \"${USE_gl}\"" >&6; }
 
-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: enable-libpng...\"${USE_libpng}\"" >&5
-$as_echo "enable-libpng...\"${USE_libpng}\"" >&6; }
-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: enable-gtk...   \"${USE_gtk}\"" >&5
-$as_echo "enable-gtk...   \"${USE_gtk}\"" >&6; }
-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: enable-glfw...  \"${USE_glfw}\"" >&5
-$as_echo "enable-glfw...  \"${USE_glfw}\"" >&6; }
-
-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: with-zlib...     \"${with_zlib}\"" >&5
-$as_echo "with-zlib...     \"${with_zlib}\"" >&6; }
+USE_gl='yes'
+USE_gtk='yes'
+USE_glfw='yes'
+USE_libpng='yes'
+with_zlib='yes'
 
 # Checks for programs.
 ac_ext=c

@@ -64,11 +64,6 @@ ZLIB_LIBS =   @ZLIB_LIBS@
 PNG_CFLAGS =  @PNG_CFLAGS@
 PNG_LIBS =    @PNG_LIBS@
 #
-#    FFTW3 settings
-#
-FFTW3_CFLAGS= @FFTW3_CFLAGS@
-FFTW3_LIBS=   @FFTW3_LIBS@
-#
 #   X window settings
 #
 X_CFLAGS = @X_CFLAGS@
@@ -112,8 +107,6 @@ depends:
 		ZLIB_LIBS="$(ZLIB_LIBS)"     \
 		PNG_CFLAGS="$(PNG_CFLAGS)"   \
 		PNG_LIBS="$(PNG_LIBS)"       \
-		FFTW3_CFLAGS="$(FFTW3_CFLAGS)" \
-		FFTW3_LIBS="$(FFTW3_LIBS)" \
 		X_LIBS="$(X_LIBS)" \
 		X_CFLAGS="$(X_CFLAGS)" \
 		OPENGL_INC="$(OPENGL_INC)" \
@@ -154,8 +147,6 @@ makemake:
 		ZLIB_LIBS="$(ZLIB_LIBS)"     \
 		PNG_CFLAGS="$(PNG_CFLAGS)"   \
 		PNG_LIBS="$(PNG_LIBS)"       \
-		FFTW3_CFLAGS="$(FFTW3_CFLAGS)" \
-		FFTW3_LIBS="$(FFTW3_LIBS)" \
 		X_LIBS="$(X_LIBS)" \
 		X_CFLAGS="$(X_CFLAGS)" \
 		OPENGL_INC="$(OPENGL_INC)" \

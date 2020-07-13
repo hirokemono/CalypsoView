@@ -43,9 +43,6 @@ AC_CONFIG_SRCDIR([src/programs/VIEWER/kemoviewer_glfw_gtk.c])
 AC_ARG_ENABLE(cocoa,
 	[  --enable-cocoa          Use Cocoa framework],[USE_Cocoa='yes'],[USE_Cocoa='no'])
 
-AC_ARG_ENABLE(fftw3,
-	[  --enable-fftw3          Use fftw3 library],[USE_fftw3='yes'],[USE_fftw3='no'])
-
 AC_ARG_ENABLE(gl,
 	[  --enable-gl             Use OpenGL for viewer],[USE_gl='yes'],[USE_gl='no'])
 
@@ -63,7 +60,6 @@ AC_ARG_WITH(glfw,
 AC_MSG_RESULT(enable-cocoa... "${USE_Cocoa}")
 AC_MSG_RESULT(enable-OpenGL.. "${USE_gl}")
 
-AC_MSG_RESULT(enable-fftw3... "${USE_fftw3}")
 AC_MSG_RESULT(enable-libpng..."${USE_libpng}")
 AC_MSG_RESULT(enable-gtk...   "${USE_gtk}")
 AC_MSG_RESULT(enable-glfw...  "${USE_glfw}")
@@ -153,12 +149,6 @@ AC_CHECK_HEADERS([stdlib.h string.h])
 # Checks for library functions.
 AC_FUNC_MALLOC
 AC_CHECK_FUNCS([floor memset sqrt strrchr strtol])
-
-# FFTW3 check
-if test ${USE_fftw3} = "yes"
-then
-	PKG_CHECK_MODULES([FFTW3], fftw3, have_fftw3=yes, AC_MSG_ERROR(Cannot find FFTW 3.x))
-fi
 
 # Check zlib
 if test ${with_zlib} != "no"
@@ -344,12 +334,6 @@ if test -n "${BLAS_LIBS}"; then
         AC_MSG_RESULT(    Use BLAS ...          yes)
 else
         AC_MSG_RESULT(    Use BLAS ...           no)
-fi
-AC_MSG_RESULT()
-if test -n "${FFTW3_LIBS}"; then
-        AC_MSG_RESULT(    Use FFTW3 ...         yes)
-else
-        AC_MSG_RESULT(    Use FFTW3 ...          no)
 fi
 AC_MSG_RESULT()
 if test -n "${ZLIB_LIBS}"; then

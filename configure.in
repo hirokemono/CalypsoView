@@ -20,10 +20,6 @@ builtin(include,src/confdb/ax_mpi.m4)
 dnl Include gmake Check related definitions
 builtin(include,src/confdb/check_gnu_make.m4)
 
-dnl Include BLAS library check
-builtin(include,src/confdb/ax_blas.m4)
-builtin(include,src/confdb/ax_blas_f77_func.m4)
-
 #
 dnl Include zlib Check related definitions
 builtin(include,src/confdb/ax_check_zlib.m4)
@@ -59,7 +55,6 @@ AC_MSG_RESULT(enable-libpng..."${USE_libpng}")
 AC_MSG_RESULT(enable-gtk...   "${USE_gtk}")
 AC_MSG_RESULT(enable-glfw...  "${USE_glfw}")
 
-AC_MSG_RESULT(with-blas...     "${with_blas}")
 AC_MSG_RESULT(with-zlib...     "${with_zlib}")
 
 # Checks for programs.
@@ -124,12 +119,6 @@ AC_SUBST(MPIDIR)
 AC_SUBST(MPILIBS)
 AC_SUBST(MPIINCDIR)
 
-# Check BLAS
-if test -n "${with_blas}"; then
-    AX_BLAS
-#   AX_BLAS_F77_FUNC
-fi
-AC_SUBST(BLAS_LIBS)
 
 # Checks for header files.
 AC_HEADER_STDC
@@ -300,12 +289,6 @@ if test -n "${X_LIBS}"; then
         AC_MSG_RESULT(    Use X Window...       yes)
 else
         AC_MSG_RESULT(    Use X Window...        no)
-fi
-AC_MSG_RESULT()
-if test -n "${BLAS_LIBS}"; then
-        AC_MSG_RESULT(    Use BLAS ...          yes)
-else
-        AC_MSG_RESULT(    Use BLAS ...           no)
 fi
 AC_MSG_RESULT()
 if test -n "${ZLIB_LIBS}"; then

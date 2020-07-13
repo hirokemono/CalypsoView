@@ -4,8 +4,8 @@
 
 C_SRCDIR = $$(MHDDIR)/C_src
 
-LIB_KEMO_C =       -lcalypsoview.a
-LIB_KEMO_C_FILE = calypsoview.a
+LIB_KEMO_C =       -lcalypso_viz
+LIB_KEMO_C_FILE = libcalypso_viz.a
 
 OBJS_C= \
 $$(OBJ_KEMO_C) \

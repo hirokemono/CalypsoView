@@ -2,10 +2,21 @@
 !       Brief installation procedure
 !------------------------------------------------------------------------
 !
+For detailed instllation procedure, please read documentation.
 
-For detailed instllation procedure, please read documentation page 16--19.
+For MacOS, simply drag CalypsoView_Cocoa.app icon 
+in CalypsoView_Cocoa/ folder into /Applications folder.
 
-The easiest way to install Calypso is the following:
+The easiest way to install Calypso for Linux is the following:
+
+CalypsoView REQUIRES the following libraries.
+zlib   (https://www.zlib.net)
+libpng (http://www.libpng.org/pub/png/libpng.html)
+gtk+3  (https://developer.gnome.org/gtk3/stable/)
+OpenGL (https://www.opengl.org)
+GLFW   (https://www.glfw.org)
+
+These libraries must be found in the package manager in the most of Linux distributrions.
 
 0. Check options for configure 
     ./configure --help
@@ -19,6 +30,8 @@ The easiest way to install Calypso is the following:
     make clean
 5. To revert initial state of the repository, 
     make distclean 
+6. You will find a application file, so run by
+    [BINDIR]/CalypsoView_GLFW
 
 For details of the configuration, type
 ./configure --help

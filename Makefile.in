@@ -14,14 +14,6 @@ MAKEDIR= $(SRCDIR)/work
 BUILDDIR= $(SRCDIR)/bin
 
 #
-# MPI settings
-#
-MPICHDIR =    @MPIDIR@
-MPICHLIBDIR = $(MPICHDIR)/lib
-MPICHBINDIR = $(MPICHDIR)/bin
-MPICHINCDIR = @MPIINCDIR@
-MPILIBS =     @MPILIBS@
-#
 #    compilers
 #
 F90 = @FC@
@@ -29,9 +21,6 @@ CC =  @CC@
 CXX = @CXX@
 
 F90_LOCAL = $(F90)
-
-MPIF90 = @MPIFC@
-MPICC =  @MPICC@
 
 GMAKE =  @GMAKE@
 AR =     @ar_bin@
@@ -44,7 +33,6 @@ COCOA_FLAG =     @COCOA_FLAG@
 #
 #  optimization
 #
-F90OPTFLAGS= @FCFLAGS@
 OPTFLAGS =   @CFLAGS@
 CXXFLAGS =   @CXXFLAGS@
 DEPFLAGS= -MM -w -DDEPENDENCY_CHECK
@@ -104,11 +92,9 @@ depends:
 		OPTFLAGS="$(OPTFLAGS)" \
 		CXXFLAGS="$(CXXFLAGS)" \
 		DEPFLAGS="$(DEPFLAGS)" \
-		F90LIB="$(F90LIB)" \
 		F90_LOCAL="$(F90_LOCAL)" \
 		CC="$(CC)" \
 		CXX="$(CXX)" \
-		MPIF90="$(MPIF90)" \
 		depends
 
 makemake:
@@ -121,11 +107,6 @@ makemake:
 		MAKEDIR="$(MAKEDIR)" \
 		BUILDDIR="$(BUILDDIR)" \
 		MHDDIR="$(MHDDIR)" \
-		MPICHDIR="$(MPICHDIR)" \
-		MPICHLIBDIR="$(MPICHLIBDIR)" \
-		MPILIBS="$(MPILIBS)" \
-		MPICHBINDIR="$(MPICHBINDIR)" \
-		MPICHINCDIR="$(MPICHINCDIR)" \
 		ZLIB_CFLAGS="$(ZLIB_CFLAGS)" \
 		ZLIB_LIBS="$(ZLIB_LIBS)"     \
 		PNG_CFLAGS="$(PNG_CFLAGS)"   \
@@ -142,12 +123,9 @@ makemake:
 		OPTFLAGS="$(OPTFLAGS)" \
 		CXXFLAGS="$(CXXFLAGS)" \
 		DEPFLAGS="$(DEPFLAGS)" \
-		F90LIB="$(F90LIB)" \
 		F90_LOCAL="$(F90_LOCAL)" \
 		CC="$(CC)" \
 		CXX="$(CXX)" \
-		MPIF90="$(MPIF90)" \
-		MPICC="$(MPICC)"   \
 		AR="$(AR)" \
 		RANLIB="$(RANLIB)" \
 		makemake

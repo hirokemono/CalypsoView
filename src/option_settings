@@ -4,7 +4,7 @@ Settings for Makefiles
 # MacBook Pro
 # -------------------------------------------------------------------------------
 #
-./configure --prefix=/Users/matsui/local FC=mpif90 CC=mpicc \
+./configure --prefix=/Users/matsui/local FC=gfortran-mp-9 CC=gcc-mp-9 \
 CFLAGS='-O3 -Wall -g' FCFLAGS='-O3 -Wall -g' \
 --enable-cocoa --with-libpng --enable-gl --with-gtk --with-glfw --with-zlib \
 PKG_CONFIG_PATH=/Users/matsui/local/lib/pkgconfig:/usr/lib/pkgconfig

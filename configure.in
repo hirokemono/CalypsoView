@@ -10,9 +10,6 @@ AM_CONDITIONAL([am__fastdepOBJC], false)
 AM_CONDITIONAL([am__fastdepCXX], false)
 AC_CANONICAL_HOST
 
-dnl Include MPI related definitions
-builtin(include,src/confdb/ax_mpi.m4)
-
 dnl Include gmake Check related definitions
 builtin(include,src/confdb/check_gnu_make.m4)
 
@@ -88,19 +85,12 @@ PKG_PROG_PKG_CONFIG
 # Checks using C compiler
 AC_LANG_SAVE
 AC_LANG(C)
-# Check MPI
-AX_MPI
 AC_LANG_RESTORE
 
 # Checks using Fortran Compiler
 AC_LANG_SAVE
 AC_LANG(Fortran)
-# Check MPI
-AX_MPI
 AC_LANG_RESTORE
-AC_SUBST(MPIDIR)
-AC_SUBST(MPILIBS)
-AC_SUBST(MPIINCDIR)
 
 
 # Checks for header files.

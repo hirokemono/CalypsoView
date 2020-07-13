@@ -1,0 +1,41 @@
+!------------------------------------------------------------------------
+!       Brief installation procedure
+!------------------------------------------------------------------------
+!
+
+For detailed instllation procedure, please read documentation page 16--19.
+
+The easiest way to install Calypso is the following:
+
+0. Check options for configure 
+    ./configure --help
+1. Configuration
+    ./configure [--prefix=/path]
+2. Compile
+    make
+3. Install
+    make install
+4. Clean up objects
+    make clean
+5. To revert initial state of the repository, 
+    make distclean 
+
+For details of the configuration, type
+./configure --help
+
+Calypso also supports CMake configuration and compilation. The procedure for this is:
+
+1. Create build directory and configure
+    mkdir build ; cd build ; cmake ..
+2. Compile
+    make
+
+For a guided configuration, use ccmake instead of cmake:
+
+1. Create build directory and configure
+    mkdir build ; cd build ; ccmake ..
+2. Edit configuration options
+3. Compile
+    make
+
+

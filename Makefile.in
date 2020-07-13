@@ -1,0 +1,211 @@
+#
+#  Makefile for Kemo's Dynamo toolkit
+#    Written by H. Matsui
+#
+SHELL           = @SHELL@
+#
+#  directories of Kemo's Dynamo toolkit
+#
+SRCDIR = @abs_top_srcdir@
+INSTDIR= @prefix@
+#
+MHDDIR = $(SRCDIR)/src
+MAKEDIR= $(SRCDIR)/work
+BUILDDIR= $(SRCDIR)/bin
+
+#
+# MPI settings
+#
+MPICHDIR =    @MPIDIR@
+MPICHLIBDIR = $(MPICHDIR)/lib
+MPICHBINDIR = $(MPICHDIR)/bin
+MPICHINCDIR = @MPIINCDIR@
+MPILIBS =     @MPILIBS@
+#
+#    compilers
+#
+F90 = @FC@
+CC =  @CC@
+CXX = @CXX@
+
+F90_LOCAL = $(F90)
+
+MPIF90 = @MPIFC@
+MPICC =  @MPICC@
+
+GMAKE =  @GMAKE@
+AR =     @ar_bin@
+RANLIB = @RANLIB@
+
+#
+# OPENMP_FCFLAGS OprnMP option for fortran compiler
+# COCOA_FLAG is defined to use cocoa Framework
+# XL_FORTRAN   Set "-WF," option for cpp preprocessor
+#
+OPENMP_FCFLAGS = @OPENMP_FCFLAGS@
+COCOA_FLAG =     @COCOA_FLAG@
+XL_FORTRAN =     @XL_FORTRAN@
+#
+#  optimization
+#
+F90OPTFLAGS= @FCFLAGS@   @OPENMP_FCFLAGS@
+OPTFLAGS =   @CFLAGS@
+CXXFLAGS =   @CXXFLAGS@
+DEPFLAGS= -MM -w -DDEPENDENCY_CHECK
+#
+#   BLAS settings
+#
+BLAS_LIBS = @BLAS_LIBS@
+#
+#   libpng and zlib settings
+#
+ZLIB_CFLAGS = @ZLIB_CFLAGS@
+ZLIB_LIBS =   @ZLIB_LIBS@
+PNG_CFLAGS =  @PNG_CFLAGS@
+PNG_LIBS =    @PNG_LIBS@
+#
+#    FFTW3 settings
+#
+FFTW3_CFLAGS= @FFTW3_CFLAGS@
+FFTW3_LIBS=   @FFTW3_LIBS@
+#
+#    HDF5 fortran wrapper settings
+#
+HDF5_FFLAGS=    @HDF5_FFLAGS@
+HDF5_LDFLAGS=   @HDF5_LDFLAGS@
+HDF5_FLIBS=     @HDF5_PFLIBS@
+#
+#   X window settings
+#
+X_CFLAGS = @X_CFLAGS@
+X_LIBS= @X_LIBS@ -lm
+#
+#   OpenGL settings (Requirement: OpenGL, libpng)
+#
+OPENGL_INC = @GL_INC@
+OPENGL_LIBS= @GL_LIBS@
+#
+#   PGPLOT settings (Requirement: pgplot, libpng)
+#
+PGPLOT_LIBS= @PGPLOT_LIBS@
+#
+#   GTK+ settings (Requirement: OpenGL, libpng)
+GTK3_CFLAGS= @GTK3_CFLAGS@
+GTK3_LIBS= @GTK3_LIBS@
+#
+#   GLFW settings (Requirement: OpenGL, libpng)
+GLFW_CFLAGS= @GLFW_CFLAGS@
+GLFW_LIBS=   @GLFW_LIBS@
+#
+#  --- Please do not chenge the following ---
+#
+
+all: makemake
+	cd $(MAKEDIR); $(GMAKE)
+
+depends:
+	@echo "# Construct dependencies"; \
+	cd $(MHDDIR) ; \
+		$(GMAKE) \
+		GMAKE="$(GMAKE)" \
+		SRCDIR="$(SRCDIR)" \
+		INSTDIR="$(INSTDIR)" \
+		MAKEDIR="$(MAKEDIR)" \
+		BUILDDIR="$(BUILDDIR)" \
+		MHDDIR="$(MHDDIR)" \
+		BLAS_LIBS="$(BLAS_LIBS)" \
+		ZLIB_CFLAGS="$(ZLIB_CFLAGS)" \
+		ZLIB_LIBS="$(ZLIB_LIBS)"     \
+		PNG_CFLAGS="$(PNG_CFLAGS)"   \
+		PNG_LIBS="$(PNG_LIBS)"       \
+		FFTW3_CFLAGS="$(FFTW3_CFLAGS)" \
+		FFTW3_LIBS="$(FFTW3_LIBS)" \
+		X_LIBS="$(X_LIBS)" \
+		X_CFLAGS="$(X_CFLAGS)" \
+		OPENGL_INC="$(OPENGL_INC)" \
+		OPENGL_LIBS="$(OPENGL_LIBS)" \
+		PGPLOT_LIBS="$(PGPLOT_LIBS)" \
+		GTK3_CFLAGS="$(GTK3_CFLAGS)" \
+		GTK3_LIBS="$(GTK3_LIBS)" \
+		HDF5_FFLAGS="$(HDF5_FFLAGS)" \
+		HDF5_LDFLAGS="$(HDF5_LDFLAGS)" \
+		HDF5_FLIBS="$(HDF5_FLIBS)" \
+		COCOA_FLAG="$(COCOA_FLAG)" \
+		OPTFLAGS="$(OPTFLAGS)" \
+		F90OPTFLAGS="$(F90OPTFLAGS)" \
+		CXXFLAGS="$(CXXFLAGS)" \
+		DEPFLAGS="$(DEPFLAGS)" \
+		F90LIB="$(F90LIB)" \
+		F90_LOCAL="$(F90_LOCAL)" \
+		CC="$(CC)" \
+		CXX="$(CXX)" \
+		MPIF90="$(MPIF90)" \
+		XL_FORTRAN="$(XL_FORTRAN)" \
+		depends
+
+makemake:
+	@echo "# Construct Makefile"; \
+	cd $(MHDDIR) ; \
+		$(GMAKE) \
+		GMAKE="$(GMAKE)" \
+		SRCDIR="$(SRCDIR)" \
+		INSTDIR="$(INSTDIR)" \
+		MAKEDIR="$(MAKEDIR)" \
+		BUILDDIR="$(BUILDDIR)" \
+		MHDDIR="$(MHDDIR)" \
+		MPICHDIR="$(MPICHDIR)" \
+		MPICHLIBDIR="$(MPICHLIBDIR)" \
+		MPILIBS="$(MPILIBS)" \
+		MPICHBINDIR="$(MPICHBINDIR)" \
+		MPICHINCDIR="$(MPICHINCDIR)" \
+		BLAS_LIBS="$(BLAS_LIBS)" \
+		ZLIB_CFLAGS="$(ZLIB_CFLAGS)" \
+		ZLIB_LIBS="$(ZLIB_LIBS)"     \
+		PNG_CFLAGS="$(PNG_CFLAGS)"   \
+		PNG_LIBS="$(PNG_LIBS)"       \
+		FFTW3_CFLAGS="$(FFTW3_CFLAGS)" \
+		FFTW3_LIBS="$(FFTW3_LIBS)" \
+		X_LIBS="$(X_LIBS)" \
+		X_CFLAGS="$(X_CFLAGS)" \
+		OPENGL_INC="$(OPENGL_INC)" \
+		OPENGL_LIBS="$(OPENGL_LIBS)" \
+		PGPLOT_LIBS="$(PGPLOT_LIBS)" \
+		GTK3_CFLAGS="$(GTK3_CFLAGS)" \
+		GTK3_LIBS="$(GTK3_LIBS)" \
+		GLFW_CFLAGS="$(GLFW_CFLAGS)" \
+		GLFW_LIBS="$(GLFW_LIBS)" \
+		HDF5_FFLAGS="$(HDF5_FFLAGS)" \
+		HDF5_LDFLAGS="$(HDF5_LDFLAGS)" \
+		HDF5_FLIBS="$(HDF5_FLIBS)" \
+		COCOA_FLAG="$(COCOA_FLAG)" \
+		OPTFLAGS="$(OPTFLAGS)" \
+		F90OPTFLAGS="$(F90OPTFLAGS)" \
+		CXXFLAGS="$(CXXFLAGS)" \
+		DEPFLAGS="$(DEPFLAGS)" \
+		F90LIB="$(F90LIB)" \
+		F90_LOCAL="$(F90_LOCAL)" \
+		CC="$(CC)" \
+		CXX="$(CXX)" \
+		MPIF90="$(MPIF90)" \
+		MPICC="$(MPICC)"   \
+		AR="$(AR)" \
+		RANLIB="$(RANLIB)" \
+		XL_FORTRAN="$(XL_FORTRAN)" \
+		makemake
+
+
+install:
+	cd $(MAKEDIR) ; \
+		$(GMAKE) install
+
+clean:
+	for dir in $(MAKEDIR) $(MHDDIR) ; do \
+	echo "# cleaning $${dir} directory..."; \
+		( cd $${dir}; \
+		$(GMAKE) clean )\
+	done; \
+	rm -f mpif.h *.o *.mod *~ *.par *.diag *.a *.f90
+
+distclean:
+	echo "# Back to initial package"; \
+	rm -fr $(MAKEDIR) $(BUILDDIR) Makefile config.log

@@ -1,0 +1,2555 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  9 JUL 2020 13:26
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**CALYPSO.tex
+(./CALYPSO.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 142.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/textpos/textpos.sty
+Package: textpos 2014/01/03 v1.7j
+
+Package: textpos 2014/01/03 1.7j, absolute positioning of text on the page
+\TP@textbox=\box26
+\TPHorizModule=\dimen105
+\TPVertModule=\dimen106
+\TP@margin=\dimen107
+\TP@absmargin=\dimen108
+Grid set 16 x 16 = 38.39343pt x 49.68562pt
+\TPboxrulesize=\dimen109
+\TP@tbargs=\toks16
+\TP@prevdepth=\dimen110
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count88
+\Gm@cntv=\count89
+\c@Gm@tempcnt=\count90
+\Gm@bindingoffset=\dimen111
+\Gm@wd@mp=\dimen112
+\Gm@odd@mp=\dimen113
+\Gm@even@mp=\dimen114
+\Gm@layoutwidth=\dimen115
+\Gm@layoutheight=\dimen116
+\Gm@layouthoffset=\dimen117
+\Gm@layoutvoffset=\dimen118
+\Gm@dimlist=\toks17
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package hobsub Info: Skipping package `etexcmds' (already loaded).
+Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
+Package hobsub Info: Skipping package `kvdefinekeys' (already loaded).
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+\@linkdim=\dimen119
+\Hy@linkcounter=\count91
+\Hy@pagecounter=\count92
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count93
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count94
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen120
+\Fld@menulength=\count95
+\Field@Width=\dimen121
+\Fld@charsize=\dimen122
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count96
+\c@Item=\count97
+\c@Hfootnote=\count98
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count99
+\c@bookmark@seq@number=\count100
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip43
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count101
+\float@exts=\toks18
+\float@box=\box27
+\@float@everytoks=\toks19
+\@floatcapt=\box28
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count102
+\c@@ppsavesec=\count103
+\c@@ppsaveapp=\count104
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 17.
+
+(./CALYPSO.aux
+
+LaTeX Warning: Label `sec:PSF_data' multiply defined.
+
+
+LaTeX Warning: Label `table:sectioning' multiply defined.
+
+
+LaTeX Warning: Label `href_i:visualizer' multiply defined.
+
+
+LaTeX Warning: Label `href_i:visual_control_v' multiply defined.
+
+
+LaTeX Warning: Label `href_t:new_time_step_ctl' multiply defined.
+
+)
+\openout1 = `CALYPSO.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 23.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count105
+\scratchdimen=\dimen123
+\scratchbox=\box29
+\nofMPsegments=\count106
+\nofMParguments=\count107
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count108
+\MPscratchDim=\dimen124
+\MPnumerator=\count109
+\makeMPintoPDFobject=\count110
+\everyMPtoPDFconversion=\toks21
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=19.8752pt
+* \evensidemargin=19.8752pt
+* \topmargin=-13.87262pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\AtBeginShipoutBox=\box30
+Package hyperref Info: Link coloring ON on input line 23.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count111
+)
+LaTeX Info: Redefining \ref on input line 23.
+LaTeX Info: Redefining \pageref on input line 23.
+LaTeX Info: Redefining \nameref on input line 23.
+
+(./CALYPSO.out) (./CALYPSO.out)
+\@outlinefile=\write3
+\openout3 = `CALYPSO.out'.
+
+ (./tex_src/cover_CALYPSO.tex
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 528.93675pt, 28.45274pt)
+* v-part:(T,H,B)=(56.9055pt, 681.15898pt, 56.9055pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=528.93675pt
+* \textheight=681.15898pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 23.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+Overfull \hbox (0.4627pt too wide) in paragraph at lines 40--49
+ [] 
+ []
+
+<images/Interior2.pdf, id=558, 1606.0pt x 1284.8pt>
+File: images/Interior2.pdf Graphic file (type pdf)
+ <use images/Interior2.pdf>
+Package pdftex.def Info: images/Interior2.pdf used on input line 60.
+(pdftex.def)             Requested size: 379.41951pt x 303.53377pt.
+
+Overfull \hbox (379.41951pt too wide) in paragraph at lines 60--61
+ [] 
+ []
+
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 87--88
+[][] 
+ []
+
+[1
+
+
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
+s/Interior2.pdf>]) (./tex_src/mathdef.tex)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 31.
+ [1
+
+] (./CALYPSO.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    Try loading font information for U+msa on input line 3.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 3.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 29.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [2] [3]
+[4] [5])
+\tf@toc=\write4
+\openout4 = `CALYPSO.toc'.
+
+ [6] (./tex_src/intro_CALYPSO.tex [7]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 20.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 20.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 31.
+
+Overfull \hbox (5.46046pt too wide) in paragraph at lines 36--37
+[]\OT1/ptm/m/n/12 Label for ra-dial grid type in the file []\OT1/pcr/m/n/12 ctl
+_sph_shell []raidal_grid_type_ctl
+ []
+
+
+Overfull \hbox (2.11186pt too wide) in paragraph at lines 42--43
+\OT1/ptm/m/n/12 The old ver-sion of spec-trum in-dex-ing data, which is gen-er-
+ated by []\OT1/pcr/m/n/12 gen_sph_grids
+ []
+
+[8]
+Overfull \hbox (35.31448pt too wide) in paragraph at lines 57--58
+[]\OT1/ptm/m/n/12 The time and time step in-for-ma-tion in the restart data can
+ be mod-i-field by []\OT1/pcr/m/n/12 assemble_mhd\OT1/ptm/m/n/12 .
+ []
+
+[9]
+Overfull \hbox (1.12639pt too wide) in paragraph at lines 67--68
+[]\OT1/ptm/m/n/12 Include spher-i-cal har-mon-ics in-dex gen-er-a-tor into sim-
+u-la-tion pro-gram. Con-se-quently,
+ []
+
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¾ in font ptmr7t!
+Missing character: There is no • in font ptmr7t!
+[10]) [11] (./tex_src/model_CALYPSO.tex
+<images/Spherical_shell.pdf, id=783, 963.6pt x 579.16376pt>
+File: images/Spherical_shell.pdf Graphic file (type pdf)
+
+<use images/Spherical_shell.pdf>
+Package pdftex.def Info: images/Spherical_shell.pdf used on input line 6.
+(pdftex.def)             Requested size: 369.88582pt x 222.31151pt.
+ [12pdfTeX warning (ext4): destination with the same identifier (name{figure.1}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.37 \end{eqnarray}
+                    <./images/Spherical_shell.pdf>]pdfTeX warning (ext4): desti
+nation with the same identifier (name{equation.5.1}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.40 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.40 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.40 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.40 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.47 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.47 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.47 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.47 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.54 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.54 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.54 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.54 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.65 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.65 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.65 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.65 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.78 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.78 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.78 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.78 \begin{eqnarray}
+                      [13]pdfTeX warning (ext4): destination with the same iden
+tifier (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.83 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.83 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.83 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.83 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.88 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.88 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.88 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.88 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.97 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.97 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.97 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.97 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.107 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.107 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.107 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.107 \begin{eqnarray}
+                       [14]pdfTeX warning (ext4): destination with the same ide
+ntifier (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.128 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.128 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.128 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.128 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.135 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.135 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.135 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.135 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.143 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.143 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.143 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.143 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.150 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.150 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.150 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.150 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.158 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.158 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.158 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.158 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.171 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.171 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.171 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.171 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.179 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.179 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.179 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.179 \begin{eqnarray}
+                       [15]pdfTeX warning (ext4): destination with the same ide
+ntifier (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.186 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.186 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.186 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.186 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.194 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.194 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.194 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.194 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.201 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.201 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.201 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.201 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.209 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.209 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.209 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.209 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.216 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.216 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.216 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.216 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.224 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.224 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.224 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.224 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.231 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.231 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.231 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.231 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.239 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.239 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.239 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.239 \begin{eqnarray}
+                       [16]pdfTeX warning (ext4): destination with the same ide
+ntifier (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.246 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.246 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.246 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.246 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.253 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.253 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.253 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.253 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.261 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.261 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.261 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.261 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.270 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.270 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.270 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.270 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.277 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.277 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.277 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.277 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.284 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.284 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.284 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.284 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.292 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.292 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.292 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.292 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.299 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.299 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.299 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.299 \begin{eqnarray}
+                       [17]pdfTeX warning (ext4): destination with the same ide
+ntifier (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.308 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.308 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.308 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.308 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.317 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.317 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.317 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.317 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.325 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.325 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.325 \begin{eqnarray}
+                      pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.5.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.325 \begin{eqnarray}
+                      ) (./tex_src/install_CALYPSO.tex [18]
+Overfull \hbox (11.22011pt too wide) in paragraph at lines 17--18
+[]\OT1/ptm/m/n/12 FFTPACK Ver 5.1D ([][]$\OT1/pcr/m/n/12 https : / / people . s
+c . fsu . edu / []jburkardt / f _ src /
+ []
+
+[19] [20]
+Overfull \hbox (0.94933pt too wide) in paragraph at lines 75--77
+\OT1/ptm/m/n/12 Doxygen ([][]$\OT1/pcr/m/n/12 http : / / www . doxygen . org$[]
+[]\OT1/ptm/m/n/12 ) is an pow-er-ful doc-u-ment gen-er-a-tion tool from
+ []
+
+
+Overfull \hbox (37.86188pt too wide) in paragraph at lines 82--83
+\OT1/ptm/m/n/12 The html doc-u-ments can see by open-ing []\OT1/pcr/m/n/12 [CAL
+YPSO_HOME]/doxygen/html/index.html\OT1/ptm/m/n/12 .
+ []
+
+[21]
+Overfull \hbox (21.86072pt too wide) in paragraph at lines 105--108
+[]\OT1/ptm/m/n/12 ./configure gen-er-ates a Make-file in the cur-rent di-rec-to
+ry. Avail-able op-tions for \OT1/pcr/m/n/12 configure
+ []
+
+
+Overfull \hbox (43.0348pt too wide) in paragraph at lines 141--141
+[]  \OT1/pcr/m/n/10.95 --disable-option-checking  ignore unrecognized --enable/
+--with options[] 
+ []
+
+
+Overfull \hbox (82.45476pt too wide) in paragraph at lines 141--141
+[]  \OT1/pcr/m/n/10.95 --disable-FEATURE       do not include FEATURE (same as 
+--enable-FEATURE=no)[] 
+ []
+
+
+Overfull \hbox (43.0348pt too wide) in paragraph at lines 141--141
+[]  \OT1/pcr/m/n/10.95 --without-PACKAGE       do not use PACKAGE (same as --wi
+th-PACKAGE=no)[] 
+ []
+
+
+Overfull \hbox (69.31477pt too wide) in paragraph at lines 141--141
+[]  \OT1/pcr/m/n/10.95 --with-hdf5=yes/no/PATH full path of h5pcc for parallel 
+HDF5 configuration[] 
+ []
+
+
+Overfull \hbox (29.89482pt too wide) in paragraph at lines 141--141
+[]  \OT1/pcr/m/n/10.95 --with-zlib=DIR root directory path of zlib installation
+ defaults to[] 
+ []
+
+
+Overfull \hbox (36.46481pt too wide) in paragraph at lines 141--141
+[]  \OT1/pcr/m/n/10.95 LDFLAGS     linker flags, e.g. -L<lib dir> if you have l
+ibraries in a[] 
+ []
+
+
+Overfull \hbox (62.74478pt too wide) in paragraph at lines 141--141
+[]  \OT1/pcr/m/n/10.95 CPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -
+I<include dir> if[] 
+ []
+
+
+Overfull \hbox (36.46481pt too wide) in paragraph at lines 141--141
+[]              \OT1/pcr/m/n/10.95 you have headers in a nonstandard directory 
+<include dir>[] 
+ []
+
+[22] [23] [24]
+Overfull \hbox (1.8973pt too wide) in paragraph at lines 215--216
+\OT1/ptm/m/n/12 for []\OT1/pcr/m/n/12 configure \OT1/ptm/m/n/12 com-mand. Al-te
+r-na-tively, you can use the pro-grams in []\OT1/pcr/m/n/12 ${SRCDIR}/bin
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 218--220
+
+ []
+
+
+Overfull \hbox (37.16145pt too wide) in paragraph at lines 224--225
+[]\OT1/ptm/m/n/12 This pro-cess gen-er-ate de-pen-den-cies of the For-tran mod-
+ules by pro-gram []\OT1/pcr/m/n/12 make_f90depends\OT1/ptm/m/n/12 .
+ []
+
+
+Overfull \hbox (47.4124pt too wide) in paragraph at lines 224--225
+\OT1/ptm/m/n/12 For C source files, the de-pen-dency is gen-er-ated by the gcc 
+with []\OT1/pcr/m/n/12 -MM -w -DDEPENDENCY_CHECK
+ []
+
+[25] [26]
+Overfull \hbox (25.00935pt too wide) in paragraph at lines 271--275
+\OT1/ptm/m/n/12 CMake can be checked by []\OT1/pcr/m/n/12 cmake -i [CALYPSO_HOM
+E] \OT1/ptm/m/n/12 com-mand at []\OT1/pcr/m/n/12 [CALYPSO_HOME] 
+ []
+
+[27]
+Overfull \hbox (102.79515pt too wide) in paragraph at lines 330--330
+[]\OT1/pcr/m/n/12 % cmake ~/CALYPSO/ -DCMAKE_Fortran_COMPILER=/opt/local/bin/gf
+ortran-mp-9 \[] 
+ []
+
+[28])
+Overfull \hbox (17.71027pt too wide) in paragraph at lines 340--46
+[]\OT1/ptm/m/n/12 After run-ning []\OT1/pcr/m/n/12 make \OT1/ptm/m/n/12 com-man
+d, ex-e-cute files are built in []\OT1/pcr/m/n/12 [CALYPSO_HOME]/work/bin
+ []
+
+(./tex_src/outlines_CALYPSO.tex [29pdfTeX warning (ext4): destination with the 
+same identifier (name{table.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.40 \begin{verbatim}
+                     ]
+Overfull \hbox (43.09286pt too wide) in paragraph at lines 58--59
+[]\OT1/ptm/m/n/12 Evaluate time av-er-ages by []\OT1/pcr/m/n/12 t_ave_sph_mean_
+square\OT1/ptm/m/n/12 , []\OT1/pcr/m/n/12 t_ave_picked_sph_coefs\OT1/ptm/m/n/12
+ ,
+ []
+
+<images/flow_0.pdf, id=939, 563.10374pt x 230.8625pt>
+File: images/flow_0.pdf Graphic file (type pdf)
+ <use images/flow_0.pdf>
+Package pdftex.def Info: images/flow_0.pdf used on input line 65.
+(pdftex.def)             Requested size: 369.88582pt x 151.64755pt.
+
+Overfull \hbox (21.16809pt too wide) in paragraph at lines 61--69
+\OT1/ptm/m/n/12 The sim-u-la-tion pro-gram []\OT1/pcr/m/n/12 sph_mhd \OT1/ptm/m
+/n/12 re-quires an in-dex-ing file for spher-i-cal trans-form. []\OT1/pcr/m/n/1
+2 sph_mhd
+ []
+
+[30] [31pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.89 	\end{itemize}
+                    <./images/flow_0.pdf>]
+Overfull \hbox (56.97612pt too wide) in paragraph at lines 91--92
+[]\OT1/ptm/m/n/12 An ar-ray block starts with `[]\OT1/pcr/m/n/12 begin array [n
+ame]\OT1/ptm/m/n/12 ' and ends with `[]\OT1/pcr/m/n/12 end array [name]\OT1/ptm
+/m/n/12 '. 
+ []
+
+[32] [33pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.134 \newpage
+              ] [34]
+Underfull \hbox (badness 10000) in paragraph at lines 173--175
+
+ []
+
+
+Overfull \hbox (72.4095pt too wide) in paragraph at lines 177--177
+ []\OT1/pcr/m/n/10.95 [username]$ cd [CALYPSO_DIR]/examples/dynamo_benchmark/dy
+namobench_case1[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--182
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--189
+
+ []
+
+
+Overfull \hbox (46.12953pt too wide) in paragraph at lines 207--207
+ []\OT1/pcr/m/n/10.95 [dynamobench_case_1]$ mpirun -np 4 [CALYPSO_DIR]/bin/sph_
+dynamobench[] 
+ []
+
+[35] [36] [37]
+Overfull \hbox (16.39519pt too wide) in paragraph at lines 301--301
+[]\OT1/pcr/m/n/12 [sph_lm31r48c_2]$ mpirun -np 2 [CALYPSO_DIR]/bin/gen_sph_grid
+s[] 
+ []
+
+
+Overfull \hbox (14.3495pt too wide) in paragraph at lines 303--304
+[]\OT1/ptm/m/n/12 Finally restart data for new con-fig-u-ra-tion is gen-er-ated
+ by []\OT1/pcr/m/n/12 assemble_sph \OT1/ptm/m/n/12 in []\OT1/pcr/m/n/12 2doamin
+s
+ []
+
+
+Overfull \hbox (9.19519pt too wide) in paragraph at lines 306--306
+[]\OT1/pcr/m/n/12 [sph_lm31r48c_2]$ mpirun -np 2 [CALYPSO_DIR]/bin/assemble_sph
+[] 
+ []
+
+[38]) [39] (./tex_src/programs_CALYPSO.tex
+<images/flow_1.pdf, id=1037, 563.10374pt x 230.8625pt>
+File: images/flow_1.pdf Graphic file (type pdf)
+ <use images/flow_1.pdf>
+Package pdftex.def Info: images/flow_1.pdf used on input line 11.
+(pdftex.def)             Requested size: 369.88582pt x 151.64755pt.
+Missing character: There is no ã in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+
+Overfull \hbox (8.36562pt too wide) in paragraph at lines 23--34
+ [] 
+ []
+
+
+Overfull \hbox (49.5952pt too wide) in paragraph at lines 42--60
+ [] 
+ []
+
+[40pdfTeX warning (ext4): destination with the same identifier (name{figure.4})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.80 I
+      n Chebyshev collocation points, radial grids in the fluid shell are de...
+ <./images/flow_1.pdf>] [41pdfTeX warning (ext4): destination with the same ide
+ntifier (name{table.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.80 I
+      n Chebyshev collocation points, radial grids in the fluid shell are de...
+pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
+ been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.80 I
+      n Chebyshev collocation points, radial grids in the fluid shell are de...
+]pdfTeX warning (ext4): destination with the same identifier (name{equation.9.1
+}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.82 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.9.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.82 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.9.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.82 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.9.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.82 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.9.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.89 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.9.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.89 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.9.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.89 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.9.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.89 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.9.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.96 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.9.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.96 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.9.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.96 \begin{eqnarray}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{equation.9.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.96 \begin{eqnarray}
+                     
+Overfull \hbox (38.05322pt too wide) in paragraph at lines 104--105
+\OT1/ptm/m/n/12 and []\OT1/pcr/m/n/12 end array \OT1/ptm/m/n/12 flags. The num-
+ber of com-po-nents of an ar-ray must be de-fined at []\OT1/pcr/m/n/12 begin ar
+ray
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--116
+
+ []
+
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 164--168
+
+ []
+
+
+Overfull \hbox (26.96103pt too wide) in paragraph at lines 178--180
+[]\OT1/ptm/m/n/12 The ex-ter-nal file for re-soul-tion and par-al-leliza-tion i
+n-for-ma-tion []\OT1/pcr/m/n/12 [resolution_control]
+ []
+
+[43] [44] <images/parallelize.pdf, id=1253, 1571.56128pt x 1457.15387pt>
+File: images/parallelize.pdf Graphic file (type pdf)
+
+<use images/parallelize.pdf>
+Package pdftex.def Info: images/parallelize.pdf used on input line 219.
+(pdftex.def)             Requested size: 369.88582pt x 342.9426pt.
+ [45] [46pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.235 
+       <./images/parallelize.pdf>] [47]
+<images/flow_2.pdf, id=1303, 563.10374pt x 230.8625pt>
+File: images/flow_2.pdf Graphic file (type pdf)
+ <use images/flow_2.pdf>
+Package pdftex.def Info: images/flow_2.pdf used on input line 245.
+(pdftex.def)             Requested size: 369.88582pt x 151.64755pt.
+
+Overfull \hbox (53.53346pt too wide) in paragraph at lines 256--283
+ [] 
+ []
+
+
+Overfull \hbox (49.5952pt too wide) in paragraph at lines 292--302
+ [] 
+ []
+
+
+Overfull \hbox (45.20471pt too wide) in paragraph at lines 241--307
+\OT1/ptm/m/n/12 which start-ing with []\OT1/pcr/m/n/12 [sph_prefix] \OT1/ptm/m/
+n/12 are ob-tained by the pre-pro-cess-ing pro-gram []\OT1/pcr/m/n/12 gen_sph_g
+rid\OT1/ptm/m/n/12 .
+ []
+
+[48pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.307 \newpage
+               <./images/flow_2.pdf>] [49pdfTeX warning (ext4): destination wit
+h the same identifier (name{table.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.307 \newpage
+              ]
+Underfull \hbox (badness 10000) in paragraph at lines 309--315
+
+ []
+
+[50pdfTeX warning (ext4): destination with the same identifier (name{table.5}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.357 		\item A
+               rray \hyperref[href_t:nod_value_ctl]]
+Overfull \hbox (4.3357pt too wide) in paragraph at lines 357--359
+[]\OT1/ptm/m/n/12 Array [][]\OT1/pcr/m/n/12 nod[]value[]ctl [Field] [Viz[]flag]
+ [Monitor[]flag][][] 
+ []
+
+[51]
+Overfull \hbox (2.71045pt too wide) in paragraph at lines 435--437
+[]\OT1/ptm/m/n/12 Array [][]\OT1/pcr/m/n/12 coef[]4[]composition[]source[]ctl [
+Name] [Power][][] 
+ []
+
+[52] [53] [54]
+Overfull \hbox (24.78038pt too wide) in paragraph at lines 633--635
+\OT1/ptm/m/n/12 a line start-ing from '[]\OT1/pcr/m/n/12 #\OT1/ptm/m/n/12 ' or 
+'[]\OT1/pcr/m/n/12 !\OT1/ptm/m/n/12 ' is rec-og-nized as a com-ment line. In []
+\OT1/pcr/m/n/12 [boundary_data_name]\OT1/ptm/m/n/12 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 720--723
+
+ []
+
+[55] [56pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.725 
+      ] [57pdfTeX warning (ext4): destination with the same identifier (name{ta
+ble.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.739 \item O
+             nly ParaView supports this format] [58pdfTeX warning (ext4): desti
+nation with the same identifier (name{table.7}) has been already used, duplicat
+e ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.795 \item A
+             dvantagepdfTeX warning (ext4): destination with the same identifie
+r (name{table.8}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.795 \item A
+             dvantage]
+Overfull \hbox (56.7952pt too wide) in paragraph at lines 829--839
+ [] 
+ []
+
+[59pdfTeX warning (ext4): destination with the same identifier (name{table.9}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.873 
+      ] [60pdfTeX warning (ext4): destination with the same identifier (name{ta
+ble.10}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.879 
+      pdfTeX warning (ext4): destination with the same identifier (name{table.1
+1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.879 
+      ]
+Overfull \hbox (28.54955pt too wide) in paragraph at lines 880--903
+[]\OT1/pcr/m/n/12 outer_core\OT1/ptm/m/n/12 , []\OT1/pcr/m/n/12 inner_core\OT1/
+ptm/m/n/12 , and []\OT1/pcr/m/n/12 all\OT1/ptm/m/n/12 . Fields to dis-play is d
+e-fined in ar-ray []\OT1/pcr/m/n/12 output_field\OT1/ptm/m/n/12 .
+ []
+
+
+Overfull \hbox (42.6253pt too wide) in paragraph at lines 904--909
+\OT1/ptm/m/n/12 ex-ter-nal file. To de-fine the ex-ter-nal file name, as []\OT1
+/pcr/m/n/12 file cross_section_ctl [file name]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 904--909
+
+ []
+
+[61pdfTeX warning (ext4): destination with the same identifier (name{table.12})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.920 			\item \hyperref
+                        [href_t:psf_radius]{\tt radius    [SIZE]}] [62pdfTeX wa
+rning (ext4): destination with the same identifier (name{table.13}) has been al
+ready used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.966 
+      ]
+Overfull \hbox (46.87459pt too wide) in paragraph at lines 967--969
+[]\OT1/pcr/m/n/12 i_step_isosurface_ctl \OT1/ptm/m/n/12 in []\OT1/pcr/m/n/12 ti
+me_step_ctl \OT1/ptm/m/n/12 block. And, ar-ray block []\OT1/pcr/m/n/12 isosurfa
+ce_ctl
+ []
+
+
+Overfull \hbox (15.88878pt too wide) in paragraph at lines 967--969
+\OT1/ptm/m/n/12 in []\OT1/pcr/m/n/12 visual_control \OT1/ptm/m/n/12 sec-tion is
+ re-quired to de-fine cross sec-tions. Each []\OT1/pcr/m/n/12 isosurface_ctl
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 970--975
+
+ []
+
+[63]
+Overfull \hbox (3.4681pt too wide) in paragraph at lines 1024--1026
+\OT1/ptm/m/n/12 This pro-gram out-put mean square am-pli-tude of the fields whi
+ch is marked as []\OT1/pcr/m/n/12 Monitor_ON
+ []
+
+
+Overfull \hbox (31.65886pt too wide) in paragraph at lines 1024--1026
+\OT1/ptm/m/n/12 file []\OT1/pcr/m/n/12 [vol_pwr_prefix]_s.dat \OT1/ptm/m/n/12 o
+r []\OT1/pcr/m/n/12 sph_pwr_volume_s.dat \OT1/ptm/m/n/12 if []\OT1/pcr/m/n/12 [
+vol_pwr_prefix]
+ []
+
+[64pdfTeX warning (ext4): destination with the same identifier (name{table.14})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1029 \item{
+             \tt  line 6: } Number of field of data, total number of components
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1053--1055
+
+ []
+
+[65] [66pdfTeX warning (ext4): destination with the same identifier (name{equat
+ion.10.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1099 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1099 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1099 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1099 \begin{eqnarray}
+                       ]pdfTeX warning (ext4): destination with the same identi
+fier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1099 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1099 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1099 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1099 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1104 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1104 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1104 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1104 \begin{eqnarray}
+                       
+Overfull \hbox (49.04443pt too wide) in paragraph at lines 1118--1120
+\OT1/ptm/m/n/12 Spectrum data for the each ra-dial po-si-tion are writ-ten by d
+efin-ing \OT1/pcr/m/n/12 layered[]pwr[]spectr[]prefix
+ []
+
+
+Overfull \hbox (2.9361pt too wide) in paragraph at lines 1121--1122
+[]\OT1/pcr/m/n/12 [layer[]pwr[]prefix][]s.dat \OT1/ptm/m/n/12 Sur-face av-er-ag
+e of mean square am-pli-tude of the fields. 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.10.1
+}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1123 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1123 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1123 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1123 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1128 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1128 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1128 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1128 \begin{eqnarray}
+                        [67]pdfTeX warning (ext4): destination with the same id
+entifier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1136 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1136 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1136 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1136 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1142 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1142 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1142 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1142 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1152 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1152 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1152 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1152 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1157 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1157 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1157 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1157 \begin{eqnarray}
+                       
+Overfull \hbox (11.46103pt too wide) in paragraph at lines 1170--1172
+\OT1/ptm/m/n/12 The vol-ume av-er-age in-for-ma-tion is writ-ten in the file \O
+T1/pcr/m/n/12 [volume[]average[]prefix].dat\OT1/ptm/m/n/12 .
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.10.1
+}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1172 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1172 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1172 \begin{eqnarray}
+                       pdfTeX warning (ext4): destination with the same identif
+ier (name{equation.10.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1172 \begin{eqnarray}
+                        [68]
+Overfull \hbox (21.75816pt too wide) in paragraph at lines 1178--1180
+\OT1/ptm/m/n/12 eval-u-ated for ra-dius de-fined by []\OT1/pcr/m/n/12 [gauss_co
+ef_radius] \OT1/ptm/m/n/12 ev-ery []\OT1/pcr/m/n/12 [increment_monitor]
+ []
+
+[69] [70pdfTeX warning (ext4): destination with the same identifier (name{equat
+ion.10.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1252 \newpage
+               ] <images/flow_3.pdf, id=1742, 563.10374pt x 230.8625pt>
+File: images/flow_3.pdf Graphic file (type pdf)
+
+<use images/flow_3.pdf>
+Package pdftex.def Info: images/flow_3.pdf used on input line 1258.
+(pdftex.def)             Requested size: 369.88582pt x 151.64755pt.
+
+Overfull \hbox (18.63744pt too wide) in paragraph at lines 1264--1267
+\OT1/ptm/m/n/12 cept for the re-quired in-put restart data []\OT1/pcr/m/n/12 [r
+st_prefix].[step #].[rst_extension]\OT1/ptm/m/n/12 .
+ []
+
+[71pdfTeX warning (ext4): destination with the same identifier (name{figure.8})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1272 \newpage
+                <./images/flow_3.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\\' on input line 1274.
+
+<images/flow_ini.pdf, id=1802, 563.10374pt x 230.8625pt>
+File: images/flow_ini.pdf Graphic file (type pdf)
+
+<use images/flow_ini.pdf>
+Package pdftex.def Info: images/flow_ini.pdf used on input line 1279.
+(pdftex.def)             Requested size: 369.88582pt x 151.64755pt.
+
+Overfull \hbox (11.53348pt too wide) in paragraph at lines 1292--1302
+ [] 
+ []
+
+
+Overfull \hbox (19.35886pt too wide) in paragraph at lines 1285--1309
+[]\OT1/pcr/m/n/12 const_sph_initial_spectr.f90 \OT1/ptm/m/n/12 is saved in []\O
+T1/pcr/m/n/12 src/programs/data_utilities 
+ []
+
+
+Overfull \hbox (65.08873pt too wide) in paragraph at lines 1312--1314
+\OT1/ptm/m/n/12 To con-struct Ini-tial field data, you need to edit the source 
+code []\OT1/pcr/m/n/12 const_sph_initial_spectr.f90
+ []
+
+[72pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1317 \item{
+             \verb|set_initial_temperature|:} Routine to construct initial t...
+ <./images/flow_ini.pdf>]
+Overfull \hbox (52.73021pt too wide) in paragraph at lines 1330--1341
+ [] 
+ []
+
+
+Overfull \hbox (1.74121pt too wide) in paragraph at lines 1348--1350
+\OT1/ptm/m/n/12 First, []\OT1/pcr/m/n/12 j = find_local_sph_mode_address(l,m) \
+OT1/ptm/m/n/12 re-turns the lo-cal spher-i-cal har-
+ []
+
+[73pdfTeX warning (ext4): destination with the same identifier (name{table.15})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1350 
+       ] [74pdfTeX warning (ext4): destination with the same identifier (name{t
+able.16}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1428 \end{verbatim}
+                     ]
+Overfull \hbox (95.59515pt too wide) in paragraph at lines 1428--1428
+[]          \OT1/pcr/m/n/12 d_rj(inod,ipol%i_temp) = (ar_1d_rj(k,1) * 20.d0/13.
+0d0        &[] 
+ []
+
+
+Overfull \hbox (16.39519pt too wide) in paragraph at lines 1428--1428
+[]     \OT1/pcr/m/n/12 &                              - 1.0d0 ) * 7.0d0 / 13.0d
+0[] 
+ []
+
+
+Overfull \hbox (30.79518pt too wide) in paragraph at lines 1428--1428
+[]\OT1/pcr/m/n/12 !    If data for (l,m) = (4,4) is there, set initial temperat
+ure[] 
+ []
+
+[75]
+Overfull \hbox (95.59515pt too wide) in paragraph at lines 1428--1428
+[]          \OT1/pcr/m/n/12 d_rj(inod,ipol%i_temp) = (one-three*xr**2+three*xr*
+*4-xr**6)  &[] 
+ []
+
+
+Overfull \hbox (52.39517pt too wide) in paragraph at lines 1428--1428
+[]     \OT1/pcr/m/n/12 &                            * A_temp * three / (sqrt(tw
+o*pi))[] 
+ []
+
+
+Overfull \hbox (37.99518pt too wide) in paragraph at lines 1428--1428
+[]        \OT1/pcr/m/n/12 d_rj(inod_rj_center,ipol%i_temp) = d_rj(inod,ipol%i_t
+emp)[] 
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\\' on input line 1432.
+
+File: images/flow_ini.pdf Graphic file (type pdf)
+<use images/flow_ini.pdf>
+Package pdftex.def Info: images/flow_ini.pdf used on input line 1437.
+(pdftex.def)             Requested size: 369.88582pt x 151.64755pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1443--1444
+
+ []
+
+
+Overfull \hbox (17.53348pt too wide) in paragraph at lines 1450--1460
+ [] 
+ []
+
+[76pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1468 
+       ]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\\' on input line 1472.
+
+[77pdfTeX warning (ext4): destination with the same identifier (name{table.17})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1500 \begin{description}
+                          ] [78pdfTeX warning (ext4): destination with the same
+ identifier (name{table.18}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1509 \item{
+             \tt ME\_pol\_ic:      }  Poloidal magnetic energy in inner core...
+]
+Overfull \hbox (10.87384pt too wide) in paragraph at lines 1550--1559
+ [] 
+ []
+
+[79]
+Underfull \hbox (badness 10000) in paragraph at lines 1565--1571
+
+ []
+
+[80pdfTeX warning (ext4): destination with the same identifier (name{table.19})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1595 	\item \hyperref
+                       [href_t:i_step_finish_ctl]]
+
+LaTeX Warning: Reference `table:fld_to_vtk' on page 81 undefined on input line 
+1629.
+
+
+Overfull \hbox (21.32553pt too wide) in paragraph at lines 1634--1642
+ [] 
+ []
+
+[81]
+Underfull \hbox (badness 10000) in paragraph at lines 1649--1655
+
+ []
+
+
+Overfull \hbox (54.40259pt too wide) in paragraph at lines 1693--1693
+[]\OT1/ptm/b/n/17.28 Section and iso-sur-face data con-verter pro-gram (\OT1/pc
+r/m/n/17.28 psf[]to[]VTK\OT1/ptm/b/n/17.28 ) 
+ []
+
+[82pdfTeX warning (ext4): destination with the same identifier (name{table.20})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1695 
+       ]
+Overfull \hbox (69.31477pt too wide) in paragraph at lines 1708--1708
+[]\OT1/pcr/m/n/10.95 vtk, vtk.gz, vtd, vtd.gz, inp, inp.gz, udt, udt.gz, psf, p
+sf.gz, sdt, sdt.gz[] 
+ []
+
+
+Overfull \hbox (49.6048pt too wide) in paragraph at lines 1708--1708
+[]\OT1/pcr/m/n/10.95 {\color{red} 2004 2000 1 <- Input start, end, and incremen
+t of file step}[] 
+ []
+
+<images/flow_4.pdf, id=1925, 563.10374pt x 224.84pt>
+File: images/flow_4.pdf Graphic file (type pdf)
+ <use images/flow_4.pdf>
+Package pdftex.def Info: images/flow_4.pdf used on input line 1716.
+(pdftex.def)             Requested size: 369.88582pt x 147.69154pt.
+
+[83pdfTeX warning (ext4): destination with the same identifier (name{figure.11}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1723 
+        <./images/flow_4.pdf>] [84pdfTeX warning (ext4): destination with the s
+ame identifier (name{table.21}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1774 	\item \hyperref
+                       [href_t:sph_file_fmt_ctl]]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\\' on input line 1816.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\\' on input line 1839.
+
+[85]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\\' on input line 1845.
+
+
+Overfull \hbox (6.98727pt too wide) in paragraph at lines 1851--1851
+[]\OT1/ptm/b/n/17.28 Module de-pen-dency pro-gram (\OT1/pcr/m/n/17.28 module[]d
+ependency\OT1/ptm/b/n/17.28 ) 
+ []
+
+[86pdfTeX warning (ext4): destination with the same identifier (name{table.22})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1853 \begin{itemize}
+                      ]
+<images/paraview_open.pdf, id=1991, 996.22188pt x 783.92876pt>
+File: images/paraview_open.pdf Graphic file (type pdf)
+
+<use images/paraview_open.pdf>
+Package pdftex.def Info: images/paraview_open.pdf used on input line 1864.
+(pdftex.def)             Requested size: 369.88582pt x 291.0539pt.
+
+<images/paraview_calc.pdf, id=1996, 950.55125pt x 903.375pt>
+File: images/paraview_calc.pdf Graphic file (type pdf)
+
+<use images/paraview_calc.pdf>
+Package pdftex.def Info: images/paraview_calc.pdf used on input line 1885.
+(pdftex.def)             Requested size: 284.52756pt x 270.40808pt.
+
+<images/Paraview_Br.pdf, id=1999, 1079.03125pt x 668.4975pt>
+File: images/Paraview_Br.pdf Graphic file (type pdf)
+
+<use images/Paraview_Br.pdf>
+Package pdftex.def Info: images/Paraview_Br.pdf used on input line 1895.
+(pdftex.def)             Requested size: 284.52756pt x 176.27376pt.
+) [87] [88pdfTeX warning (ext4): destination with the same identifier (name{fig
+ure.12}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.53 \newpage
+              <./images/paraview_open.pdf>] [89pdfTeX warning (ext4): destinati
+on with the same identifier (name{figure.13}) has been already used, duplicate 
+ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.53 \newpage
+             pdfTeX warning (ext4): destination with the same identifier (name{
+figure.14}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.53 \newpage
+              <./images/paraview_calc.pdf> <./images/Paraview_Br.pdf>] [90]
+(./tex_src/controls_CALYPSO.tex [91] [92] [93]
+Overfull \hbox (3.21646pt too wide) in paragraph at lines 141--143
+\OT1/ptm/m/n/12 Definition of num-ber of sub-do-mains for Leg-en-dre trans-form
+ be-tween $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r; ^^R; m\OT1/cmr/m/n/12 )$ \OT1/p
+tm/m/n/12 and $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 r; l; m\OT1/cmr/m/n/12 )$\OT1/
+ptm/m/n/12 .
+ []
+
+
+Overfull \hbox (31.00937pt too wide) in paragraph at lines 141--143
+\OT1/ptm/m/n/12 Di-rec-tion \OT1/pcr/m/n/12 radial \OT1/ptm/m/n/12 or \OT1/pcr/
+m/n/12 zonal \OT1/ptm/m/n/12 is set in []\OT1/pcr/m/n/12 [Direction]\OT1/ptm/m/
+n/12 , and num-ber of sub-do-mains []\OT1/pcr/m/n/12 [Ndomain]
+ []
+
+[94] [95]
+Overfull \hbox (34.67114pt too wide) in paragraph at lines 260--311
+ [] 
+ []
+
+
+LaTeX Warning: Float too large for page by 3.0067pt on input line 313.
+
+[96] [97pdfTeX warning (ext4): destination with the same identifier (name{table
+.23}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.323 \verb
+           |[Field]| \\] [98pdfTeX warning (ext4): destination with the same id
+entifier (name{table.24}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.362 \verb
+           |[Group]  [Type]  [Value]| \\]
+Overfull \hbox (4.31523pt too wide) in paragraph at lines 382--383
+[]\OT1/pcr/m/n/12 insulator \OT1/ptm/m/n/12 Mag-netic field is con-nected to po
+-ten-tial field at bound-ary de-fined in [Group].
+ []
+
+[99] [100pdfTeX warning (ext4): destination with the same identifier (name{tabl
+e.25}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.452 
+      ] [101pdfTeX warning (ext4): destination with the same identifier (name{t
+able.26}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.482 \paragraph
+                {\tt coef\_4\_heat\_source\_ctll}] [102] [103]
+Overfull \hbox (30.7215pt too wide) in paragraph at lines 639--642
+\OT1/ptm/m/n/12 for given time, pro-gram out-put spec-trum data []\OT1/pcr/m/n/
+12 [rst_prefix].elaps.[process #].fst
+ []
+
+[104]
+Overfull \hbox (5.55591pt too wide) in paragraph at lines 675--677
+\OT1/ptm/m/n/12 Increment of time step to out-put iso-sur-face data for vi-su-a
+l-iza-tion []\OT1/pcr/m/n/12 [ISTEP_ISOSURFACE]
+ []
+
+[105]
+Overfull \hbox (55.85988pt too wide) in paragraph at lines 701--704
+\OT1/ptm/m/n/12 Type of Ini-tial field is de-fined by text. The fol-low-ing pa-
+ram-e-ters are avail-able for []\OT1/pcr/m/n/12 [INITIAL_TYPE]\OT1/ptm/m/n/12 .
+ 
+ []
+
+
+Overfull \hbox (3.59608pt too wide) in paragraph at lines 710--711
+[]\OT1/pcr/m/n/12 Pseudo[]vacuum[]benchmark \OT1/ptm/m/n/12 Gen-er-ate ini-tial
+ field for pseudo vac-uum dy-namo bench-
+ []
+
+
+Overfull \hbox (4.60338pt too wide) in paragraph at lines 725--728
+[]\OT1/pcr/m/n/12 Crank[]Nicolson \OT1/ptm/m/n/12 Crank-Nicolson scheme for dif
+-fu-sion terms and sec-ond or-der Adams-
+ []
+
+[106] [107]
+Overfull \hbox (17.70068pt too wide) in paragraph at lines 791--793
+\OT1/ptm/m/n/12 File pre-fix for mean square spec-trum data av-er-aged over the
+ fluid shell []\OT1/pcr/m/n/12 [vol_pwr_prefix]
+ []
+
+
+Overfull \hbox (20.06479pt too wide) in paragraph at lines 794--796
+\OT1/ptm/m/n/12 also used for the file name of the vol-ume mean square data as 
+[]\OT1/pcr/m/n/12 [vol_pwr_prefix]_s.dat\OT1/ptm/m/n/12 .
+ []
+
+[108]
+Overfull \hbox (60.58858pt too wide) in paragraph at lines 825--827
+\OT1/ptm/m/n/12 File pre-fix for mean square spec-trum data av-er-aged over eac
+h sphere sur-face []\OT1/pcr/m/n/12 [layer_pwr_prefix]
+ []
+
+
+Overfull \hbox (16.84996pt too wide) in paragraph at lines 832--834
+ []\OT1/pcr/m/n/12 array spectr[]layer[]ctl[] [][Layer #] \OT1/ptm/m/n/12 List 
+of ra-dial grid point num-ber []\OT1/pcr/m/n/12 [Layer #]
+ []
+
+[109]
+Overfull \hbox (2.44997pt too wide) in paragraph at lines 877--879
+ []\OT1/pcr/m/n/12 array pick[]layer[]ctl[] [][Layer #] \OT1/ptm/m/n/12 List of
+ ra-dial grid point num-ber []\OT1/pcr/m/n/12 [Layer #]
+ []
+
+[110]
+Underfull \hbox (badness 10000) in paragraph at lines 937--939
+
+ []
+
+[111] [112pdfTeX warning (ext4): destination with the same identifier (name{tab
+le.27}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.997 \end{eqnarray*}
+                     pdfTeX warning (ext4): destination with the same identifie
+r (name{table.28}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.997 \end{eqnarray*}
+                     ] [113pdfTeX warning (ext4): destination with the same ide
+ntifier (name{table.29}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1061 	\item{
+              \tt all} Whole simulation domain.]
+Underfull \hbox (badness 10000) in paragraph at lines 1067--1069
+
+ []
+
+
+Overfull \hbox (31.82451pt too wide) in paragraph at lines 1113--1114
+ []\OT1/pcr/m/n/12 iso[]output[]type[] \OT1/ptm/m/n/12 File for-mat for iso-sur
+-face data is de-fined as char-ac-ter []\OT1/pcr/m/n/12 [file_format]\OT1/ptm/m
+/n/12 .
+ []
+
+[114pdfTeX warning (ext4): destination with the same identifier (name{table.30}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1115 \item{
+             \tt VTK: }               VTK format]
+Underfull \hbox (badness 10000) in paragraph at lines 1128--1130
+
+ []
+
+[115pdfTeX warning (ext4): destination with the same identifier (name{table.31}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1139 \paragraph
+                 {\tt isosurf\_area\_ctl}]
+Overfull \hbox (12.00691pt too wide) in paragraph at lines 1155--1156
+[]\OT1/pcr/m/n/12 constant \OT1/ptm/m/n/12 Con-stant value is set as a re-sult 
+field. The am-pli-tude is set by []\OT1/pcr/m/n/12 result_value\OT1/ptm/m/n/12 
+. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1167--1170
+
+ []
+
+[116]
+Overfull \hbox (23.72395pt too wide) in paragraph at lines 1191--1192
+\OT1/ptm/m/n/12 field are de-fined in this block. This block has the same con-t
+rol items as [][]\OT1/pcr/m/n/12 cross[]section[]ctl[][]\OT1/ptm/m/n/12 .
+ []
+
+
+Overfull \hbox (23.72395pt too wide) in paragraph at lines 1196--1197
+\OT1/ptm/m/n/12 field are de-fined in this block. This block has the same con-t
+rol items as [][]\OT1/pcr/m/n/12 cross[]section[]ctl[][]\OT1/ptm/m/n/12 .
+ []
+
+
+Overfull \hbox (0.32529pt too wide) in paragraph at lines 1196--1197
+\OT1/ptm/m/n/12 In the ex-ter-nal file \OT1/pcr/m/n/12 [zonal[]RMS[]section[]co
+ntrol[]file]\OT1/ptm/m/n/12 , con trol block starts from
+ []
+
+
+Overfull \hbox (147.31334pt too wide) in paragraph at lines 1200--1201
+\OT1/ptm/m/n/12 netic field is de-fined in \OT1/pcr/m/n/12 truncation[]degree[]
+ctl\OT1/ptm/m/n/12 . In the ex-ter-nal file \OT1/pcr/m/n/12 [zonal[]mean[]secti
+on[]control[]file]\OT1/ptm/m/n/12 ,
+ []
+
+[117]) [118] (./tex_src/gpl2.tex [119] [120] [121] [122] [123]
+Overfull \hbox (17.80385pt too wide) in paragraph at lines 316--325
+\OT1/ptm/m/sc/12 Ex-cept when oth-er-wise stated in writ-ing the copy-right hol
+d-ers and/or
+ []
+
+[124]
+Underfull \hbox (badness 10000) in paragraph at lines 360--362
+
+ []
+
+
+Overfull \hbox (4.00545pt too wide) in paragraph at lines 368--372
+\OT1/ptm/m/n/12 ANY WAR-RANTY; with-out even the im-plied war-ranty of MER-CHAN
+TABIL-
+ []
+
+[125]
+Underfull \hbox (badness 10000) in paragraph at lines 402--404
+
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 69.
+ [126]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 69.
+ (./CALYPSO.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 69.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 69.
+Package rerunfilecheck Info: File `CALYPSO.out' has not changed.
+(rerunfilecheck)             Checksum: C972DD5C2D23E07A90B8A406E182BE0D;11230.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 69.
+ ) 
+Here is how much of TeX's memory you used:
+ 7300 strings out of 493089
+ 109550 string characters out of 6134842
+ 208059 words of memory out of 5000000
+ 10128 multiletter control sequences out of 15000+600000
+ 33095 words of font info for 74 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 42i,14n,32p,1425b,578s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
+pe1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/ti
+mes/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8
+a.pfb>
+Output written on CALYPSO.pdf (127 pages, 5575062 bytes).
+PDF statistics:
+ 2474 PDF objects out of 2487 (max. 8388607)
+ 2112 compressed objects within 22 object streams
+ 496 named destinations out of 1000 (max. 500000)
+ 1237 words of extra memory for PDF output out of 10000 (max. 10000000)
+

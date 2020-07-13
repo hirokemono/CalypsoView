@@ -1,0 +1,138 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{History}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Updates for Ver 1.1}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Updates for Ver 1.2}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Updates for Ver 2.0}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Acknowledgements}{}% 6
+\BOOKMARK [1][-]{section.4}{Citation}{}% 7
+\BOOKMARK [1][-]{section.5}{Model of Simulation}{}% 8
+\BOOKMARK [2][-]{subsection.5.1}{Governing equations}{section.5}% 9
+\BOOKMARK [2][-]{subsection.5.2}{Spherical harmonics expansion}{section.5}% 10
+\BOOKMARK [2][-]{subsection.5.3}{Evaluation of Coriolis term}{section.5}% 11
+\BOOKMARK [2][-]{subsection.5.4}{Boundary conditions}{section.5}% 12
+\BOOKMARK [3][-]{subsubsection.5.4.1}{Non-slip boundary}{subsection.5.4}% 13
+\BOOKMARK [3][-]{subsubsection.5.4.2}{Free-slip boundary}{subsection.5.4}% 14
+\BOOKMARK [3][-]{subsubsection.5.4.3}{Fixed rotation rate}{subsection.5.4}% 15
+\BOOKMARK [3][-]{subsubsection.5.4.4}{Fixed homogenous temperature}{subsection.5.4}% 16
+\BOOKMARK [3][-]{subsubsection.5.4.5}{Fixed homogenous heat flux}{subsection.5.4}% 17
+\BOOKMARK [3][-]{subsubsection.5.4.6}{Fixed composition}{subsection.5.4}% 18
+\BOOKMARK [3][-]{subsubsection.5.4.7}{Fixed composition flux}{subsection.5.4}% 19
+\BOOKMARK [3][-]{subsubsection.5.4.8}{Connection to the magnetic potential field}{subsection.5.4}% 20
+\BOOKMARK [3][-]{subsubsection.5.4.9}{Magnetic boundary condition for center}{subsection.5.4}% 21
+\BOOKMARK [3][-]{subsubsection.5.4.10}{Pseudo-vacuum magnetic boundary condition}{subsection.5.4}% 22
+\BOOKMARK [1][-]{section.6}{Installation}{}% 23
+\BOOKMARK [2][-]{subsection.6.1}{Compiler Requirements}{section.6}% 24
+\BOOKMARK [2][-]{subsection.6.2}{Library Requirements}{section.6}% 25
+\BOOKMARK [2][-]{subsection.6.3}{Known problems}{section.6}% 26
+\BOOKMARK [2][-]{subsection.6.4}{Directories}{section.6}% 27
+\BOOKMARK [2][-]{subsection.6.5}{Doxygen}{section.6}% 28
+\BOOKMARK [2][-]{subsection.6.6}{Install using configure command }{section.6}% 29
+\BOOKMARK [3][-]{subsubsection.6.6.1}{Configuration using configure command }{subsection.6.6}% 30
+\BOOKMARK [3][-]{subsubsection.6.6.2}{Compile}{subsection.6.6}% 31
+\BOOKMARK [3][-]{subsubsection.6.6.3}{Clean}{subsection.6.6}% 32
+\BOOKMARK [3][-]{subsubsection.6.6.4}{Distclean}{subsection.6.6}% 33
+\BOOKMARK [3][-]{subsubsection.6.6.5}{Install}{subsection.6.6}% 34
+\BOOKMARK [3][-]{subsubsection.6.6.6}{Construct dependecies \(only for developper\)}{subsection.6.6}% 35
+\BOOKMARK [2][-]{subsection.6.7}{Install without using configure}{section.6}% 36
+\BOOKMARK [2][-]{subsection.6.8}{Install using cmake}{section.6}% 37
+\BOOKMARK [1][-]{section.7}{Simulation procedure}{}% 38
+\BOOKMARK [1][-]{section.8}{Examples}{}% 39
+\BOOKMARK [2][-]{subsection.8.1}{Examples for preprocessing program}{section.8}% 40
+\BOOKMARK [2][-]{subsection.8.2}{Examples of dynamo benchmark}{section.8}% 41
+\BOOKMARK [3][-]{subsubsection.8.2.1}{Data files and directories for Case 0}{subsection.8.2}% 42
+\BOOKMARK [3][-]{subsubsection.8.2.2}{Data files and directories for Case 1}{subsection.8.2}% 43
+\BOOKMARK [3][-]{subsubsection.8.2.3}{Data files and directories for Case 2}{subsection.8.2}% 44
+\BOOKMARK [3][-]{subsubsection.8.2.4}{Data files and directories for Compositional Case 1}{subsection.8.2}% 45
+\BOOKMARK [2][-]{subsection.8.3}{Example of data assembling program}{section.8}% 46
+\BOOKMARK [2][-]{subsection.8.4}{Example of treatment of heat and composition source term}{section.8}% 47
+\BOOKMARK [2][-]{subsection.8.5}{Example of thermal and compositional boundary conditions by external file}{section.8}% 48
+\BOOKMARK [1][-]{section.9}{Preprocessing program \(gen\137sph\137grid\)}{}% 49
+\BOOKMARK [2][-]{subsection.9.1}{Position of radial grid}{section.9}% 50
+\BOOKMARK [2][-]{subsection.9.2}{Control file \(control\137sph\137shell\)}{section.9}% 51
+\BOOKMARK [2][-]{subsection.9.3}{Spectrum index data}{section.9}% 52
+\BOOKMARK [2][-]{subsection.9.4}{Finite element mesh data \(optional\)}{section.9}% 53
+\BOOKMARK [2][-]{subsection.9.5}{Radial grid data}{section.9}% 54
+\BOOKMARK [2][-]{subsection.9.6}{How to define spatial resolution and parallelization?}{section.9}% 55
+\BOOKMARK [1][-]{section.10}{Simulation program \(sph\137mhd\)}{}% 56
+\BOOKMARK [2][-]{subsection.10.1}{Control file}{section.10}% 57
+\BOOKMARK [2][-]{subsection.10.2}{Spectrum data for restarting}{section.10}% 58
+\BOOKMARK [2][-]{subsection.10.3}{Thermal and compositional boundary condition data file}{section.10}% 59
+\BOOKMARK [2][-]{subsection.10.4}{Field data for visualization}{section.10}% 60
+\BOOKMARK [3][-]{subsubsection.10.4.1}{Distributed VTK data}{subsection.10.4}% 61
+\BOOKMARK [3][-]{subsubsection.10.4.2}{Merged VTK data}{subsection.10.4}% 62
+\BOOKMARK [3][-]{subsubsection.10.4.3}{Merged XDMF data}{subsection.10.4}% 63
+\BOOKMARK [3][-]{subsubsection.10.4.4}{Calypso field data}{subsection.10.4}% 64
+\BOOKMARK [2][-]{subsection.10.5}{Cross section data \(Parallel Surfacing module\)}{section.10}% 65
+\BOOKMARK [3][-]{subsubsection.10.5.1}{Control data}{subsection.10.5}% 66
+\BOOKMARK [3][-]{subsubsection.10.5.2}{Output data format of sectioning module}{subsection.10.5}% 67
+\BOOKMARK [2][-]{subsection.10.6}{Isosurface data}{section.10}% 68
+\BOOKMARK [3][-]{subsubsection.10.6.1}{Control data}{subsection.10.6}% 69
+\BOOKMARK [3][-]{subsubsection.10.6.2}{Output data format of isosurface module}{subsection.10.6}% 70
+\BOOKMARK [2][-]{subsection.10.7}{Mean square amplitude data}{section.10}% 71
+\BOOKMARK [3][-]{subsubsection.10.7.1}{Volume average data}{subsection.10.7}% 72
+\BOOKMARK [3][-]{subsubsection.10.7.2}{Volume spectrum data}{subsection.10.7}% 73
+\BOOKMARK [3][-]{subsubsection.10.7.3}{Layered spectrum data}{subsection.10.7}% 74
+\BOOKMARK [2][-]{subsection.10.8}{Volume average data [volume\137average\137prefix].dat}{section.10}% 75
+\BOOKMARK [2][-]{subsection.10.9}{Gauss coefficient data [gauss\137coef\137prefix].dat}{section.10}% 76
+\BOOKMARK [2][-]{subsection.10.10}{Spectrum monitor data [picked\137sph\137prefix].dat}{section.10}% 77
+\BOOKMARK [2][-]{subsection.10.11}{Nusselt number data [nusselt\137number\137prefix].dat}{section.10}% 78
+\BOOKMARK [1][-]{section.11}{Data transform program \(sph\137snapshot\)}{}% 79
+\BOOKMARK [1][-]{section.12}{Initial field generation program \040\(sph\137initial\137field\)}{}% 80
+\BOOKMARK [2][-]{subsection.12.1}{Definition of the initial field}{section.12}% 81
+\BOOKMARK [1][-]{section.13}{Initial field modification program \040\(sph\137add\137initial\137field\)}{}% 82
+\BOOKMARK [1][-]{section.14}{Check program for dynamo benchmark \040\(sph\137dynamobench\)}{}% 83
+\BOOKMARK [2][-]{subsection.14.1}{Dynamo benchmark data dynamobench.dat}{section.14}% 84
+\BOOKMARK [1][-]{section.15}{Sectioning program \(sectioning\)}{}% 85
+\BOOKMARK [2][-]{subsection.15.1}{Control file}{section.15}% 86
+\BOOKMARK [1][-]{section.16}{Field data converter program \(field\137to\137VTK\)}{}% 87
+\BOOKMARK [2][-]{subsection.16.1}{Control file}{section.16}% 88
+\BOOKMARK [1][-]{section.17}{Section and isosurface data converter program \(psf\137to\137VTK\)}{}% 89
+\BOOKMARK [1][-]{section.18}{Data assemble program \(assemble\137sph\)}{}% 90
+\BOOKMARK [2][-]{subsection.18.1}{Format of control file}{section.18}% 91
+\BOOKMARK [1][-]{section.19}{Time averaging programs}{}% 92
+\BOOKMARK [2][-]{subsection.19.1}{Averaging for mean square and power spectrum \040\(t\137ave\137sph\137mean\137square\)}{section.19}% 93
+\BOOKMARK [2][-]{subsection.19.2}{Averaging for picked harmonics mode data \040\(t\137ave\137picked\137sph\137coefs\)}{section.19}% 94
+\BOOKMARK [2][-]{subsection.19.3}{Averaging for Nusselt number data \040\(t\137ave\137nusselt\)}{section.19}% 95
+\BOOKMARK [1][-]{section.20}{Module dependency program \(module\137dependency\)}{}% 96
+\BOOKMARK [1][-]{section.21}{Visualization using field data}{}% 97
+\BOOKMARK [1][-]{section*.8}{Appendices}{}% 98
+\BOOKMARK [1][-]{Appendix.1.A}{Appendix Definition of parameters for control files}{}% 99
+\BOOKMARK [2][-]{subsection.1.A.1}{Block data\137files\137def}{Appendix.1.A}% 100
+\BOOKMARK [2][-]{subsection.1.A.2}{spherical\137shell\137ctl}{Appendix.1.A}% 101
+\BOOKMARK [3][-]{subsubsection.1.A.2.1}{FEM\137mesh\137ctl}{subsection.1.A.2}% 102
+\BOOKMARK [3][-]{subsubsection.1.A.2.2}{num\137domain\137ctl}{subsection.1.A.2}% 103
+\BOOKMARK [3][-]{subsubsection.1.A.2.3}{num\137grid\137sph}{subsection.1.A.2}% 104
+\BOOKMARK [2][-]{subsection.1.A.3}{phys\137values\137ctl}{Appendix.1.A}% 105
+\BOOKMARK [2][-]{subsection.1.A.4}{time\137evolution\137ctl}{Appendix.1.A}% 106
+\BOOKMARK [2][-]{subsection.1.A.5}{boundary\137condition}{Appendix.1.A}% 107
+\BOOKMARK [2][-]{subsection.1.A.6}{forces\137define}{Appendix.1.A}% 108
+\BOOKMARK [2][-]{subsection.1.A.7}{dimensionless\137ctl}{Appendix.1.A}% 109
+\BOOKMARK [2][-]{subsection.1.A.8}{coefficients\137ctl}{Appendix.1.A}% 110
+\BOOKMARK [3][-]{subsubsection.1.A.8.1}{thermal}{subsection.1.A.8}% 111
+\BOOKMARK [3][-]{subsubsection.1.A.8.2}{momentum}{subsection.1.A.8}% 112
+\BOOKMARK [3][-]{subsubsection.1.A.8.3}{induction}{subsection.1.A.8}% 113
+\BOOKMARK [3][-]{subsubsection.1.A.8.4}{composition}{subsection.1.A.8}% 114
+\BOOKMARK [2][-]{subsection.1.A.9}{temperature\137define}{Appendix.1.A}% 115
+\BOOKMARK [2][-]{subsection.1.A.10}{time\137step\137ctl}{Appendix.1.A}% 116
+\BOOKMARK [2][-]{subsection.1.A.11}{new\137time\137step\137ctl}{Appendix.1.A}% 117
+\BOOKMARK [2][-]{subsection.1.A.12}{restart\137file\137ctl}{Appendix.1.A}% 118
+\BOOKMARK [2][-]{subsection.1.A.13}{time\137loop\137ctl}{Appendix.1.A}% 119
+\BOOKMARK [2][-]{subsection.1.A.14}{sph\137monitor\137ctl}{Appendix.1.A}% 120
+\BOOKMARK [3][-]{subsubsection.1.A.14.1}{volume\137spectrum\137ctl}{subsection.1.A.14}% 121
+\BOOKMARK [3][-]{subsubsection.1.A.14.2}{layered\137spectrum\137ctl}{subsection.1.A.14}% 122
+\BOOKMARK [3][-]{subsubsection.1.A.14.3}{gauss\137coefficient\137ctl}{subsection.1.A.14}% 123
+\BOOKMARK [3][-]{subsubsection.1.A.14.4}{pickup\137spectr\137ctl}{subsection.1.A.14}% 124
+\BOOKMARK [3][-]{subsubsection.1.A.14.5}{mid\137equator\137monitor\137ctl}{subsection.1.A.14}% 125
+\BOOKMARK [2][-]{subsection.1.A.15}{visual\137control}{Appendix.1.A}% 126
+\BOOKMARK [2][-]{subsection.1.A.16}{cross\137section\137ctl}{Appendix.1.A}% 127
+\BOOKMARK [3][-]{subsubsection.1.A.16.1}{surface\137define}{subsection.1.A.16}% 128
+\BOOKMARK [3][-]{subsubsection.1.A.16.2}{output\137field\137define}{subsection.1.A.16}% 129
+\BOOKMARK [2][-]{subsection.1.A.17}{isosurface\137ctl}{Appendix.1.A}% 130
+\BOOKMARK [3][-]{subsubsection.1.A.17.1}{isosurf\137define}{subsection.1.A.17}% 131
+\BOOKMARK [3][-]{subsubsection.1.A.17.2}{field\137on\137isosurf}{subsection.1.A.17}% 132
+\BOOKMARK [2][-]{subsection.1.A.18}{output\137field\137file\137fmt\137ctl [VTK\137format]}{Appendix.1.A}% 133
+\BOOKMARK [2][-]{subsection.1.A.19}{dynamo\137vizs\137control}{Appendix.1.A}% 134
+\BOOKMARK [2][-]{subsection.1.A.20}{new\137data\137files\137def}{Appendix.1.A}% 135
+\BOOKMARK [2][-]{subsection.1.A.21}{new\137time\137step\137ctl}{Appendix.1.A}% 136
+\BOOKMARK [2][-]{subsection.1.A.22}{newrst\137magne\137ctl}{Appendix.1.A}% 137
+\BOOKMARK [1][-]{Appendix.1.B}{Appendix GNU GENERAL PUBLIC LICENSE}{}% 138

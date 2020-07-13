@@ -10,10 +10,6 @@ AM_CONDITIONAL([am__fastdepOBJC], false)
 AM_CONDITIONAL([am__fastdepCXX], false)
 AC_CANONICAL_HOST
 
-dnl Include OpenMP related definitions
-builtin(include,src/confdb/ax_pthread.m4)
-builtin(include,src/confdb/ax_openmp.m4)
-
 dnl Include MPI related definitions
 builtin(include,src/confdb/ax_mpi.m4)
 
@@ -68,13 +64,6 @@ else
 	F77=${FC}
 fi
 
-if test ${host_alias} = "powerpc64-bgq-linux"
-then
-  XL_FORTRAN="__bgq__"
-fi
-AC_SUBST(XL_FORTRAN)
-
-
 if test -z ${AR}
 then
 	ar_bin="ar"
@@ -99,9 +88,6 @@ PKG_PROG_PKG_CONFIG
 # Checks using C compiler
 AC_LANG_SAVE
 AC_LANG(C)
-# Check OpenMP
-AX_OPENMP
-AC_SUBST(OPENMP_CFLAGS)
 # Check MPI
 AX_MPI
 AC_LANG_RESTORE
@@ -109,9 +95,6 @@ AC_LANG_RESTORE
 # Checks using Fortran Compiler
 AC_LANG_SAVE
 AC_LANG(Fortran)
-# Check OpenMP
-AX_OPENMP
-AC_SUBST(OPENMP_FCFLAGS)
 # Check MPI
 AX_MPI
 AC_LANG_RESTORE
@@ -273,13 +256,7 @@ AC_MSG_RESULT()
 AC_MSG_RESULT(-----   Configuration summary   -------------------------------)
 AC_MSG_RESULT()
 AC_MSG_RESULT(  host:        "${host}")
-AC_MSG_RESULT(XL_FORTRAN:    "${XL_FORTRAN}")
 AC_MSG_RESULT()
-if test -n "${OPENMP_FCFLAGS}"; then
-        AC_MSG_RESULT(    Use OpenMP ...        yes)
-else
-        AC_MSG_RESULT(    Use OpenMP ...         no)
-fi
 if test -n "${COCOA_FLAG}"; then
         AC_MSG_RESULT(    Use Cocoa...          yes)
 else

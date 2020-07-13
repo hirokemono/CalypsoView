@@ -656,16 +656,13 @@ CPP
 MPIINCDIR
 MPIDIR
 MPIFC
-OPENMP_FCFLAGS
 MPILIBS
 MPICC
-OPENMP_CFLAGS
 PKG_CONFIG
 GMAKE
 ifGNUmake
 RANLIB
 ar_bin
-XL_FORTRAN
 ac_ct_FC
 FCFLAGS
 FC
@@ -3088,111 +3085,6 @@ case $host_os in *\ *) host_os=`echo "$host_os" | sed 's/ /-/g'`;; esac
 
 
 
-# SYNOPSIS
-#
-#   AX_PTHREAD([ACTION-IF-FOUND[, ACTION-IF-NOT-FOUND]])
-#
-# DESCRIPTION
-#
-#   This macro figures out how to build C programs using POSIX threads. It
-#   sets the PTHREAD_LIBS output variable to the threads library and linker
-#   flags, and the PTHREAD_CFLAGS output variable to any special C compiler
-#   flags that are needed. (The user can also force certain compiler
-#   flags/libs to be tested by setting these environment variables.)
-#
-#   Also sets PTHREAD_CC to any special C compiler that is needed for
-#   multi-threaded programs (defaults to the value of CC otherwise). (This
-#   is necessary on AIX to use the special cc_r compiler alias.)
-#
-#   NOTE: You are assumed to not only compile your program with these flags,
-#   but also link it with them as well. e.g. you should link with
-#   $PTHREAD_CC $CFLAGS $PTHREAD_CFLAGS $LDFLAGS ... $PTHREAD_LIBS $LIBS
-#
-#   If you are only building threads programs, you may wish to use these
-#   variables in your default LIBS, CFLAGS, and CC:
-#
-#     LIBS="$PTHREAD_LIBS $LIBS"
-#     CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
-#     CC="$PTHREAD_CC"
-#
-#   In addition, if the PTHREAD_CREATE_JOINABLE thread-attribute constant
-#   has a nonstandard name, defines PTHREAD_CREATE_JOINABLE to that name
-#   (e.g. PTHREAD_CREATE_UNDETACHED on AIX).
-#
-#   Also HAVE_PTHREAD_PRIO_INHERIT is defined if pthread is found and the
-#   PTHREAD_PRIO_INHERIT symbol is defined when compiling with
-#   PTHREAD_CFLAGS.
-#
-#   ACTION-IF-FOUND is a list of shell commands to run if a threads library
-#   is found, and ACTION-IF-NOT-FOUND is a list of commands to run it if it
-#   is not found. If ACTION-IF-FOUND is not specified, the default action
-#   will define HAVE_PTHREAD.
-#
-#   Please let the authors know if this macro fails on any platform, or if
-#   you have any other suggestions or comments. This macro was based on work
-#   by SGJ on autoconf scripts for FFTW (http://www.fftw.org/) (with help
-#   from M. Frigo), as well as ac_pthread and hb_pthread macros posted by
-#   Alejandro Forero Cuervo to the autoconf macro repository. We are also
-#   grateful for the helpful feedback of numerous users.
-#
-#   Updated for Autoconf 2.68 by Daniel Richard G.
-#
-# LICENSE
-#
-#   Copyright (c) 2008 Steven G. Johnson <stevenj@alum.mit.edu>
-#   Copyright (c) 2011 Daniel Richard G. <skunk@iSKUNK.ORG>
-#
-#   This program is free software: you can redistribute it and/or modify it
-#   under the terms of the GNU General Public License as published by the
-#   Free Software Foundation, either version 3 of the License, or (at your
-#   option) any later version.
-#
-#   This program is distributed in the hope that it will be useful, but
-#   WITHOUT ANY WARRANTY; without even the implied warranty of
-#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
-#   Public License for more details.
-#
-#   You should have received a copy of the GNU General Public License along
-#   with this program. If not, see <http://www.gnu.org/licenses/>.
-#
-#   As a special exception, the respective Autoconf Macro's copyright owner
-#   gives unlimited permission to copy, distribute and modify the configure
-#   scripts that are the output of Autoconf when processing the Macro. You
-#   need not follow the terms of the GNU General Public License when using
-#   or distributing such scripts, even though portions of the text of the
-#   Macro appear in them. The GNU General Public License (GPL) does govern
-#   all other use of the material that constitutes the Autoconf Macro.
-#
-#   This special exception to the GPL applies to versions of the Autoconf
-#   Macro released by the Autoconf Archive. When you make and distribute a
-#   modified version of the Autoconf Macro, you may extend this special
-#   exception to the GPL to apply to your modified version as well.
-
-#serial 16
-
-# This is what autoupdate's m4 run will expand.  It fires
-# the warning (with _au_warn_XXX), outputs it into the
-# updated configure.ac (with AC_DIAGNOSE), and then outputs
-# the replacement expansion.
-
-
-# This is an auxiliary macro that is also run when
-# autoupdate runs m4.  It simply calls m4_warning, but
-# we need a wrapper so that each warning is emitted only
-# once.  We break the quoting in m4_warning's argument in
-# order to expand this macro's arguments, not AU_DEFUN's.
-
-
-# Finally, this is the expansion that is picked up by
-# autoconf.  It tells the user to run autoupdate, and
-# then outputs the replacement expansion.  We do not care
-# about autoupdate's warning because that contains
-# information on what to do *after* running autoupdate.
-
-
-
-
-
 #
 # SYNOPSIS
 #
@@ -4757,13 +4649,6 @@ else
 	F77=${FC}
 fi
 
-if test ${host_alias} = "powerpc64-bgq-linux"
-then
-  XL_FORTRAN="__bgq__"
-fi
-
-
-
 if test -z ${AR}
 then
 	ar_bin="ar"
@@ -5056,70 +4941,8 @@ ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
 ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
 ac_compiler_gnu=$ac_cv_c_compiler_gnu
 
-# Check OpenMP
-
-
-
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for OpenMP flag of C compiler" >&5
-$as_echo_n "checking for OpenMP flag of C compiler... " >&6; }
-if ${ax_cv_c_openmp+:} false; then :
-  $as_echo_n "(cached) " >&6
-else
-  saveCFLAGS=$CFLAGS
-ax_cv_c_openmp=unknown
-# Flags to try:  -fopenmp (gcc), -qopenmp (icc), -openmp (icc), -mp (SGI & PGI),
-#                -xopenmp (Sun), -omp (Tru64), -qsmp=omp (AIX), none
-ax_openmp_flags="-qopenmp -openmp -fopenmp -mp -xopenmp -omp -qsmp=omp none"
-if test "x$OPENMP_CFLAGS" != x; then
-  ax_openmp_flags="$OPENMP_CFLAGS $ax_openmp_flags"
-fi
-for ax_openmp_flag in $ax_openmp_flags; do
-  case $ax_openmp_flag in
-    none) CFLAGS=$saveC ;;
-    *) CFLAGS="$saveCFLAGS $ax_openmp_flag" ;;
-  esac
-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-/* Override any GCC internal prototype to avoid an error.
-   Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char omp_set_num_threads ();
-int
-main ()
-{
-return omp_set_num_threads ();
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"; then :
-  ax_cv_c_openmp=$ax_openmp_flag; break
-fi
-rm -f core conftest.err conftest.$ac_objext \
-    conftest$ac_exeext conftest.$ac_ext
-done
-CFLAGS=$saveCFLAGS
-
-fi
-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ax_cv_c_openmp" >&5
-$as_echo "$ax_cv_c_openmp" >&6; }
-if test "x$ax_cv_c_openmp" = "xunknown"; then
-  :
-else
-  if test "x$ax_cv_c_openmp" != "xnone"; then
-    OPENMP_CFLAGS=$ax_cv_c_openmp
-  fi
-
-$as_echo "#define HAVE_OPENMP 1" >>confdefs.h
-
-fi
-
-
 # Check MPI
+
 
 
 
@@ -5320,57 +5143,8 @@ ac_compile='$FC -c $FCFLAGS $ac_fcflags_srcext conftest.$ac_ext >&5'
 ac_link='$FC -o conftest$ac_exeext $FCFLAGS $LDFLAGS $ac_fcflags_srcext conftest.$ac_ext $LIBS >&5'
 ac_compiler_gnu=$ac_cv_fc_compiler_gnu
 
-# Check OpenMP
-
-
-
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for OpenMP flag of Fortran compiler" >&5
-$as_echo_n "checking for OpenMP flag of Fortran compiler... " >&6; }
-if ${ax_cv_fc_openmp+:} false; then :
-  $as_echo_n "(cached) " >&6
-else
-  saveFCFLAGS=$FCFLAGS
-ax_cv_fc_openmp=unknown
-# Flags to try:  -fopenmp (gcc), -qopenmp (icc), -openmp (icc), -mp (SGI & PGI),
-#                -xopenmp (Sun), -omp (Tru64), -qsmp=omp (AIX), none
-ax_openmp_flags="-qopenmp -openmp -fopenmp -mp -xopenmp -omp -qsmp=omp none"
-if test "x$OPENMP_FCFLAGS" != x; then
-  ax_openmp_flags="$OPENMP_FCFLAGS $ax_openmp_flags"
-fi
-for ax_openmp_flag in $ax_openmp_flags; do
-  case $ax_openmp_flag in
-    none) FCFLAGS=$saveFC ;;
-    *) FCFLAGS="$saveFCFLAGS $ax_openmp_flag" ;;
-  esac
-  cat > conftest.$ac_ext <<_ACEOF
-      program main
-      call omp_set_num_threads
-      end
-_ACEOF
-if ac_fn_fc_try_link "$LINENO"; then :
-  ax_cv_fc_openmp=$ax_openmp_flag; break
-fi
-rm -f core conftest.err conftest.$ac_objext \
-    conftest$ac_exeext conftest.$ac_ext
-done
-FCFLAGS=$saveFCFLAGS
-
-fi
-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ax_cv_fc_openmp" >&5
-$as_echo "$ax_cv_fc_openmp" >&6; }
-if test "x$ax_cv_fc_openmp" = "xunknown"; then
-  :
-else
-  if test "x$ax_cv_fc_openmp" != "xnone"; then
-    OPENMP_FCFLAGS=$ax_cv_fc_openmp
-  fi
-
-$as_echo "#define HAVE_OPENMP 1" >>confdefs.h
-
-fi
-
-
 # Check MPI
+
 
 
 
@@ -7627,17 +7401,8 @@ $as_echo "-----   Configuration summary   -------------------------------" >&6; 
 $as_echo "" >&6; }
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: host:        \"${host}\"" >&5
 $as_echo "host:        \"${host}\"" >&6; }
-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: XL_FORTRAN:    \"${XL_FORTRAN}\"" >&5
-$as_echo "XL_FORTRAN:    \"${XL_FORTRAN}\"" >&6; }
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: " >&5
 $as_echo "" >&6; }
-if test -n "${OPENMP_FCFLAGS}"; then
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: Use OpenMP ...        yes" >&5
-$as_echo "Use OpenMP ...        yes" >&6; }
-else
-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: Use OpenMP ...         no" >&5
-$as_echo "Use OpenMP ...         no" >&6; }
-fi
 if test -n "${COCOA_FLAG}"; then
         { $as_echo "$as_me:${as_lineno-$LINENO}: result: Use Cocoa...          yes" >&5
 $as_echo "Use Cocoa...          yes" >&6; }

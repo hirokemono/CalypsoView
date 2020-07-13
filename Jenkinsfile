@@ -13,18 +13,12 @@ pipeline {
   }
 
   stages {
-    stage('Build & Test') {
+    stage('Build') {
       steps {
         sh '''
-          ./configure \
-            --enable-fftw3 \
-            --with-hdf5 \
-            --with-blas \
-            --with-zlib 
-        '''
+          ./configure
+           '''
         sh '''
-        # Fix OpenMPI issue in Docker : https://github.com/open-mpi/ompi/issues/4948
-        export OMPI_MCA_btl_vader_single_copy_mechanism=none
 
         make
         '''

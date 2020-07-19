@@ -1,0 +1,802 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 JUL 2020 00:44
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**CalypsoView.tex
+(./CalypsoView.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 142.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/textpos/textpos.sty
+Package: textpos 2014/01/03 v1.7j
+
+Package: textpos 2014/01/03 1.7j, absolute positioning of text on the page
+\TP@textbox=\box26
+\TPHorizModule=\dimen105
+\TPVertModule=\dimen106
+\TP@margin=\dimen107
+\TP@absmargin=\dimen108
+Grid set 16 x 16 = 38.39343pt x 49.68562pt
+\TPboxrulesize=\dimen109
+\TP@tbargs=\toks16
+\TP@prevdepth=\dimen110
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count88
+\Gm@cntv=\count89
+\c@Gm@tempcnt=\count90
+\Gm@bindingoffset=\dimen111
+\Gm@wd@mp=\dimen112
+\Gm@odd@mp=\dimen113
+\Gm@even@mp=\dimen114
+\Gm@layoutwidth=\dimen115
+\Gm@layoutheight=\dimen116
+\Gm@layouthoffset=\dimen117
+\Gm@layoutvoffset=\dimen118
+\Gm@dimlist=\toks17
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package hobsub Info: Skipping package `etexcmds' (already loaded).
+Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
+Package hobsub Info: Skipping package `kvdefinekeys' (already loaded).
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+\@linkdim=\dimen119
+\Hy@linkcounter=\count91
+\Hy@pagecounter=\count92
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count93
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count94
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen120
+\Fld@menulength=\count95
+\Field@Width=\dimen121
+\Fld@charsize=\dimen122
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count96
+\c@Item=\count97
+\c@Hfootnote=\count98
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count99
+\c@bookmark@seq@number=\count100
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip43
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count101
+\float@exts=\toks18
+\float@box=\box27
+\@float@everytoks=\toks19
+\@floatcapt=\box28
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count102
+\c@@ppsavesec=\count103
+\c@@ppsaveapp=\count104
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 17.
+
+(./CalypsoView.aux
+
+LaTeX Warning: Label `fig:desktop_loaded' multiply defined.
+
+)
+\openout1 = `CalypsoView.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 23.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count105
+\scratchdimen=\dimen123
+\scratchbox=\box29
+\nofMPsegments=\count106
+\nofMParguments=\count107
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count108
+\MPscratchDim=\dimen124
+\MPnumerator=\count109
+\makeMPintoPDFobject=\count110
+\everyMPtoPDFconversion=\toks21
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=19.8752pt
+* \evensidemargin=19.8752pt
+* \topmargin=-13.87262pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\AtBeginShipoutBox=\box30
+Package hyperref Info: Link coloring ON on input line 23.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count111
+)
+LaTeX Info: Redefining \ref on input line 23.
+LaTeX Info: Redefining \pageref on input line 23.
+LaTeX Info: Redefining \nameref on input line 23.
+
+(./CalypsoView.out) (./CalypsoView.out)
+\@outlinefile=\write3
+\openout3 = `CalypsoView.out'.
+
+ (./tex_src/cover_CALYPSO.tex
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 528.93675pt, 28.45274pt)
+* v-part:(T,H,B)=(56.9055pt, 681.15898pt, 56.9055pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=528.93675pt
+* \textheight=681.15898pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 23.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+Overfull \hbox (0.4627pt too wide) in paragraph at lines 40--49
+ [] 
+ []
+
+<images/Interior2.pdf, id=168, 1606.0pt x 1284.8pt>
+File: images/Interior2.pdf Graphic file (type pdf)
+ <use images/Interior2.pdf>
+Package pdftex.def Info: images/Interior2.pdf used on input line 60.
+(pdftex.def)             Requested size: 379.41951pt x 303.53377pt.
+
+Overfull \hbox (379.41951pt too wide) in paragraph at lines 60--61
+ [] 
+ []
+
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 87--88
+[][] 
+ []
+
+[1
+
+
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
+s/Interior2.pdf>]) (./tex_src/mathdef.tex)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 31.
+ [1
+
+] (./CalypsoView.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    Try loading font information for U+msa on input line 6.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 6.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 15.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [2]
+Overfull \hbox (25.41913pt too wide) in paragraph at lines 42--42
+ [][] [][][]\OT1/ptm/m/n/12 Array \OT1/pcr/m/n/12 viewpoint[]in[]viewer[]ctl [D
+IRECTION] [POSITION][][] [][]  
+ []
+
+)
+\tf@toc=\write4
+\openout4 = `CalypsoView.toc'.
+
+ [3] (./tex_src/intro_CalypsoView.tex
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 18.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 18.
+ [4]
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¾ in font ptmr7t!
+Missing character: There is no • in font ptmr7t!
+) [5]
+(./tex_src/install_CalypsoView.tex
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
+
+<images/install_mac.pdf, id=256, 404.51125pt x 307.1475pt>
+File: images/install_mac.pdf Graphic file (type pdf)
+
+<use images/install_mac.pdf>
+Package pdftex.def Info: images/install_mac.pdf used on input line 11.
+(pdftex.def)             Requested size: 227.62204pt x 172.83565pt.
+ [6pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.33 
+      <./images/install_mac.pdf>] [7]
+Overfull \hbox (0.94933pt too wide) in paragraph at lines 76--78
+\OT1/ptm/m/n/12 Doxygen ([][]$\OT1/pcr/m/n/12 http : / / www . doxygen . org$[]
+[]\OT1/ptm/m/n/12 ) is an pow-er-ful doc-u-ment gen-er-a-tion tool from
+ []
+
+
+Overfull \hbox (37.86188pt too wide) in paragraph at lines 83--84
+\OT1/ptm/m/n/12 The html doc-u-ments can see by open-ing []\OT1/pcr/m/n/12 [CAL
+YPSO_HOME]/doxygen/html/index.html\OT1/ptm/m/n/12 .
+ []
+
+[8]
+Overfull \hbox (21.86072pt too wide) in paragraph at lines 106--109
+[]\OT1/ptm/m/n/12 ./configure gen-er-ates a Make-file in the cur-rent di-rec-to
+ry. Avail-able op-tions for \OT1/pcr/m/n/12 configure
+ []
+
+
+Overfull \hbox (29.89482pt too wide) in paragraph at lines 153--153
+[]\OT1/pcr/m/n/10.95 --disable-option-checking  ignore unrecognized --enable/--
+with options[] 
+ []
+
+
+Overfull \hbox (69.31477pt too wide) in paragraph at lines 153--153
+[]\OT1/pcr/m/n/10.95 --disable-FEATURE       do not include FEATURE (same as --
+enable-FEATURE=no)[] 
+ []
+
+
+Overfull \hbox (16.75484pt too wide) in paragraph at lines 153--153
+[]\OT1/pcr/m/n/10.95 --enable-silent-rules   less verbose build output (undo: "
+make V=1")[] 
+ []
+
+
+Overfull \hbox (29.89482pt too wide) in paragraph at lines 153--153
+[]\OT1/pcr/m/n/10.95 --without-PACKAGE       do not use PACKAGE (same as --with
+-PACKAGE=no)[] 
+ []
+
+
+Overfull \hbox (16.75484pt too wide) in paragraph at lines 153--153
+[]\OT1/pcr/m/n/10.95 --with-zlib=DIR root directory path of zlib installation d
+efaults to[] 
+ []
+
+
+Overfull \hbox (23.32483pt too wide) in paragraph at lines 153--153
+[]\OT1/pcr/m/n/10.95 LDFLAGS     linker flags, e.g. -L<lib dir> if you have lib
+raries in a[] 
+ []
+
+
+Overfull \hbox (49.6048pt too wide) in paragraph at lines 153--153
+[]\OT1/pcr/m/n/10.95 CPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -I<
+include dir> if[] 
+ []
+
+[9]
+Overfull \hbox (56.17479pt too wide) in paragraph at lines 153--153
+[]\OT1/pcr/m/n/10.95 Use these variables to override the choices made by `confi
+gure' or to help[] 
+ []
+
+
+Overfull \hbox (10.18484pt too wide) in paragraph at lines 153--153
+[]\OT1/pcr/m/n/10.95 it to find libraries and programs with nonstandard names/l
+ocations.[] 
+ []
+
+[10]
+Overfull \hbox (1.8973pt too wide) in paragraph at lines 207--208
+\OT1/ptm/m/n/12 for []\OT1/pcr/m/n/12 configure \OT1/ptm/m/n/12 com-mand. Al-te
+r-na-tively, you can use the pro-grams in []\OT1/pcr/m/n/12 ${SRCDIR}/bin
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--212
+
+ []
+
+[11] [12]
+Overfull \hbox (10.1846pt too wide) in paragraph at lines 246--247
+[][]\OT1/pcr/m/n/12 GTK3_CFLAGS \OT1/ptm/m/n/12 Op-tion flags for gtk+-3 (ex. [
+]\OT1/pcr/m/n/12 `pkg-config --cflags gtk+-3.0`\OT1/ptm/m/n/12 ) 
+ []
+
+
+Overfull \hbox (25.00935pt too wide) in paragraph at lines 262--266
+\OT1/ptm/m/n/12 CMake can be checked by []\OT1/pcr/m/n/12 cmake -i [CALYPSO_HOM
+E] \OT1/ptm/m/n/12 com-mand at []\OT1/pcr/m/n/12 [CALYPSO_HOME] 
+ []
+
+[13]
+Overfull \hbox (102.79515pt too wide) in paragraph at lines 301--301
+[]\OT1/pcr/m/n/12 % cmake ~/CALYPSO/ -DCMAKE_Fortran_COMPILER=/opt/local/bin/gf
+ortran-mp-9 \[] 
+ []
+
+
+Overfull \hbox (17.71027pt too wide) in paragraph at lines 311--312
+[]\OT1/ptm/m/n/12 After run-ning []\OT1/pcr/m/n/12 make \OT1/ptm/m/n/12 com-man
+d, ex-e-cute files are built in []\OT1/pcr/m/n/12 [CALYPSO_HOME]/work/bin
+ []
+
+<images/Desktop_101.pdf, id=315, 1445.4pt x 903.375pt>
+File: images/Desktop_101.pdf Graphic file (type pdf)
+
+<use images/Desktop_101.pdf>
+Package pdftex.def Info: images/Desktop_101.pdf used on input line 319.
+(pdftex.def)             Requested size: 341.43306pt x 213.3959pt.
+ [14]
+<images/Desktop_1.pdf, id=323, 1445.4pt x 903.375pt>
+File: images/Desktop_1.pdf Graphic file (type pdf)
+
+<use images/Desktop_1.pdf>
+Package pdftex.def Info: images/Desktop_1.pdf used on input line 339.
+(pdftex.def)             Requested size: 341.43306pt x 213.3959pt.
+) [15pdfTeX warning (ext4): destination with the same identifier (name{figure.2
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.47 \newpage
+              <./images/Desktop_101.pdf>] (./tex_src/programs_CalypsoView.tex
+<images/menu_1.pdf, id=343, 846.66313pt x 838.63312pt>
+File: images/menu_1.pdf Graphic file (type pdf)
+ <use images/menu_1.pdf>
+Package pdftex.def Info: images/menu_1.pdf used on input line 7.
+(pdftex.def)             Requested size: 341.43306pt x 338.18575pt.
+
+Overfull \hbox (20.34193pt too wide) in paragraph at lines 15--18
+\OT1/ptm/m/n/12 has to have a step num-ber and ex-ten-sion as []\OT1/pcr/m/n/12
+ [file_prefix].[step #].[extension]\OT1/ptm/m/n/12 .
+ []
+
+<images/Desktop_102.pdf, id=350, 1445.4pt x 903.375pt>
+File: images/Desktop_102.pdf Graphic file (type pdf)
+
+<use images/Desktop_102.pdf>
+Package pdftex.def Info: images/Desktop_102.pdf used on input line 46.
+(pdftex.def)             Requested size: 170.71652pt x 106.69106pt.
+
+<images/Desktop_2.pdf, id=352, 1445.4pt x 903.375pt>
+File: images/Desktop_2.pdf Graphic file (type pdf)
+
+<use images/Desktop_2.pdf>
+Package pdftex.def Info: images/Desktop_2.pdf used on input line 47.
+(pdftex.def)             Requested size: 170.71652pt x 106.69106pt.
+ [16pdfTeX warning (ext4): destination with the same identifier (name{figure.3}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.55 
+      <./images/Desktop_1.pdf>] [17pdfTeX warning (ext4): destination with the 
+same identifier (name{figure.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.55 
+     pdfTeX warning (ext4): destination with the same identifier (name{table.1}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.55 
+      <./images/menu_1.pdf>] [18pdfTeX warning (ext4): destination with the sam
+e identifier (name{figure.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.70 \end{description}
+                       <./images/Desktop_102.pdf> <./images/Desktop_2.pdf>]
+
+LaTeX Warning: Reference `fig:grids' on page 19 undefined on input line 86.
+
+<images/with_axis.pdf, id=425, 642.4pt x 642.4pt>
+File: images/with_axis.pdf Graphic file (type pdf)
+ <use images/with_axis.pdf>
+Package pdftex.def Info: images/with_axis.pdf used on input line 92.
+(pdftex.def)             Requested size: 113.81102pt x 113.80379pt.
+
+<images/with_coastline.pdf, id=427, 513.92pt x 513.92pt>
+File: images/with_coastline.pdf Graphic file (type pdf)
+
+<use images/with_coastline.pdf>
+Package pdftex.def Info: images/with_coastline.pdf used on input line 93.
+(pdftex.def)             Requested size: 113.81102pt x 113.80771pt.
+
+<images/with_grid.pdf, id=429, 513.92pt x 513.92pt>
+File: images/with_grid.pdf Graphic file (type pdf)
+ <use images/with_grid.pdf>
+Package pdftex.def Info: images/with_grid.pdf used on input line 94.
+(pdftex.def)             Requested size: 113.81102pt x 113.80771pt.
+) [19pdfTeX warning (ext4): destination with the same identifier (name{figure.6
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.50 \newpage
+              <./images/with_axis.pdf> <./images/with_coastline.pdf> <./images/
+with_grid.pdf>] [20] [21] (./tex_src/controls_CalypsoView.tex
+Underfull \hbox (badness 10000) in paragraph at lines 6--8
+
+ []
+
+
+Overfull \hbox (18.63625pt too wide) in paragraph at lines 25--26
+\OT1/ptm/m/n/12 Position of eye in the viewer co-or-di-nate is de-fined in each
+ []\OT1/pcr/m/n/12 [DIRECTION] \OT1/ptm/m/n/12 and []\OT1/pcr/m/n/12 [POSITION]
+\OT1/ptm/m/n/12 .
+ []
+
+
+Overfull \hbox (135.17964pt too wide) in paragraph at lines 37--38
+\OT1/ptm/m/n/12 Direction of the ro-ta-tion axis of the ob-ject is de-fined by 
+[]\OT1/pcr/m/n/12 [DIRECTION] \OT1/ptm/m/n/12 and []\OT1/pcr/m/n/12 POSITION]. 
+\verb|\OT1/ptm/m/n/12 DIRECTION]|
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 86--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
+
+ []
+
+) [24] (./tex_src/gpl2.tex [25] [26] [27] [28] [29]
+Overfull \hbox (17.80385pt too wide) in paragraph at lines 316--325
+\OT1/ptm/m/sc/12 Ex-cept when oth-er-wise stated in writ-ing the copy-right hol
+d-ers and/or
+ []
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 360--362
+
+ []
+
+
+Overfull \hbox (4.00545pt too wide) in paragraph at lines 368--372
+\OT1/ptm/m/n/12 ANY WAR-RANTY; with-out even the im-plied war-ranty of MER-CHAN
+TABIL-
+ []
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 402--404
+
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 66.
+ [32]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 66.
+ (./CalypsoView.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 66.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 66.
+
+
+Package rerunfilecheck Warning: File `CalypsoView.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `CalypsoView.out':
+(rerunfilecheck)             Before: 52907B09289530E2F71006F427CFB361;2872
+(rerunfilecheck)             After:  9F699663613CF93917767898EFD03EC6;3642.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 66.
+ ) 
+Here is how much of TeX's memory you used:
+ 6552 strings out of 493089
+ 97584 string characters out of 6134842
+ 184367 words of memory out of 5000000
+ 9766 multiletter control sequences out of 15000+600000
+ 29811 words of font info for 63 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 42i,12n,32p,747b,559s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
+e1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/tim
+es/utmri8a.pfb>
+Output written on CalypsoView.pdf (33 pages, 13288674 bytes).
+PDF statistics:
+ 626 PDF objects out of 1000 (max. 8388607)
+ 527 compressed objects within 6 object streams
+ 128 named destinations out of 1000 (max. 500000)
+ 433 words of extra memory for PDF output out of 10000 (max. 10000000)
+

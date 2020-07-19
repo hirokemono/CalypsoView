@@ -1,0 +1,49 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{History}{}% 2
+\BOOKMARK [1][-]{section.3}{Acknowledgements}{}% 3
+\BOOKMARK [1][-]{section.4}{Citation}{}% 4
+\BOOKMARK [1][-]{section.5}{Installation}{}% 5
+\BOOKMARK [2][-]{subsection.5.1}{MacOS}{section.5}% 6
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Compiler Requirements}{subsection.5.1}% 7
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Library Requirements}{subsection.5.1}% 8
+\BOOKMARK [2][-]{subsection.5.2}{Linux}{section.5}% 9
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Compiler Requirements}{subsection.5.2}% 10
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Library Requirements}{subsection.5.2}% 11
+\BOOKMARK [2][-]{subsection.5.3}{Known problems}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.4}{Directories}{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.5}{Doxygen}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.6}{Install using configure command }{section.5}% 15
+\BOOKMARK [3][-]{subsubsection.5.6.1}{Configuration using configure command }{subsection.5.6}% 16
+\BOOKMARK [3][-]{subsubsection.5.6.2}{Compile}{subsection.5.6}% 17
+\BOOKMARK [3][-]{subsubsection.5.6.3}{Clean}{subsection.5.6}% 18
+\BOOKMARK [3][-]{subsubsection.5.6.4}{Distclean}{subsection.5.6}% 19
+\BOOKMARK [3][-]{subsubsection.5.6.5}{Install}{subsection.5.6}% 20
+\BOOKMARK [3][-]{subsubsection.5.6.6}{Construct dependecies \(only for developper\)}{subsection.5.6}% 21
+\BOOKMARK [2][-]{subsection.5.7}{Install without using configure}{section.5}% 22
+\BOOKMARK [2][-]{subsection.5.8}{Install using cmake}{section.5}% 23
+\BOOKMARK [1][-]{section.6}{Start the program}{}% 24
+\BOOKMARK [2][-]{subsection.6.1}{Mac OS}{section.6}% 25
+\BOOKMARK [2][-]{subsection.6.2}{Linux}{section.6}% 26
+\BOOKMARK [1][-]{section.7}{Usage of program}{}% 27
+\BOOKMARK [2][-]{subsection.7.1}{Open file}{section.7}% 28
+\BOOKMARK [2][-]{subsection.7.2}{Save image}{section.7}% 29
+\BOOKMARK [2][-]{subsection.7.3}{Interface of Viewer window and viewing mode}{section.7}% 30
+\BOOKMARK [3][-]{subsubsection.7.3.1}{Axis and grids}{subsection.7.3}% 31
+\BOOKMARK [2][-]{subsection.7.4}{Preference menu}{section.7}% 32
+\BOOKMARK [2][-]{subsection.7.5}{View transfer menu}{section.7}% 33
+\BOOKMARK [2][-]{subsection.7.6}{Surfacing menu}{section.7}% 34
+\BOOKMARK [1][-]{section*.6}{Appendices}{}% 35
+\BOOKMARK [1][-]{Appendix.1.A}{Appendix Definition of parameters for control files}{}% 36
+\BOOKMARK [2][-]{subsection.1.A.1}{Block view\137transform\137ctl}{Appendix.1.A}% 37
+\BOOKMARK [3][-]{subsubsection.1.A.1.1}{Block image\137size\137ctl}{subsection.1.A.1}% 38
+\BOOKMARK [3][-]{subsubsection.1.A.1.2}{Array viewpoint\137in\137viewer\137ctl [DIRECTION] [POSITION]}{subsection.1.A.1}% 39
+\BOOKMARK [3][-]{subsubsection.1.A.1.3}{Array look\137at\137point\137ctl [DIRECTION] [POSITION]}{subsection.1.A.1}% 40
+\BOOKMARK [3][-]{subsubsection.1.A.1.4}{scale\137factor\137ctl [SCALE]}{subsection.1.A.1}% 41
+\BOOKMARK [3][-]{subsubsection.1.A.1.5}{Array view\137rotation\137vec\137ctl [DIRECTION] [POSITION]}{subsection.1.A.1}% 42
+\BOOKMARK [3][-]{subsubsection.1.A.1.6}{view\137rotation\137deg\137ctl [DEGREE]}{subsection.1.A.1}% 43
+\BOOKMARK [3][-]{subsubsection.1.A.1.7}{Block projection\137matrix\137ctl}{subsection.1.A.1}% 44
+\BOOKMARK [3][-]{subsubsection.1.A.1.8}{Block streo\137view\137parameter\137ctl}{subsection.1.A.1}% 45
+\BOOKMARK [2][-]{subsection.1.A.2}{Block pvr\137color\137ctl}{Appendix.1.A}% 46
+\BOOKMARK [3][-]{subsubsection.1.A.2.1}{Block colormap\137ctl}{subsection.1.A.2}% 47
+\BOOKMARK [3][-]{subsubsection.1.A.2.2}{Block colorbar\137ctl}{subsection.1.A.2}% 48
+\BOOKMARK [1][-]{Appendix.1.B}{Appendix GNU GENERAL PUBLIC LICENSE}{}% 49

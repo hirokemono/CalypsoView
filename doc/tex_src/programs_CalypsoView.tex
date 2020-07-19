@@ -1,0 +1,113 @@
+\section{Usage of program}
+\label{section:usage}
+The menu window at starting is shown in Figure \ref{fig:menu_1}. The program can finish by pushing "Quit" button (1 in Figure \ref{fig:menu_1}).
+%
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics*[width=120mm]{images/menu_1}
+\end{center}
+\caption{Menu windows of CalypsoView at starting.}
+\label{fig:menu_1}
+\end{figure}
+%
+
+\subsection{Open file}
+First of all, data for visualization is required to be loaded. The file menu is opend by clicking "Open" bottun 
+(2 in Figure \ref{fig:menu_1}). In Mac version, the file can drag and drop into the viewer window. In Linux version, file name can input the file name box. CalypsoView can treat a unstructured grid data with triangle element or quadrature elements. The file name has to have a step number and extension as \verb|[file_prefix].[step #].[extension]|. The avaiable data formats and extensions are listed in Table \ref{table:PSF_data}. For (compressed) sectioning binary data, the file for grid data \verb|[file_prefix].0.sgd| \\
+  or \verb|[file_prefix].0.sgd.gz| is required in the same directory as the data file.
+
+\begin{table}[htp]
+\caption{Data format and extensions for CalypsoView}
+\label{table:PSF_data}
+\begin{center} 
+\begin{tabular}{|c|c|}
+\hline
+File format & \verb|extension| \\ \hline \hline
+VTK & \verb|.vtk| \\
+Compressed VTK & \verb|.vtk.gz| \\  \hline
+Sectioning binary & \verb|.sdt|$^{(*)}$ \\
+Compressed sectioning & \verb|.sdt.gz|$^{(*)}$ \\ \hline
+Isosurface Binary & \verb|.sfm| \\
+Compressed isosurface binary & \verb|.sfm.gz| \\ \hline
+\end{tabular}
+\end{center}
+(*) Grid data \verb|[file_prefix].0.sgd| or \verb|[file_prefix].0.sgd.gz| is required.
+\end{table} 
+
+After loading the data, the menu is expanded to control surface visualization parameters as shown in Figure \ref{fig:desktop_loaded}. CalypsoView can load up 10 surfacing data. The detailed control of the sectionig data is described in section \ref{sec:PSF_menu}.
+
+\paragraph{Note: }
+At the first time using CalypsoView on MacOS, nothing could be displayed in the viewer window. In that case, lighting parameter may be missing. Please set light parameters in \hyperref[sec:pref_menu]{Preference menu}.
+%
+\begin{figure}[htbp]
+\begin{center}
+\[
+\begin{array}{cc}
+\includegraphics*[width=60mm]{images/Desktop_102} &
+\includegraphics*[width=60mm]{images/Desktop_2}
+\end{array}
+\]
+\end{center}
+\caption{Desktop after loading data for MacOS (lest) and Linux (right).}
+\label{fig:desktop_loaded}
+\end{figure}
+%
+
+\subsection{Save image}
+To save image of the viewer window, click "Save image" bottun (3 in Figure \ref{fig:menu_1}) and set the image file name and direcotry to save in the file menu. Image data can save as PNG (\verb|.png|) or bitmap (\verb|.bmp|) format. PNG format is smaller size than bitmap format. If no file extension set in the file save menu, file format is chosen in the default faumat in the \hyperref[sec:pref_menu]{Preference menu} (for Mac) or in the next of the "Save Image" bottun (Linux).
+
+\subsection{Interface of Viewer window and viewing mode}
+The visalised objects can move by mouse or trackpad. THe mouse interface depends on the viewing mode. The viewing mode is selected by View type menu (4 in Figure \ref{fig:menu_1}). The following viewing mode can choose:
+%
+\begin{description}
+\item{3D-View: } 3-dimentional view.
+\item{Streo-View: } Streo view using anaglyph. Please use red and blue glass.
+\item{Map-View: }  Map projection using Aitof projection. \\
+Map projection does not support griph (arrow) visualization.
+\item{XY-View: }   Display parallel with $xy$-plane.
+\item{XZ-View: }   Display parallel with $xz$-plane.
+\item{YZ-View: }   Display parallel with $yz$-plane.
+\end{description}
+%
+
+The mouse interface is the follwing:
+\begin{description}
+\item{Push and drag: }
+  \begin{description}
+  \item{3D-View and Streo-View}  Rotate object
+  \item{Map-View, XY-View, XZ-View, and YZ-View} Move object horizontally in screen.
+  \end{description}
+\item{Swipe by two finger: } Zoom in and out.
+\item{Push two finger and drag: } Move object horizontally in screen.
+\item{Push option and drag: } Move object vertically in screen.
+\end{description}
+
+\subsubsection{Axis and grids}
+The axis is drawn when "Axis" switch (6 in Figure \ref{fig:menu_1}) is turned on. The axis is not shown in the Map-View mode. The coastline is drawn when "Coastline" switch (7 in Figure \ref{fig:menu_1}) is turned on. A grid on a sphere with 30 degree increment is drawn when "grid" switch (8 in Figure \ref{fig:menu_1}). THe radius of the coastline and grid are set in the "Radius" box (9 in Figure \ref{fig:menu_1}). Example images for axis, coastline, and grid are shown in Figure \ref{fig:grids}.
+%
+\begin{figure}[htbp]
+\begin{center}
+\[
+\begin{array}{ccc}
+\includegraphics*[width=40mm]{images/with_axis} &
+\includegraphics*[width=40mm]{images/with_coastline} &
+\includegraphics*[width=40mm]{images/with_grid}
+\end{array}
+\]
+\end{center}
+\caption{Images with axis(left), with coastline(middle), and sphere grid(right).}
+\label{fig:desktop_loaded}
+\end{figure}
+%
+
+\subsection{Preference menu}
+\label{sec:pref_menu}
+
+\subsection{View transfer menu}
+\label{sec:viewmatrix_menu}
+
+\subsection{Surfacing menu}
+\label{sec:PSF_menu}
+
+
+

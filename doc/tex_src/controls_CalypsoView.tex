@@ -1,0 +1,155 @@
+\section{Definition of parameters for control files}
+\label{section:def_control}
+
+\subsection{Block {\tt view\_transform\_ctl}}
+\label{href_t:view_transform_ctl}
+Parameters to construct view transform matrix and projection matrix are defined in this block. \\
+(Back to Section \ref{sec:viewmatrix_menu}) \\
+
+\subsubsection{Block {\tt image\_size\_ctl}}
+\label{href_t:image_size_ctl}
+Number of pixels of the image is defined in this block.
+
+\paragraph{\tt x\_pixel\_ctl}
+\label{href_t:x_pixel_ctl}
+\verb|[NUM_PIXEL_X]| \\
+Number of pixels in the horizontal direction \verb|[NUM_PIXEL_X]| is defined by integer.
+
+\paragraph{\tt y\_pixel\_ctl}
+\label{href_t:y_pixel_ctl}
+\verb|[NUM_PIXEL_Y]| \\
+Number of pixels in the veritcal direction \verb|[NUM_PIXEL_Y]| is defined by integer.
+
+\subsubsection{Array {\tt viewpoint\_in\_viewer\_ctl [DIRECTION] [POSITION]}}
+\label{href_t:viewpoint_in_viewer_ctl}
+Position of eye in the viewer coordinate is defined in each \verb|[DIRECTION]| and \verb|[POSITION]|. \verb|[DIRECTION]| is set by text (\verb|x, y,| or \verb|z|), and \verb|[POSITION]| is set by real.
+
+\subsubsection{Array {\tt look\_at\_point\_ctl [DIRECTION] [POSITION]}}
+\label{href_t:look_at_point_ctl}
+Position to look at is defined in each \verb|[DIRECTION]| and \verb|[POSITION]|. \verb|[DIRECTION]| is set by text (\verb|x, y,| or \verb|z|), and \verb|[POSITION]| is set by real.
+
+\subsubsection{\tt scale\_factor\_ctl  [SCALE]}
+\label{href_t:scale_factor_ctl}
+Scale of the object is defined by real. In viewer coordinate, object is scaled by 1 / \verb|[SCALE]| times.
+
+\subsubsection{Array {\tt view\_rotation\_vec\_ctl [DIRECTION] [POSITION]}}
+\label{href_t:view_rotation_vec_ctl}
+Direction of the rotation axis of the object is defined by \verb|[DIRECTION]| and \verb[POSITION]. \verb|[DIRECTION]| is set by text (\verb|x, y,| or \verb|z|), and \verb|[POSITION]| is set by real.
+
+\subsubsection{\tt view\_rotation\_deg\_ctl  [DEGREE]}
+\label{href_t:view_rotation_deg_ctl}
+Angle of the rotation of the object is defined by \verb|[DEGREE]|.
+
+\subsubsection{Block {\tt projection\_matrix\_ctl}}
+\label{href_t:projection_matrix_ctl}
+Parameters of projection is defined in this block.
+
+\paragraph{\tt perspective\_angle\_ctl}
+\label{href_t:perspective_angle_ctl}
+\verb|[PERSPECTIVE]| \\
+Angle of perspective \verb|[PERSPECTIVE]| is defined by real.
+
+\paragraph{\tt perspective\_xy\_ratio\_ctl}
+\label{href_t:perspective_xy_ratio_ctl}
+\verb|[XY_RATIO]| \\
+Aspect ratio of horizontal and vertical screen \verb|[XY_RATIO]| is defined by real.
+
+\paragraph{\tt perspective\_near\_ctl}
+\label{href_t:perspective_near_ctl}
+\verb|[NEAR]| \\
+Nearrest distance from eye \verb|[NEAR]| is defined by real.
+
+\paragraph{\tt perspective\_far\_ctl}
+\label{href_t:perspective_far_ctl}
+\verb|[FAR]| \\
+Farest distance from eye \verb|[FAR]| is defined by real.
+
+
+\subsubsection{Block {\tt streo\_view\_parameter\_ctl}}
+\label{href_t:streo_view_parameter_ctl}
+Parameters of streo image is defined in this block. This block is only used for the streo view.
+
+\paragraph{\tt focal\_point\_ctl}
+\label{href_t:focal_point_ctl}
+\verb|[FOCAL]| \\
+Focal point \verb|[FOCAL]| is defined by real.
+
+\paragraph{\tt eye\_separation\_ctl}
+\label{href_t:eye_separation_ctl}
+\verb|[SEPARATION]| \\
+Eye separation \verb|[SEPARATION]| is defined by real.
+
+
+
+\subsection{Block {\tt pvr\_color\_ctl}}
+\label{href_t:pvr_color_ctl}
+Parameters to construct colormap and colorbar information in this block. \\
+(Back to Section \ref{sec:viewmatrix_menu}) \\
+
+\subsubsection{Block {\tt colormap\_ctl}}
+\label{href_t:colormap_ctl}
+Parameters to construct colormap information in this block. \\
+
+\paragraph{\tt eye\_separation\_ctl}
+\label{href_t:eye_separation_ctl}
+\verb|[SEPARATION]| \\
+Eye separation \verb|[SEPARATION]| is defined by real.
+
+\paragraph{Array {\tt color_table_ctl}}
+\label{href_t:color_table_ctl}
+\verb|[SEPARATION]| \\
+Eye separation \verb|[SEPARATION]| is defined by real.
+
+\paragraph{\tt opacity_style_ctl}
+\label{href_t:opacity_style_ctl}
+\verb|[SEPARATION]| \\
+Eye separation \verb|[SEPARATION]| is defined by real.
+
+\paragraph{\tt constant_opacity_ctl}
+\label{href_t:constant_opacity_ctl}
+\verb|[SEPARATION]| \\
+Eye separation \verb|[SEPARATION]| is defined by real.
+
+
+
+\subsubsection{Block {\tt colorbar\_ctl}}
+\label{href_t:colorbar_ctl}
+Parameters to construct colorbar information in this block. \\
+
+\paragraph{\tt colorbar_switch_ctl}
+\label{href_t:colorbar_switch_ctl}
+\verb|[SEPARATION]| \\
+Eye separation \verb|[SEPARATION]| is defined by real.
+
+\paragraph{\tt colorbar_scale_ctl}
+\label{href_t:colorbar_scale_ctl}
+\verb|[SEPARATION]| \\
+Eye separation \verb|[SEPARATION]| is defined by real.
+
+\paragraph{\tt font_size_ctl}
+\label{href_t:font_size_ctl}
+\verb|[SEPARATION]| \\
+Eye separation \verb|[SEPARATION]| is defined by real.
+
+\paragraph{\tt num_grid_ctl}
+\label{href_t:num_grid_ctl}
+\verb|[SEPARATION]| \\
+Eye separation \verb|[SEPARATION]| is defined by real.
+
+\paragraph{\tt iflag_zeromarker}
+\label{href_t:iflag_zeromarker}
+\verb|[SEPARATION]| \\
+Eye separation \verb|[SEPARATION]| is defined by real.
+
+\paragraph{\tt colorbar_range}
+\label{href_t:colorbar_range}
+\verb|[SEPARATION]| \\
+Eye separation \verb|[SEPARATION]| is defined by real.
+
+\paragraph{\tt axis_label_switch}
+\label{href_t:axis_label_switch}
+\verb|[SEPARATION]| \\
+Eye separation \verb|[SEPARATION]| is defined by real.
+
+
+

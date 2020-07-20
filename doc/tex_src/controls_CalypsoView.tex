@@ -34,7 +34,7 @@ Scale of the object is defined by real. In viewer coordinate, object is scaled b
 
 \subsubsection{Array {\tt view\_rotation\_vec\_ctl [DIRECTION] [POSITION]}}
 \label{href_t:view_rotation_vec_ctl}
-Direction of the rotation axis of the object is defined by \verb|[DIRECTION]| and \verb[POSITION]. \verb|[DIRECTION]| is set by text (\verb|x, y,| or \verb|z|), and \verb|[POSITION]| is set by real.
+Direction of the rotation axis of the object is defined by \verb|[DIRECTION]| and \verb|[POSITION]|. \verb|[DIRECTION]| is set by text (\verb|x, y,| or \verb|z|), and \verb|[POSITION]| is set by real.
 
 \subsubsection{\tt view\_rotation\_deg\_ctl  [DEGREE]}
 \label{href_t:view_rotation_deg_ctl}
@@ -90,25 +90,62 @@ Parameters to construct colormap and colorbar information in this block. \\
 \label{href_t:colormap_ctl}
 Parameters to construct colormap information in this block. \\
 
-\paragraph{\tt eye\_separation\_ctl}
-\label{href_t:eye_separation_ctl}
-\verb|[SEPARATION]| \\
-Eye separation \verb|[SEPARATION]| is defined by real.
+\paragraph{\tt colormap\_mode\_ctl}
+\label{href_t:colormap_mode_ctl}
+\verb|[COLORMAP_MODE]| \\
+Colormap \verb|[COLORMAP_MODE]| is defined by character. The following colormap is applicable:
+\begin{description}
+\item{{\tt rainbow}: } Rainbow color map.
+\item{{\tt blue\_to\_red}: } Change color from brue to red.
+\item{{\tt grayscale}: } Grayscale.
+\item{{\tt symmetric\_grayscale}: } Grayscale with respect to amplitude of data.
+\end{description}
 
-\paragraph{Array {\tt color_table_ctl}}
+
+\paragraph{\tt data\_mapping\_ctl}
+\label{href_t:data_mapping_ctl}
+\verb|[COLORMAPPING_TYPE]| \\
+Color mapping interpolation mode \verb|[COLORMAPPING_TYPE]| is defined by the following:
+\begin{description}
+\item{{\tt minmax}: } Linear scaling between \hyperref[href_t:range_min_ctl]{\tt range\_min\_ctl} and \hyperref[href_t:range_max_ctl]{\tt range\_max\_ctl}.
+\item{{\tt colormap\_list}: } Linearly chanded color scale between feature points. the feature points of the data \verb|[DATA]| and color salec at this value \verb|[COLOR_SCALE]| are defined \\ 
+in \hyperref[href_t:linear_opacity_ctl]{\tt color\_table\_ctl}.
+\end{description}
+
+\paragraph{Array {\tt color\_table\_ctl}}
 \label{href_t:color_table_ctl}
-\verb|[SEPARATION]| \\
-Eye separation \verb|[SEPARATION]| is defined by real.
+\verb|[DATA]    [COLOR_SCALE]| \\
+List of the feature points of the data \verb|[DATA]| and color scale at this value \verb|[COLOR_SCALE]| are defined by real. \verb|[COLOR_SCALE]| is set between 0. and 1.0. The color between the feature points are interpolated by the linear function.
 
-\paragraph{\tt opacity_style_ctl}
+\paragraph{\tt opacity\_style\_ctl}
 \label{href_t:opacity_style_ctl}
-\verb|[SEPARATION]| \\
-Eye separation \verb|[SEPARATION]| is defined by real.
+\verb|[OPACITY_MODE]| \\
+Opacity mode \verb|[OPACITY_MODE]| is defined by the following:
+\begin{description}
+\item{{\tt constant}: } Constant opacity defined by \hyperref[href_t:constant_opacity_ctl]{\tt constant\_opacity\_ctl}
+\item{{\tt point\_linear}: } Linearly chanded opacity between feature points. the feature points of the data \verb|[DATA]| and opacity at this value \verb|[OPACITY]| are defined \\ 
+in \hyperref[href_t:linear_opacity_ctl]{\tt linear\_opacity\_ctl}.
+\end{description}
 
-\paragraph{\tt constant_opacity_ctl}
+\paragraph{\tt constant\_opacity\_ctl}
 \label{href_t:constant_opacity_ctl}
-\verb|[SEPARATION]| \\
-Eye separation \verb|[SEPARATION]| is defined by real.
+\verb|[OPACITY]| \\
+Constant opacity \verb|[OPACITY]| is defined by real.
+
+\paragraph{Array {\tt linear\_opacity\_ctl}}
+\label{href_t:linear_opacity_ctl}
+\verb|[DATA]    [OPACITY]| \\
+List of the feature points of the data \verb|[DATA]| and opacity at this value \verb|[OPACITY]| are defined by real. The opacity between the feature points are interpolated by the linear function.
+
+\paragraph{\tt range\_min\_ctl}
+\label{href_t:range_min_ctl}
+\verb|[MIN_VALUE]| \\
+Minimum value of the color and opacity map \verb|[MIN_VALUE]| is defined by real.
+
+\paragraph{\tt range\_max\_ctl}
+\label{href_t:range_max_ctl}
+\verb|[MAX_VALUE]| \\
+Maximum value of the color and opacity map \verb|[MAX_VALUE]| is defined by real.
 
 
 
@@ -116,40 +153,41 @@ Eye separation \verb|[SEPARATION]| is defined by real.
 \label{href_t:colorbar_ctl}
 Parameters to construct colorbar information in this block. \\
 
-\paragraph{\tt colorbar_switch_ctl}
+\paragraph{\tt colorbar\_switch\_ctl}
 \label{href_t:colorbar_switch_ctl}
-\verb|[SEPARATION]| \\
-Eye separation \verb|[SEPARATION]| is defined by real.
+\verb|[SWITCH]| \\
+Switch to display colorbar. \verb|[SWITCH]| is set to be \verb|On| or \verb|Off|.
 
-\paragraph{\tt colorbar_scale_ctl}
+\paragraph{\tt colorbar\_scale\_ctl}
 \label{href_t:colorbar_scale_ctl}
-\verb|[SEPARATION]| \\
-Eye separation \verb|[SEPARATION]| is defined by real.
+\verb|[SWITCH]| \\
+Switch to display numbers in colorbar. \verb|[SWITCH]| is set to be \verb|On| or \verb|Off|. This switch is always "\verb|On|" in CalypsoView.
 
-\paragraph{\tt font_size_ctl}
+\paragraph{\tt font\_size\_ctl}
 \label{href_t:font_size_ctl}
-\verb|[SEPARATION]| \\
-Eye separation \verb|[SEPARATION]| is defined by real.
+\verb|[SIZE]| \\
+Size of text of the color bar \verb|[SIZE]| is defined by integer. This value is not used in CalypsoView.
 
-\paragraph{\tt num_grid_ctl}
+\paragraph{\tt num\_grid\_ctl}
 \label{href_t:num_grid_ctl}
-\verb|[SEPARATION]| \\
-Eye separation \verb|[SEPARATION]| is defined by real.
+\verb|[NUM_OF_GRID]| \\
+Number of grids in color bar \verb|[NUM_OF_GRID]| is defined by integer. This value is not used in CalypsoView.
 
-\paragraph{\tt iflag_zeromarker}
+\paragraph{\tt iflag\_zeromarker}
 \label{href_t:iflag_zeromarker}
-\verb|[SEPARATION]| \\
-Eye separation \verb|[SEPARATION]| is defined by real.
+\verb|[SWITCH]| \\
+Switch to display position of zero in colorbar. \verb|[SWITCH]| is set to be \verb|On| or \verb|Off|. This switch is always "\verb|On|" in CalypsoView.
 
-\paragraph{\tt colorbar_range}
+\paragraph{\tt colorbar\_range}
 \label{href_t:colorbar_range}
-\verb|[SEPARATION]| \\
-Eye separation \verb|[SEPARATION]| is defined by real.
+\verb|[MIN_VALUE]  [MAX_VALUE] | \\
+Range of the color bar is defined here. \verb|[MIN_VALUE]| and \verb|[MAX_VALUE]| are defined by real. This switch does not reflect from reading from the file because the range of the color bar is defined by the values in \hyperref[href_t:range_min_ctl]{\tt range\_min\_ctl} and \hyperref[href_t:range_max_ctl]{\tt range\_max\_ctl}.
 
-\paragraph{\tt axis_label_switch}
+
+\paragraph{\tt axis\_label\_switch}
 \label{href_t:axis_label_switch}
-\verb|[SEPARATION]| \\
-Eye separation \verb|[SEPARATION]| is defined by real.
+\verb|[SWITCH]| \\
+Switch to display axis. \verb|[SWITCH]| is set to be \verb|On| or \verb|Off|. This switch does not reflect from reading from the file.
 
 
 

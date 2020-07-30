@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 JUL 2020 00:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 JUL 2020 13:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -411,7 +411,7 @@ Overfull \hbox (0.4627pt too wide) in paragraph at lines 40--49
  [] 
  []
 
-<images/Interior2.pdf, id=168, 1606.0pt x 1284.8pt>
+<images/Interior2.pdf, id=200, 1606.0pt x 1284.8pt>
 File: images/Interior2.pdf Graphic file (type pdf)
  <use images/Interior2.pdf>
 Package pdftex.def Info: images/Interior2.pdf used on input line 60.
@@ -458,6 +458,12 @@ Overfull \hbox (25.41913pt too wide) in paragraph at lines 42--42
 IRECTION] [POSITION][][] [][]  
  []
 
+
+Overfull \hbox (11.01913pt too wide) in paragraph at lines 45--45
+ [][] [][][]\OT1/ptm/m/n/12 Array \OT1/pcr/m/n/12 view[]rotation[]vec[]ctl [DIR
+ECTION] [POSITION][][] [][]  
+ []
+
 )
 \tf@toc=\write4
 \openout4 = `CalypsoView.toc'.
@@ -479,7 +485,7 @@ Missing character: There is no • in font ptmr7t!
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
 
-<images/install_mac.pdf, id=256, 404.51125pt x 307.1475pt>
+<images/install_mac.pdf, id=296, 404.51125pt x 307.1475pt>
 File: images/install_mac.pdf Graphic file (type pdf)
 
 <use images/install_mac.pdf>
@@ -598,14 +604,14 @@ Overfull \hbox (17.71027pt too wide) in paragraph at lines 311--312
 d, ex-e-cute files are built in []\OT1/pcr/m/n/12 [CALYPSO_HOME]/work/bin
  []
 
-<images/Desktop_101.pdf, id=315, 1445.4pt x 903.375pt>
+<images/Desktop_101.pdf, id=355, 1445.4pt x 903.375pt>
 File: images/Desktop_101.pdf Graphic file (type pdf)
 
 <use images/Desktop_101.pdf>
 Package pdftex.def Info: images/Desktop_101.pdf used on input line 319.
 (pdftex.def)             Requested size: 341.43306pt x 213.3959pt.
  [14]
-<images/Desktop_1.pdf, id=323, 1445.4pt x 903.375pt>
+<images/Desktop_1.pdf, id=363, 1445.4pt x 903.375pt>
 File: images/Desktop_1.pdf Graphic file (type pdf)
 
 <use images/Desktop_1.pdf>
@@ -618,7 +624,7 @@ Package pdftex.def Info: images/Desktop_1.pdf used on input line 339.
                                                   \fi \fi 
 l.47 \newpage
               <./images/Desktop_101.pdf>] (./tex_src/programs_CalypsoView.tex
-<images/menu_1.pdf, id=343, 846.66313pt x 838.63312pt>
+<images/menu_1.pdf, id=383, 846.66313pt x 838.63312pt>
 File: images/menu_1.pdf Graphic file (type pdf)
  <use images/menu_1.pdf>
 Package pdftex.def Info: images/menu_1.pdf used on input line 7.
@@ -629,14 +635,14 @@ Overfull \hbox (20.34193pt too wide) in paragraph at lines 15--18
  [file_prefix].[step #].[extension]\OT1/ptm/m/n/12 .
  []
 
-<images/Desktop_102.pdf, id=350, 1445.4pt x 903.375pt>
+<images/Desktop_102.pdf, id=390, 1445.4pt x 903.375pt>
 File: images/Desktop_102.pdf Graphic file (type pdf)
 
 <use images/Desktop_102.pdf>
 Package pdftex.def Info: images/Desktop_102.pdf used on input line 46.
 (pdftex.def)             Requested size: 170.71652pt x 106.69106pt.
 
-<images/Desktop_2.pdf, id=352, 1445.4pt x 903.375pt>
+<images/Desktop_2.pdf, id=392, 1445.4pt x 903.375pt>
 File: images/Desktop_2.pdf Graphic file (type pdf)
 
 <use images/Desktop_2.pdf>
@@ -670,20 +676,20 @@ l.70 \end{description}
 
 LaTeX Warning: Reference `fig:grids' on page 19 undefined on input line 86.
 
-<images/with_axis.pdf, id=425, 642.4pt x 642.4pt>
+<images/with_axis.pdf, id=466, 642.4pt x 642.4pt>
 File: images/with_axis.pdf Graphic file (type pdf)
  <use images/with_axis.pdf>
 Package pdftex.def Info: images/with_axis.pdf used on input line 92.
 (pdftex.def)             Requested size: 113.81102pt x 113.80379pt.
 
-<images/with_coastline.pdf, id=427, 513.92pt x 513.92pt>
+<images/with_coastline.pdf, id=468, 513.92pt x 513.92pt>
 File: images/with_coastline.pdf Graphic file (type pdf)
 
 <use images/with_coastline.pdf>
 Package pdftex.def Info: images/with_coastline.pdf used on input line 93.
 (pdftex.def)             Requested size: 113.81102pt x 113.80771pt.
 
-<images/with_grid.pdf, id=429, 513.92pt x 513.92pt>
+<images/with_grid.pdf, id=470, 513.92pt x 513.92pt>
 File: images/with_grid.pdf Graphic file (type pdf)
  <use images/with_grid.pdf>
 Package pdftex.def Info: images/with_grid.pdf used on input line 94.
@@ -708,10 +714,10 @@ Overfull \hbox (18.63625pt too wide) in paragraph at lines 25--26
  []
 
 
-Overfull \hbox (135.17964pt too wide) in paragraph at lines 37--38
+Overfull \hbox (7.12814pt too wide) in paragraph at lines 37--38
 \OT1/ptm/m/n/12 Direction of the ro-ta-tion axis of the ob-ject is de-fined by 
-[]\OT1/pcr/m/n/12 [DIRECTION] \OT1/ptm/m/n/12 and []\OT1/pcr/m/n/12 POSITION]. 
-\verb|\OT1/ptm/m/n/12 DIRECTION]|
+[]\OT1/pcr/m/n/12 [DIRECTION] \OT1/ptm/m/n/12 and []\OT1/pcr/m/n/12 [POSITION]\
+OT1/ptm/m/n/12 .
  []
 
 [22]
@@ -725,17 +731,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--92
  []
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
+Overfull \hbox (9.29948pt too wide) in paragraph at lines 117--119
+\OT1/ptm/m/n/12 List of the fea-ture points of the data []\OT1/pcr/m/n/12 [DATA
+] \OT1/ptm/m/n/12 and color scale at this value []\OT1/pcr/m/n/12 [COLOR_SCALE]
 
  []
 
-) [24] (./tex_src/gpl2.tex [25] [26] [27] [28] [29]
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+
+ []
+
+[25]) [26] (./tex_src/gpl2.tex [27] [28] [29] [30] [31]
 Overfull \hbox (17.80385pt too wide) in paragraph at lines 316--325
 \OT1/ptm/m/sc/12 Ex-cept when oth-er-wise stated in writ-ing the copy-right hol
 d-ers and/or
  []
 
-[30]
+[32]
 Underfull \hbox (badness 10000) in paragraph at lines 360--362
 
  []
@@ -746,27 +759,21 @@ Overfull \hbox (4.00545pt too wide) in paragraph at lines 368--372
 TABIL-
  []
 
-[31]
+[33]
 Underfull \hbox (badness 10000) in paragraph at lines 402--404
 
  []
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 66.
- [32]
+ [34]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 66.
  (./CalypsoView.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 66.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 66.
+Package rerunfilecheck Info: File `CalypsoView.out' has not changed.
+(rerunfilecheck)             Checksum: 9F699663613CF93917767898EFD03EC6;3642.
 
-
-Package rerunfilecheck Warning: File `CalypsoView.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `CalypsoView.out':
-(rerunfilecheck)             Before: 52907B09289530E2F71006F427CFB361;2872
-(rerunfilecheck)             After:  9F699663613CF93917767898EFD03EC6;3642.
 
 LaTeX Warning: There were undefined references.
 
@@ -776,13 +783,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 66.
  ) 
 Here is how much of TeX's memory you used:
- 6552 strings out of 493089
- 97584 string characters out of 6134842
- 184367 words of memory out of 5000000
- 9766 multiletter control sequences out of 15000+600000
+ 6592 strings out of 493089
+ 98315 string characters out of 6134842
+ 185937 words of memory out of 5000000
+ 9789 multiletter control sequences out of 15000+600000
  29811 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,32p,747b,559s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,32p,747b,561s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
@@ -793,10 +800,10 @@ mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist
 /fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
 e1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/tim
 es/utmri8a.pfb>
-Output written on CalypsoView.pdf (33 pages, 13288674 bytes).
+Output written on CalypsoView.pdf (35 pages, 13294470 bytes).
 PDF statistics:
- 626 PDF objects out of 1000 (max. 8388607)
- 527 compressed objects within 6 object streams
- 128 named destinations out of 1000 (max. 500000)
- 433 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 692 PDF objects out of 1000 (max. 8388607)
+ 591 compressed objects within 6 object streams
+ 145 named destinations out of 1000 (max. 500000)
+ 497 words of extra memory for PDF output out of 10000 (max. 10000000)
 

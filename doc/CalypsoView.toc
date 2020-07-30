@@ -54,5 +54,20 @@
 \contentsline {paragraph}{\tt eye\_separation\_ctl}{23}{section*.14}
 \contentsline {subsection}{\numberline {A.2}Block {\tt pvr\_color\_ctl}}{23}{subsection.1.A.2}
 \contentsline {subsubsection}{\numberline {A.2.1}Block {\tt colormap\_ctl}}{24}{subsubsection.1.A.2.1}
-\contentsline {subsubsection}{\numberline {A.2.2}Block {\tt colorbar\_ctl}}{24}{subsubsection.1.A.2.2}
-\contentsline {section}{Appendix \numberline {B}GNU GENERAL PUBLIC LICENSE}{25}{Appendix.1.B}
+\contentsline {paragraph}{\tt colormap\_mode\_ctl}{24}{section*.15}
+\contentsline {paragraph}{\tt data\_mapping\_ctl}{24}{section*.16}
+\contentsline {paragraph}{Array {\tt color\_table\_ctl}}{24}{section*.17}
+\contentsline {paragraph}{\tt opacity\_style\_ctl}{24}{section*.18}
+\contentsline {paragraph}{\tt constant\_opacity\_ctl}{25}{section*.19}
+\contentsline {paragraph}{Array {\tt linear\_opacity\_ctl}}{25}{section*.20}
+\contentsline {paragraph}{\tt range\_min\_ctl}{25}{section*.21}
+\contentsline {paragraph}{\tt range\_max\_ctl}{25}{section*.22}
+\contentsline {subsubsection}{\numberline {A.2.2}Block {\tt colorbar\_ctl}}{25}{subsubsection.1.A.2.2}
+\contentsline {paragraph}{\tt colorbar\_switch\_ctl}{25}{section*.23}
+\contentsline {paragraph}{\tt colorbar\_scale\_ctl}{25}{section*.24}
+\contentsline {paragraph}{\tt font\_size\_ctl}{25}{section*.25}
+\contentsline {paragraph}{\tt num\_grid\_ctl}{25}{section*.26}
+\contentsline {paragraph}{\tt iflag\_zeromarker}{25}{section*.27}
+\contentsline {paragraph}{\tt colorbar\_range}{26}{section*.28}
+\contentsline {paragraph}{\tt axis\_label\_switch}{26}{section*.29}
+\contentsline {section}{Appendix \numberline {B}GNU GENERAL PUBLIC LICENSE}{27}{Appendix.1.B}

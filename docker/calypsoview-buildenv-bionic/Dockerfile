@@ -9,6 +9,9 @@ RUN apt update && \
   gfortran \
   git \
   pkg-config   \
-  libglfw3     \
+  zlib1g \
+  zlib1g-dev \
+  libpng-dev \
+  libgtk-3-dev \
   libglfw3-dev
 

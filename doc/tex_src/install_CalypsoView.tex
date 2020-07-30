@@ -43,12 +43,26 @@ Source code of CalypsoView\_GLFW is written in C. Fortran90 is also used to make
 \end{itemize}
 Linux and MacOS use GNU make as a default 'make' command, but some system (e.g. BSD or SOLARIS) does not use GNU make as default. \verb|configure| command searches and set correct GNU make command.
 
-In the most of Linux distributions have these libraries as a default excepet for {\color{red} GLFW}, but they sholud have a package to install GLFW.
+In the most of Linux distributions have these libraries as a default except for {\color{red} GLFW}, but they should have a package to install GLFW.
 
+\subsubsection{Installation of required softwares for Ubuntu Linux}
+GCC, the GNU Compiler Collection (\url{https://gcc.gnu.org}) is already installed in the most of Linux distributions. However, packages for development are need to be installed. For Ubuntu 20, for example, the required compilers and  libraries can be installed by using \verb|apt| command as following::
+%
+\begin{verbatim}
+% sudo apt install pkg-config
+% sudo apt install git
+% sudo apt install gfortran
+% sudo apt install zlib1g
+% sudo apt install zlib1g-dev
+% sudo apt install libpng-dev
+% sudo apt install libgtk-3-dev
+% sudo apt install libglfw3-dev
+\end{verbatim}
+%
 
 \subsection{Known problems}
 \subsubsection*{OpenGL on MacOS}
-Apple set OpenGL as a deprecated library. OpenGL is still supprted, but some alternative needs to be considered.
+Apple set OpenGL as a deprecated library. OpenGL is still supported, but some alternative needs to be considered.
 
 \subsection{Directories}
 

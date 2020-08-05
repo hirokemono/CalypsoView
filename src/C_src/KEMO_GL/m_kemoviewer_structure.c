@@ -104,11 +104,6 @@ int kemoview_get_current_viewer_id(void){return kemo_sgl->window_ID;};
 
 /* Routines for draw by OpenGL */
 
-void kemoview_draw_fast_gl3(void){
-	quick_mono_kemoview(kemo_sgl);
-	return;
-};
-
 void kemoview_orthogonalGL(double left, double right, double bottom, double top,
 						   double near, double far){
 	orthogonalGL(left, right, bottom, top, near, far);
@@ -394,8 +389,8 @@ void kemoview_set_PSF_by_rgba_texture(int width, int height, const unsigned char
 							  width, height, bgra_in);
 };
 
-void kemoview_quick_view(void){
-	quick_mono_kemoview(kemo_sgl);
+int kemoview_quick_view(void){
+	return quick_mono_kemoview(kemo_sgl);
 };
 void kemoview_modify_view(void){
 	modify_stereo_kemoview(kemo_sgl);
@@ -421,8 +416,8 @@ void kemoview_set_windowsize(int npixel_x, int npixel_y, int nwindow_x, int nwin
 void kemoview_update_projection_by_viewer_size(int npixel_x, int npixel_y, int nwindow_x, int nwindow_y){
 	update_projection_by_windowsize(kemo_sgl->view_s, npixel_x, npixel_y, nwindow_x, nwindow_y);
 };
-void kemoview_set_windowsize_message(int iflag){
-    set_message_switch(iflag, kemo_sgl->kemo_mesh->msg_wk);
+void kemoview_set_message_opacity(float opacity){
+    set_message_opacity(opacity, kemo_sgl->kemo_mesh->msg_wk);
     return;
 }
 

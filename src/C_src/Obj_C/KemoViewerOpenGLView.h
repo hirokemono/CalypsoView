@@ -12,6 +12,7 @@
 
 #import "ResetViewControll.h"
 
+#include <math.h>
 #include "kemoviewer.h"
 
 #define PAN     2
@@ -40,14 +41,24 @@ typedef struct {
 	NSBitmapImageRep *bmpRep;
 	// string textures
 	
-	NSTimer* timer;
-	
+	NSTimer* timer_anime;
+    NSTimer* timer_quick;
+    NSTimer* timer_msg;
+
     bool fAnimate;
-    bool fResizing;
 	bool fDrawCaps;
+    int iflag_resize;
+    int iflag_fast;
     int id_window;
+    float message_opacity;
 	
-	CFAbsoluteTime time;
+    CFTimeInterval reftime_anime;
+    CFTimeInterval reftime_quick;
+    CFTimeInterval reftime_msg;
+
+    CFTimeInterval time_anime;
+    CFTimeInterval time_quick;
+    CFTimeInterval time_msg;
 
 	// left (second) bottun handling
 	NSInteger leftBottunFlag;
@@ -72,6 +83,8 @@ typedef struct {
 - (void) swapbuffer_cocoa;
 
 - (void) animationTimer:(NSTimer *)timer;
+- (void) fullDrawTimer:(NSTimer *)timer;
+- (void) messageTimer:(NSTimer *)timer;
 
 - (void) setViewerType:(NSInteger) selected;
 - (void) Resetview;

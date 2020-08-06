@@ -102,15 +102,16 @@ KemoViewerOpenGLView * gTrackingViewInfo = NULL;
 	// ensure camera knows size changed
     int iflag_updated = [self getViewSize];
 	if (iflag_updated != 0) {
-		
+        iflag_resize = 1;
+        reftime_msg = CFAbsoluteTimeGetCurrent(); //reset time in all cases
 		kemoview_update_projection_by_viewer_size(XpixelGLWindow, YpixelGLWindow,
                                                   XpixelRectView, YpixelRectView);
-        kemoview_set_windowsize_message(1);
+        kemoview_set_message_opacity(1.0);
         [_context makeCurrentContext];
 		
 		[self swapbuffer_cocoa];
     } else{
-	    kemoview_set_windowsize_message(0);
+	    kemoview_set_message_opacity(message_opacity);
     }
 }
 
@@ -181,12 +182,12 @@ KemoViewerOpenGLView * gTrackingViewInfo = NULL;
 	
 	// move view
 	kemoview_set_single_viewer_id(id_window);
-	kemoview_quick_view();
+    iflag_fast = kemoview_quick_view();
 	[_resetview UpdateParameters];
 	
 	[self swapbuffer_cocoa];
 	[self setNeedsDisplay: YES];
-	return;
+    reftime_quick = CFAbsoluteTimeGetCurrent (); //reset time in all cases
 }
 
 - (void) drawRectforError:(NSRect)rect
@@ -202,9 +203,11 @@ KemoViewerOpenGLView * gTrackingViewInfo = NULL;
 // per-window timer function, basic time based animation preformed here
 - (void)animationTimer:(NSTimer *)timer
 {
+    /*
 	BOOL shouldDraw = NO;
 	if (fAnimate) {
-		CFTimeInterval deltaTime = CFAbsoluteTimeGetCurrent () - time;
+        CFTimeInterval currentTime = CFAbsoluteTimeGetCurrent ();
+		CFTimeInterval deltaTime = currentTime - time_anime;
 		if (deltaTime > 10.0) // skip pauses
 			return;
 		else {
@@ -214,10 +217,42 @@ KemoViewerOpenGLView * gTrackingViewInfo = NULL;
 			}
 			shouldDraw = YES; // force redraw
 		}
+        printf("timer on %f %f %f\n", currentTime, time_anime, deltaTime);
 	}
-	time = CFAbsoluteTimeGetCurrent (); //reset time in all cases
+	time_anime = CFAbsoluteTimeGetCurrent (); //reset time in all cases
 	// if we have current messages
 	[self drawRectforError:[self bounds]]; // redraw now instead dirty to enable updates during live resize
+     */
+}
+
+- (void)fullDrawTimer:(NSTimer *)timer
+{
+//    printf("fullDrawTimer on %f %d\n",  CFAbsoluteTimeGetCurrent(), iflag_fast);
+    if(iflag_fast == 0) return;
+    
+    CFTimeInterval deltaTime = CFAbsoluteTimeGetCurrent() - reftime_quick;
+    if(deltaTime > 2.0){ // skip pauses
+        [self UpdateImage];
+        reftime_quick = CFAbsoluteTimeGetCurrent(); //reset time in all cases
+        iflag_fast = 0;
+    };
+    return;
+}
+
+- (void)messageTimer:(NSTimer *)timer
+{
+    if(iflag_resize == 0) return;
+
+    CFTimeInterval deltaTime = CFAbsoluteTimeGetCurrent() - reftime_msg;
+    if(deltaTime < 4.5){ // skip pauses
+        message_opacity = log10f(10.0 - 2.0*deltaTime);
+        [self UpdateImage];
+    } else {
+        iflag_resize = 0;
+        message_opacity = 0;
+        [self UpdateImage];
+    }
+    return;
 }
 
 // ---------------------------------
@@ -231,7 +266,6 @@ KemoViewerOpenGLView * gTrackingViewInfo = NULL;
 	}
 	else{
 		leftBottunFlag = PAN;
-		fAnimate = 0;
 	};
 	kemoview_set_viewtype(selected);
 }
@@ -301,7 +335,7 @@ KemoViewerOpenGLView * gTrackingViewInfo = NULL;
 		kemoview_startTrackball(location.x, -location.y);
 		gTrackingViewInfo = self;
 	}
-	[self QuickUpdateImage];
+    [self QuickUpdateImage];
 }
 
 // ---------------------------------
@@ -392,7 +426,7 @@ KemoViewerOpenGLView * gTrackingViewInfo = NULL;
 		[self mousePan: location];
 	}
 	
-	[self QuickUpdateImage];
+    [self QuickUpdateImage];
 }
 
 // ---------------------------------
@@ -403,8 +437,8 @@ KemoViewerOpenGLView * gTrackingViewInfo = NULL;
 	if (wheelDelta)
 	{
 		kemoview_zooming((double) wheelDelta);
-		[self QuickUpdateImage];
 	}
+    [self QuickUpdateImage];
 }
 
 // ---------------------------------
@@ -427,7 +461,7 @@ KemoViewerOpenGLView * gTrackingViewInfo = NULL;
 {
     double newScale = 200.0*[theEvent magnification];
     kemoview_zooming(newScale);
-	[self QuickUpdateImage];
+    [self QuickUpdateImage];
 }
 
 // ---------------------------------
@@ -520,12 +554,25 @@ KemoViewerOpenGLView * gTrackingViewInfo = NULL;
     [NSColor setIgnoresAlpha:NO];
 	
 	// start animation timer
+/*
+	time_anime = CFAbsoluteTimeGetCurrent ();  // set animation time start time
+	timer_anime = [NSTimer timerWithTimeInterval:(1.0f/60.0f) target:self selector:@selector(animationTimer:) userInfo:nil repeats:NO];
+	[[NSRunLoop currentRunLoop] addTimer:timer_anime forMode:NSDefaultRunLoopMode];
+	[[NSRunLoop currentRunLoop] addTimer:timer_anime forMode:NSEventTrackingRunLoopMode]; // ensure timer fires during resize
+  */  
+    
+    iflag_fast = 0;
+    reftime_quick = CFAbsoluteTimeGetCurrent ();  // set animation time start time
+    timer_quick = [NSTimer timerWithTimeInterval:(1.0f/1.0f) target:self selector:@selector(fullDrawTimer:) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:timer_quick forMode:NSDefaultRunLoopMode];
+    [[NSRunLoop currentRunLoop] addTimer:timer_quick forMode:NSEventTrackingRunLoopMode]; // ensure timer
 
-	time = CFAbsoluteTimeGetCurrent ();  // set animation time start time
-	timer = [NSTimer timerWithTimeInterval:(1.0f/60.0f) target:self selector:@selector(animationTimer:) userInfo:nil repeats:NO];
-	[[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
-	[[NSRunLoop currentRunLoop] addTimer:timer forMode:NSEventTrackingRunLoopMode]; // ensure timer fires during resize
-
+    iflag_resize = 0;
+    message_opacity = 0.0;
+    reftime_msg = CFAbsoluteTimeGetCurrent ();  // set animation time start time
+    timer_msg = [NSTimer timerWithTimeInterval:(1.0f/2.0f) target:self selector:@selector(messageTimer:) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:timer_msg forMode:NSDefaultRunLoopMode];
+    [[NSRunLoop currentRunLoop] addTimer:timer_msg forMode:NSEventTrackingRunLoopMode]; // ensure timer fires during resize
  }
 
 @end

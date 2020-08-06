@@ -268,8 +268,6 @@ extern "C" {
 
     void kemoview_set_current_viewer_id(int id_window, struct mul_kemoviewer_type *kemoview_array);
     int kemoview_get_current_viewer_id(void);
-
-	void kemoview_draw_fast_gl3(void);
 	
     void kemoview_init_lighting(void);
     
@@ -379,7 +377,7 @@ extern "C" {
     void kemoview_get_fliped_img(int npixel_x, int npixel_y,
                                  unsigned char *glimage, unsigned char *fliped_img);
 
-	void kemoview_quick_view(void);
+	int kemoview_quick_view(void);
     void kemoview_modify_view(void);
     void kemoview_rotate(void);
     
@@ -390,7 +388,7 @@ extern "C" {
     
     void kemoview_set_windowsize(int npixel_x, int npixel_y, int nwindow_x, int nwindow_y);
     void kemoview_update_projection_by_viewer_size(int npixel_x, int npixel_y, int nwindow_x, int nwindow_y);
-    void kemoview_set_windowsize_message(int iflag);
+    void kemoview_set_message_opacity(float opacity);
     
     void kemoview_update_distance(void);
     

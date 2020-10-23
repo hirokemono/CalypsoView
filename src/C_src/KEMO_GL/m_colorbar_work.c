@@ -28,7 +28,7 @@ void dealloc_colorbar_position(struct cbar_work *cbar_wk){
 };
 
 void set_colorbar_position(int iflag_retina, int nx_win, int ny_win,
-			struct colormap_params *cmap_s, struct cbar_work *cbar_wk){
+						   struct colormap_params *cmap_s, struct cbar_work *cbar_wk){
 	int num;
 	double d1, v1, d2, v2;
 
@@ -64,7 +64,6 @@ void set_colorbar_position(int iflag_retina, int nx_win, int ny_win,
 	
 	return;
 }
-
 
 void clear_colorbar_text_image(struct cbar_work *cbar_wk){
 	int i;
@@ -146,6 +145,77 @@ void set_colorbar_text_image(float text_color3[3], struct cbar_work *cbar_wk){
 	return;
 };
 
+
+struct tlabel_work * alloc_tlabel_work(void){
+	struct tlabel_work *tlabel_wk = (struct tlabel_work *) malloc(sizeof(struct tlabel_work));
+	if(tlabel_wk == NULL){
+		printf("malloc error for tlabel_work\n");
+		exit(0);
+	}
+    
+    tlabel_wk->npix_x = IWIDTH_TLABEL;
+    tlabel_wk->npix_y = IHIGHT_TXT;
+    tlabel_wk->npixel = tlabel_wk->npix_x * tlabel_wk->npix_y;
+    tlabel_wk->numBMP =  (unsigned char *) calloc((4 * tlabel_wk->npixel), sizeof(unsigned char));
+    tlabel_wk->testBMP = (unsigned char *) calloc((3 * tlabel_wk->npixel), sizeof(unsigned char));
+	return tlabel_wk;
+};
+
+void dealloc_tlabel_work(struct tlabel_work *tlabel_wk){
+    free(tlabel_wk->numBMP);
+    free(tlabel_wk->testBMP);
+    free(tlabel_wk);
+    return;
+};
+
+void clear_time_text_image(struct tlabel_work *tlabel_wk){
+	int i;
+	
+	for(i=0;i<4*tlabel_wk->npixel;i++){
+		tlabel_wk->numBMP[i] =  0;
+	};
+	for(i=0;i<3*tlabel_wk->npixel;i++){
+		tlabel_wk->testBMP[i] =  0;
+	};
+	return;
+};
+
+void set_time_text_image(float text_color3[3], struct tlabel_work *tlabel_wk){
+	int i;
+	
+	YsGlWriteStringToRGBA8Bitmap(tlabel_wk->minlabel, 191, 191, 191, 191, 
+                                 tlabel_wk->numBMP, tlabel_wk->npix_x, tlabel_wk->npix_y,
+								 0, 0, YsFont12x16, 14, 16);
+	YsGlWriteStringToRGBA8Bitmap(tlabel_wk->minlabel, 191, 191, 191, 191, 
+                                 tlabel_wk->numBMP, tlabel_wk->npix_x, tlabel_wk->npix_y,
+								 0, 2, YsFont12x16, 14, 16);
+	YsGlWriteStringToRGBA8Bitmap(tlabel_wk->minlabel, 191, 191, 191, 191, 
+                                 tlabel_wk->numBMP, tlabel_wk->npix_x, tlabel_wk->npix_y,
+								 1, 0, YsFont12x16, 14, 16);
+
+	YsGlWriteStringToRGBA8Bitmap(tlabel_wk->minlabel, 255, 255, 255, 255, 
+                                 tlabel_wk->numBMP, tlabel_wk->npix_x, tlabel_wk->npix_y,
+								 0, 1, YsFont12x16, 14, 16);
+	
+	/*
+	for(i=0;i<tlabel_wk->npixel;i++){
+		tlabel_wk->testBMP[3*i  ] = (unsigned char) (0.8 * (float) ((int) tlabel_wk->numBMP[4*i  ]));
+		tlabel_wk->testBMP[3*i+1] = (unsigned char) (0.2 * (float) ((int) tlabel_wk->numBMP[4*i+1]));
+		tlabel_wk->testBMP[3*i+2] = (unsigned char) (0.4 * (float) ((int) tlabel_wk->numBMP[4*i+2]));
+	};
+	pixout_BMP_c("/Users/matsui/Desktop/aho", tlabel_wk->npix_x, 3*tlabel_wk->npix_y, testBMP);
+	*/
+	
+	for(i=0;i<tlabel_wk->npixel;i++){
+		tlabel_wk->numBMP[4*i  ] = (unsigned char) (text_color3[0] * (float) ((int) tlabel_wk->numBMP[4*i  ]));
+		tlabel_wk->numBMP[4*i+1] = (unsigned char) (text_color3[1] * (float) ((int) tlabel_wk->numBMP[4*i+1]));
+		tlabel_wk->numBMP[4*i+2] = (unsigned char) (text_color3[2] * (float) ((int) tlabel_wk->numBMP[4*i+2]));
+	};
+	return;
+};
+
+
+
 struct msg_work * alloc_message_work(void){
 	struct msg_work *msg_wk = (struct msg_work *) malloc(sizeof(struct msg_work));
 	if(msg_wk == NULL){
@@ -204,36 +274,26 @@ void clear_message_text_image(struct msg_work *msg_wk){
 	return;
 };
 
-void set_windowsize_image(int npixel_x, int npixel_y, struct msg_work *msg_wk){
+static void set_message_image(int icolor_txt[4], int icolor_mid[4], 
+							  struct msg_work *msg_wk){
 	int i;
-	int icolor_txt[4];
-	int icolor_mid[4];
-	
-	for(i=0;i<3;i++){
-		icolor_txt[i] = 255;
-		icolor_mid[i] = 191;
-	};
-	icolor_txt[3] = 255;
-	icolor_txt[3] = 255;
-	
-    sprintf(msg_wk->minlabel, " Window size:(%4d,%4d)", npixel_x, npixel_y);
 	
 	YsGlWriteStringToRGBA8Bitmap(msg_wk->minlabel, icolor_mid[0], icolor_mid[1],
 								 icolor_mid[2], icolor_mid[3], 
-                                 msg_wk->msgBMP, msg_wk->npix_x, msg_wk->npix_y,
+								 msg_wk->msgBMP, msg_wk->npix_x, msg_wk->npix_y,
 								 0, 4, YsFont16x24, 20, 24);
 	YsGlWriteStringToRGBA8Bitmap(msg_wk->minlabel, icolor_mid[0], icolor_mid[1],
 								 icolor_mid[2], icolor_mid[3], 
-                                 msg_wk->msgBMP, msg_wk->npix_x, msg_wk->npix_y,
+								 msg_wk->msgBMP, msg_wk->npix_x, msg_wk->npix_y,
 								 0, 6, YsFont16x24, 20, 24);
 	YsGlWriteStringToRGBA8Bitmap(msg_wk->minlabel, icolor_mid[0], icolor_mid[1], 
 								 icolor_mid[2], icolor_mid[3], 
-                                 msg_wk->msgBMP, msg_wk->npix_x, msg_wk->npix_y,
+								 msg_wk->msgBMP, msg_wk->npix_x, msg_wk->npix_y,
 								 1, 4, YsFont16x24, 20, 24);
 
 	YsGlWriteStringToRGBA8Bitmap(msg_wk->minlabel, icolor_txt[0], icolor_txt[1], 
 								 icolor_txt[2], icolor_txt[3], 
-                                 msg_wk->msgBMP, msg_wk->npix_x, msg_wk->npix_y,
+								 msg_wk->msgBMP, msg_wk->npix_x, msg_wk->npix_y,
 								 0, 5, YsFont16x24, 20, 24);
 	
 	/* Draw box in the texture */
@@ -275,6 +335,24 @@ void set_windowsize_image(int npixel_x, int npixel_y, struct msg_work *msg_wk){
 */
 	
 	for(i=0;i<msg_wk->npixel;i++){
-        msg_wk->msgBMP[4*i+3] = (unsigned char) ((float) 255 * msg_wk->message_opacity);
+		msg_wk->msgBMP[4*i+3] = (unsigned char) ((float) 255 * msg_wk->message_opacity);
 	};
+};
+
+
+void set_windowsize_image(int npixel_x, int npixel_y, struct msg_work *msg_wk){
+	int i;
+	int icolor_txt[4];
+	int icolor_mid[4];
+	
+	for(i=0;i<3;i++){
+		icolor_txt[i] = 255;
+		icolor_mid[i] = 191;
+	};
+	icolor_txt[3] = 255;
+	icolor_txt[3] = 255;
+	
+	sprintf(msg_wk->minlabel, " Window size:(%4d,%4d)", npixel_x, npixel_y);
+	
+	set_message_image(icolor_txt, icolor_mid, msg_wk);
 };

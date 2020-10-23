@@ -35,7 +35,16 @@ struct kemo_array_control{
     int *ipsf_viz_far;
 	int *iele_viz_far;
 	
+    int iflag_avail_time;
+    int iflag_draw_time;
+    double time_disp;
+    
+    int iflag_avail_file_step;
+    int iflag_draw_file_step;
+    int file_step_disp;
+    
 	struct cbar_work *cbar_wk;
+	struct tlabel_work *tlabel_wk;
 };
 
 struct psf_menu_val{
@@ -43,7 +52,10 @@ struct psf_menu_val{
 	int psf_step;
 	int iflag_psf_file;
 	
-	int polygon_mode_psf;
+    int iflag_draw_time;
+    double time;
+
+    int polygon_mode_psf;
     int ivect_tangential;
 	
 	int draw_psf_solid;
@@ -121,5 +133,7 @@ int get_curent_PSF_ID(struct kemo_array_control *psf_a);
 int get_curent_PSF_filename(struct kemo_array_control *psf_a);
 
 int get_PSF_draw_switch(struct kemo_array_control *psf_a);
+
+void set_iflag_draw_time(double time, struct psf_menu_val *psf_m);
 
 #endif

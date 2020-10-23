@@ -18,11 +18,29 @@
 @synthesize StereoFlag;
 @synthesize coastlineRadius;
 @synthesize psfTexTureEnable;
+@synthesize timeDisplayFlag;
+@synthesize fileStepDisplayFlag;
+@synthesize timeDisplayAccess;
+@synthesize fileStepDisplayAccess;
+@synthesize coastLineDrawFlag;
+@synthesize globeGridDrawFlag;
+@synthesize axisDrawFlag;
+@synthesize axisDrawAccess;
 - (id)init
 {
 	NodeSizeFactor =  1;
 	NodeSizedigits = -2;
 	ColorLoopCount =  6;
+    
+    self.timeDisplayAccess =     0;
+    self.fileStepDisplayAccess = 0;
+    self.timeDisplayFlag =     0;
+    self.fileStepDisplayFlag = 0;
+
+    self.coastLineDrawFlag = 0;
+    self.globeGridDrawFlag = 0;
+    self.axisDrawFlag =      0;
+    self.axisDrawAccess =    1;
 	
 	fAnimate = 0;
 	return self;
@@ -35,6 +53,10 @@
 	[_streoViewTypeMenu selectItemAtIndex:(1-AnaglyphFlag)];
 
     self.coastlineRadius = kemoview_get_coastline_radius();
+    kemoview_set_object_property_flags(TIME_LABEL_AVAIL, (int) self.timeDisplayAccess);
+    kemoview_set_object_property_flags(TIME_LABEL_SWITCH, (int) self.timeDisplayFlag);
+    kemoview_set_object_property_flags(FILE_STEP_LABEL_AVAIL, (int) self.fileStepDisplayAccess);
+    kemoview_set_object_property_flags(FILE_STEP_LABEL_SWITCH, (int) self.fileStepDisplayFlag);
     return;
 }
 
@@ -55,10 +77,12 @@
 	[_viewYZItem setState:NSOffState];
 	[_viewZXItem setState:NSOffState];
 	
+    self.axisDrawAccess = 1;
 	self.StereoFlag = 0;
 	psfTexTureEnable = 1;
 	if (selected == VIEW_3D) {[_view3dItem setState:NSOnState];}
 	else if (selected == VIEW_MAP) {
+        self.axisDrawAccess = 0;
 		psfTexTureEnable = 0;
 		[_viewMapItem setState:NSOnState];
 	}
@@ -97,26 +121,18 @@
 
 - (IBAction)AxisSwitchAction:(id)sender;
 {
-	int DrawAxisFlag = kemoview_toggle_object_properties(AXIS_TOGGLE);
-
-	if(DrawAxisFlag == 0) {[_AxisSwitchOutlet setTitle:@"Axis Off"];}
-	else{ [_AxisSwitchOutlet setTitle:@"Axis On"];};
-
+	self.axisDrawFlag = kemoview_toggle_object_properties(AXIS_TOGGLE);
 	[_kemoviewer UpdateImage];
 }
 
 - (IBAction)CoastSwitchAction:(id)sender;
 {
-	int DrawCoastFlag = kemoview_toggle_object_properties(COASTLINE_SWITCH);
-	if(DrawCoastFlag == 0) {[_coastSwitchOutlet setTitle:@"Off"];}
-	else{ [_coastSwitchOutlet setTitle:@"On"];};
+	self.coastLineDrawFlag = kemoview_toggle_object_properties(COASTLINE_SWITCH);
 	[_kemoviewer UpdateImage];
 }
 - (IBAction)SphGridSwitchAction:(id)sender;
 {
-	int DrawSphGridFlag = kemoview_toggle_object_properties(SPHEREGRID_SWITCH);
-	if(DrawSphGridFlag == 0) {[_sphGridSwitchOutlet setTitle:@"Off"];}
-	else{ [_sphGridSwitchOutlet setTitle:@"On"];};
+	self.globeGridDrawFlag = kemoview_toggle_object_properties(SPHEREGRID_SWITCH);
 	[_kemoviewer UpdateImage];
 }
 - (IBAction)SphRadiusAction:(id)sender;
@@ -202,5 +218,33 @@
 	fDrawHelp = 1 - fDrawHelp;
 	[_kemoviewer setQuickHelp:fDrawHelp];
 }
+
+- (void) TimeLabelAvaiability
+{
+    self.timeDisplayAccess = kemoview_get_object_property_flags(TIME_LABEL_AVAIL);
+}
+- (void) FileStepLabelAvaiability
+{
+    self.fileStepDisplayAccess = kemoview_get_object_property_flags(FILE_STEP_LABEL_AVAIL);
+}
+
+- (IBAction)TimeLabelSwitchAction:(id)sender{
+    self.timeDisplayFlag = kemoview_toggle_object_properties(TIME_LABEL_SWITCH);
+    if(self.timeDisplayFlag > 0){
+        self.fileStepDisplayFlag = 0;
+        kemoview_set_object_property_flags(FILE_STEP_LABEL_SWITCH, (int) self.fileStepDisplayFlag);
+    };
+    [_kemoviewer UpdateImage];
+};
+
+- (IBAction)FileStepLabelSwitchAction:(id)sender{
+    self.fileStepDisplayFlag = kemoview_toggle_object_properties(FILE_STEP_LABEL_SWITCH);
+    if(self.fileStepDisplayFlag > 0){
+        self.timeDisplayFlag = 0;
+        kemoview_set_object_property_flags(TIME_LABEL_SWITCH, (int) self.timeDisplayFlag);
+    };
+    [_kemoviewer UpdateImage];
+};
+
 
 @end

@@ -11,8 +11,9 @@
 #include "m_color_table_c.h"
 #include "ysglfontdata.h"
 
-#define IHIGHT_TXT 20
-#define IWIDTH_TXT 140
+#define IHIGHT_TXT     20
+#define IWIDTH_TXT    140
+#define IWIDTH_TLABEL 280
 
 #define IHIGHT_MSG 40
 #define IWIDTH_MSG 488
@@ -48,6 +49,20 @@ struct cbar_work{
 	unsigned char *testBMP;
 };
 
+struct tlabel_work{
+	float xwin;
+	float ywin;
+	
+	char minlabel[20];
+	
+	int id_texture;
+	int npixel;
+	int npix_x;
+	int npix_y;
+	unsigned char *numBMP;
+	unsigned char *testBMP;
+};
+
 struct msg_work{
     float message_opacity;
     float xwin;
@@ -72,10 +87,15 @@ struct msg_work{
 struct cbar_work * alloc_colorbar_position(void);
 void dealloc_colorbar_position(struct cbar_work *cbar_wk);
 void set_colorbar_position(int iflag_retina, int nx_win, int ny_win,
-			struct colormap_params *cmap_s, struct cbar_work *cbar_wk);
+						   struct colormap_params *cmap_s, struct cbar_work *cbar_wk);
 
 void clear_colorbar_text_image(struct cbar_work *cbar_wk);
 void set_colorbar_text_image(float text_color3[3], struct cbar_work *cbar_wk);
+
+struct tlabel_work * alloc_tlabel_work(void);
+void dealloc_tlabel_work(struct tlabel_work *tlabel_wk);
+void clear_time_text_image(struct tlabel_work *tlabel_wk);
+void set_time_text_image(float text_color3[3], struct tlabel_work *tlabel_wk);
 
 struct msg_work * alloc_message_work(void);
 void dealloc_message_work(struct msg_work *msg_wk);  

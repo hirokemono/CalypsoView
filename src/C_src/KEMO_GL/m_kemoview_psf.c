@@ -39,8 +39,40 @@ void dealloc_kemoview_psf(struct kemoview_psf *kemo_psf){
 	return;
 };
 
+static void set_avail_time_flag(struct kemoview_psf *kemo_psf){
+	int id_load;
+    kemo_psf->psf_a->iflag_avail_time = 0;
+    kemo_psf->psf_a->iflag_avail_file_step = 0;
+    for(id_load=0; id_load<kemo_psf->psf_a->num_loaded; id_load++){
+        if(kemo_psf->psf_a->iflag_loaded[id_load] > 0){
+            if(kemo_psf->psf_m[id_load]->iflag_draw_time > 0){
+                kemo_psf->psf_a->iflag_avail_time = 1;
+                kemo_psf->psf_a->iflag_avail_file_step = 1;
+                kemo_psf->psf_a->time_disp = kemo_psf->psf_m[id_load]->time;
+                kemo_psf->psf_a->file_step_disp = kemo_psf->psf_m[id_load]->psf_step;
+                break;
+            };
+        };
+	};
+	return;
+}
+
+static void set_avail_file_step_flag(struct kemoview_psf *kemo_psf){
+	int id_load;
+    if(kemo_psf->psf_a->iflag_avail_time != 0) return;
+	
+	for(id_load=0; id_load<kemo_psf->psf_a->num_loaded; id_load++){
+        if(kemo_psf->psf_a->iflag_loaded[id_load] > 0){
+			kemo_psf->psf_a->iflag_avail_file_step = 1;
+			kemo_psf->psf_a->file_step_disp = kemo_psf->psf_m[id_load]->psf_step;
+			break;
+        };
+	};
+	return;
+}
+
 void init_draw_psf(struct kemoview_psf *kemo_psf, struct psf_data *ucd_tmp,
-			int iflag_fileformat, int istep, const char *ucd_header){
+			int iflag_fileformat, int istep, double time, const char *ucd_header){
     int id_load;
     id_load = add_new_kemoview_array(kemo_psf->psf_a);
 
@@ -49,12 +81,16 @@ void init_draw_psf(struct kemoview_psf *kemo_psf, struct psf_data *ucd_tmp,
 	kemo_psf->psf_m[id_load]->psf_step = istep;
 	kemo_psf->psf_m[id_load]->iflag_psf_file = iflag_fileformat;
 	
+    set_iflag_draw_time(time, kemo_psf->psf_m[id_load]);
+    
 	if(kemo_psf->psf_a->num_loaded == kemo_psf->psf_a->nlimit_loaded){
 		dealloc_draw_psf_flags(kemo_psf->psf_d[id_load], kemo_psf->psf_m[id_load]);
 		deallc_all_psf_data(kemo_psf->psf_d[id_load]);
 	};
 	
 	set_kemoview_psf_data(kemo_psf->psf_d[id_load], ucd_tmp, kemo_psf->psf_m[id_load]);
+    set_avail_time_flag(kemo_psf);
+    set_avail_file_step_flag(kemo_psf);
     return;
 };
 
@@ -64,6 +100,8 @@ void close_PSF_view(struct kemoview_psf *kemo_psf){
 	deallc_all_psf_data(kemo_psf->psf_d[kemo_psf->psf_a->id_current]);
 	
 	set_close_current_kemoview_array(kemo_psf->psf_a);
+    set_avail_time_flag(kemo_psf);
+    set_avail_file_step_flag(kemo_psf);
 	return;
 }
 
@@ -76,10 +114,12 @@ void evolution_psf_viewer(struct psf_data *psf_ucd_tmp, struct kemoview_psf *kem
 						kemo_psf->psf_m[id_load]->iflag_psf_file,
 						kemo_psf->psf_m[id_load]->psf_header->string);
 			kemo_psf->psf_m[id_load]->psf_step = kemo_psf->psf_a->istep_sync;
-			evolution_PSF_data(kemo_psf->psf_d[id_load], psf_ucd_tmp, kemo_psf->psf_m[id_load]);
+			evolution_PSF_data(kemo_psf->psf_d[id_load], psf_ucd_tmp, 
+							   kemo_psf->psf_m[id_load]);
 		};
-	}
-	
+    };
+	set_avail_time_flag(kemo_psf);
+	set_avail_file_step_flag(kemo_psf);
 	return;
 }
 
@@ -276,4 +316,31 @@ double get_each_PSF_colormap_range(int selected, struct kemoview_psf *kemo_psf){
 		value = send_each_PSF_maximum_opacity(kemo_psf->psf_m[i_current]);
 	};
 	return value;
+};
+
+
+void set_draw_time_flag(int iflag, struct kemoview_psf *kemo_psf){
+    kemo_psf->psf_a->iflag_draw_time = iflag;
+};
+int toggle_draw_time_flag(struct kemoview_psf *kemo_psf){
+    return kemo_psf->psf_a->iflag_draw_time = toggle_value_c(kemo_psf->psf_a->iflag_draw_time);
+};
+int get_draw_time_flag(struct kemoview_psf *kemo_psf){
+    return kemo_psf->psf_a->iflag_draw_time;
+};
+int get_avail_time_flag(struct kemoview_psf *kemo_psf){
+    return kemo_psf->psf_a->iflag_avail_time;
+};
+
+void set_draw_file_step_flag(int iflag, struct kemoview_psf *kemo_psf){
+    kemo_psf->psf_a->iflag_draw_file_step = iflag;
+};
+int toggle_draw_file_step_flag(struct kemoview_psf *kemo_psf){
+    return kemo_psf->psf_a->iflag_draw_file_step = toggle_value_c(kemo_psf->psf_a->iflag_draw_file_step);
+};
+int get_draw_file_step_flag(struct kemoview_psf *kemo_psf){
+    return kemo_psf->psf_a->iflag_draw_file_step;
+};
+int get_avail_file_step_flag(struct kemoview_psf *kemo_psf){
+    return kemo_psf->psf_a->iflag_avail_file_step;
 };

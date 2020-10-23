@@ -76,5 +76,4 @@
 - (IBAction)SetEvolutionSteps:(id)sender;
 - (IBAction)ChooseRotateAxis:(id)sender;
 
-
 @end

@@ -22,9 +22,6 @@
 	
 	NSInteger MeshColorMode;
 
-    IBOutlet id _AxisSwitchOutlet;
-    IBOutlet id _coastSwitchOutlet;
-    IBOutlet id _sphGridSwitchOutlet;
     IBOutlet NSMatrix *_polygontype_matrix;
     IBOutlet NSMatrix *_surfacetype_matrix;
     IBOutlet NSMatrix *_colormode_matrix;
@@ -50,6 +47,17 @@
 	NSInteger fInfo;
 	NSInteger fAnimate;
 	NSInteger fDrawHelp;
+
+    
+    NSInteger timeDisplayAccess;
+    NSInteger fileStepDisplayAccess;
+    NSInteger timeDisplayFlag;
+    NSInteger fileStepDisplayFlag;
+
+    NSInteger coastLineDrawFlag;
+    NSInteger globeGridDrawFlag;
+    NSInteger axisDrawFlag;
+    NSInteger axisDrawAccess;
 }
 
 @property CGFloat ColorLoopCount;
@@ -61,6 +69,14 @@
 @property NSInteger StereoFlag;
 @property CGFloat coastlineRadius;
 @property NSInteger psfTexTureEnable;
+@property NSInteger timeDisplayAccess;
+@property NSInteger fileStepDisplayAccess;
+@property NSInteger timeDisplayFlag;
+@property NSInteger fileStepDisplayFlag;
+@property NSInteger coastLineDrawFlag;
+@property NSInteger globeGridDrawFlag;
+@property NSInteger axisDrawFlag;
+@property NSInteger axisDrawAccess;
 
 
 - (id)init;
@@ -91,5 +107,11 @@
 -(IBAction) ToggleAnimate: (id) sender;
 -(IBAction) Toggleinfo: (id) sender;
 -(IBAction) ToggleQuickhelp: (id) sender;
+
+- (void) TimeLabelAvaiability;
+- (void) FileStepLabelAvaiability;
+
+- (IBAction)TimeLabelSwitchAction:(id)sender;
+- (IBAction)FileStepLabelSwitchAction:(id)sender;
 
 @end

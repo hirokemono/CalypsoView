@@ -58,6 +58,7 @@ void alloc_psfs_sorting_list(struct kemo_array_control *psf_a){
     psf_a->iele_viz_far = (int *)calloc(psf_a->ntot_psf_patch,sizeof(int));
     
     psf_a->cbar_wk = alloc_colorbar_position();
+    psf_a->tlabel_wk = alloc_tlabel_work();
     return;
 }
 
@@ -66,7 +67,8 @@ void dealloc_psfs_sorting_list(struct kemo_array_control *psf_a){
     free(psf_a->ipsf_viz_far);
     free(psf_a->iele_viz_far);
     dealloc_colorbar_position(psf_a->cbar_wk);
-
+    dealloc_tlabel_work(psf_a->tlabel_wk);
+	
     return;
 }
 
@@ -156,7 +158,6 @@ void dealloc_kemoview_array(struct kemo_array_control *psf_a){
     dealloc_psfs_sorting_list(psf_a);
     
 	free(psf_a->iflag_loaded);
-	free(psf_a->cbar_wk);
 	return;
 };
 
@@ -237,3 +238,16 @@ int get_curent_PSF_filename(struct kemo_array_control *psf_a){return psf_a->id_c
 int get_PSF_draw_switch(struct kemo_array_control *psf_a){
 	return psf_a->iflag_loaded[psf_a->id_current];
 };
+
+void set_iflag_draw_time(double time, struct psf_menu_val *psf_m){
+    if(   psf_m->iflag_psf_file == IFLAG_PSF_BIN
+       || psf_m->iflag_psf_file == IFLAG_PSF_BIN_GZ
+       || psf_m->iflag_psf_file == IFLAG_SURF_SDT
+       || psf_m->iflag_psf_file == IFLAG_SURF_SDT_GZ){
+		psf_m->iflag_draw_time = 1;
+		psf_m->time = time;
+    }else{
+		psf_m->iflag_draw_time = 0;
+    }
+	return;
+}

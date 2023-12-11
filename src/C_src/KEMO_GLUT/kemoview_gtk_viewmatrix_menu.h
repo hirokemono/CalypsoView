@@ -29,7 +29,6 @@
 
 
 struct view_widgets{
-	GtkAdjustment *adj_win_x, *adj_win_y;
 	GtkWidget *spin_win_x, *spin_win_y;
 	GtkWidget *hbox_win_x, *hbox_win_y;
 	
@@ -59,9 +58,14 @@ struct view_widgets{
 	GtkWidget *spin_focus;
 	GtkWidget *hbox_focus;
 	
+	int iflag_updated_eye_separation;
+    int iflag_updated_eye_sep_angle;
 	GtkAdjustment *adj_eye_sep;
+    GtkAdjustment *adj_sep_angle;
 	GtkWidget *spin_eye_sep;
 	GtkWidget *hbox_eye_sep;
+    GtkWidget *spin_sep_angle;
+    GtkWidget *hbox_sep_angle;
 	
 	GtkWidget *vbox_win, *Frame_win;
 	GtkWidget *vbox_eye, *Frame_eye;
@@ -69,7 +73,7 @@ struct view_widgets{
 	GtkWidget *vbox_scale, *Frame_scale;
 	GtkWidget *vbox_rotation, *Frame_rotation;
 	GtkWidget *vbox_aperture, *Frame_aperture;
-	GtkWidget *vbox_streo, *Frame_streo;
+	GtkWidget *vbox_streo, *Frame_stereo;
 	
 	GtkWidget *vbox_viewmatrix_save;
 	GtkWidget *hbox_viewmatrix_save;
@@ -79,10 +83,14 @@ struct view_widgets{
 
 /*  prototypes */
 
-void update_windowsize_menu(struct view_widgets *view_menu, GtkWidget *window);
-void set_viewmatrix_value(struct view_widgets *view_menu, GtkWidget *window);
-void update_viewmatrix_menu(struct view_widgets *view_menu, GtkWidget *window);
+void update_windowsize_menu(struct kemoviewer_type *kemo_sgl,
+                            struct view_widgets *view_menu,
+                            GtkWidget *window);
+void set_viewmatrix_value(struct kemoviewer_type *kemo_sgl,
+                          struct view_widgets *view_menu,
+                          GtkWidget *window);
 
-GtkWidget * init_viewmatrix_menu_expander(int *iflag_fast_draw, struct view_widgets *view_menu,
+GtkWidget * init_viewmatrix_menu_expander(struct kemoviewer_type *kemo_sgl,
+                                          struct view_widgets *view_menu,
                                           GtkWidget *window);
 #endif

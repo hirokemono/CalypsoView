@@ -17,6 +17,15 @@
 #include "skip_comment_c.h"
 #include "set_rgba_table_c.h"
 
+struct kemo_PSF_texure{
+    int ipsf_texured;
+    
+    int texure_width;
+    int texure_height;
+    int texure_npix;
+    unsigned char  *texure_rgba;
+};
+
 struct kemo_array_control{
 	int nlimit_loaded;
 	int num_loaded;
@@ -25,11 +34,11 @@ struct kemo_array_control{
     int istep_sync;
 	int *iflag_loaded;
     
-    int ntot_psf_patch;
-    int istack_solid_psf_txtur;
-    int istack_solid_psf_patch;
-    int istack_trans_psf_txtur;
-    int istack_trans_psf_patch;
+    long ntot_psf_patch;
+    long istack_solid_psf_txtur;
+    long istack_solid_psf_patch;
+    long istack_trans_psf_txtur;
+    long istack_trans_psf_patch;
     
     double *z_ele_viz;
     int *ipsf_viz_far;
@@ -43,8 +52,7 @@ struct kemo_array_control{
     int iflag_draw_file_step;
     int file_step_disp;
     
-	struct cbar_work *cbar_wk;
-	struct tlabel_work *tlabel_wk;
+    struct kemo_PSF_texure *psf_texure;
 };
 
 struct psf_menu_val{
@@ -74,12 +82,6 @@ struct psf_menu_val{
 	
 	int ist_positive_line;
 	
-	int texture_width;
-	int texture_height;
-	int texture_npix;
-	GLuint texture_name[10];
-	GLubyte *texture_rgba;
-	
 	struct colormap_params **cmap_psf_comp;
 	struct colormap_params **cmap_psf_fld;
 	
@@ -92,6 +94,11 @@ struct psf_menu_val{
 };
 
 /* Prototypes */
+struct kemo_PSF_texure * alloc_kemo_PSF_texure(void);
+void dealloc_kemo_PSF_texure(struct kemo_PSF_texure *psf_texure);
+
+void alloc_draw_psf_texture(struct kemo_PSF_texure *psf_texure);
+void dealloc_draw_psf_texture(struct kemo_PSF_texure *psf_texure);
 
 void set_PSF_component_name(int ncomp, int id_coord, int icomp, char *comp_name);
 
@@ -101,9 +108,6 @@ void dealloc_psfs_sorting_list(struct kemo_array_control *psf_a);
 
 void alloc_draw_psf_flags(struct psf_data *psf_s, struct psf_menu_val *psf_m);
 void dealloc_draw_psf_flags(struct psf_data *psf_s, struct psf_menu_val *psf_m);
-
-void alloc_draw_psf_texture(struct psf_menu_val *psf_m);
-void dealloc_draw_psf_texture(struct psf_menu_val *psf_m);
 
 void alloc_kemoview_array(struct kemo_array_control *psf_a);
 void set_max_psf_loading(int ntot_psf_data, struct kemo_array_control *psf_a);

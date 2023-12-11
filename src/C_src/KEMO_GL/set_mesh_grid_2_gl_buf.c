@@ -9,13 +9,13 @@ static int set_each_mesh_grid(int iedge, struct viewer_mesh *mesh_s, double f_co
 	
 	for(k1=0;k1<(mesh_s->nnod_4_edge-1);k1++){
 		i1 = mesh_s->ie_edge_viewer[iedge][k1  ]-1;
-		set_node_stride_VBO((ITWO*inum_buf), strided_buf);
+        set_node_stride_buffer((ITWO*inum_buf), strided_buf);
 		for(nd=0;nd<3;nd++) {strided_buf->x_draw[nd] =  mesh_s->xx_draw[i1][nd];};
 		for(nd=0;nd<3;nd++) {strided_buf->n_draw[nd] =  0.0;};
 		for(nd=0;nd<4;nd++){strided_buf->c_draw[nd] = f_color[nd];};
 		
 		i2 = mesh_s->ie_edge_viewer[iedge][k1+1]-1;
-		set_node_stride_VBO((ITWO*inum_buf+1), strided_buf);
+        set_node_stride_buffer((ITWO*inum_buf+1), strided_buf);
 		for(nd=0;nd<3;nd++) {strided_buf->x_draw[nd] =  mesh_s->xx_draw[i2][nd];};
 		for(nd=0;nd<3;nd++) {strided_buf->n_draw[nd] =  0.0;};
 		for(nd=0;nd<4;nd++){strided_buf->c_draw[nd] = f_color[nd];};
@@ -37,9 +37,9 @@ int count_mesh_edge_buf(int *iflag_domain, int *istack_grp, struct viewer_mesh *
 	return num_edge;
 }
 
-int add_mesh_edge_to_buf(int ist_edge, int line_color, int color_mode, int color_loop, GLfloat single_color[4],
-			int num_grp, int *istack_grp, int *item_grp, int igrp, int *iflag_domain, 
-			struct viewer_mesh *mesh_s, struct gl_strided_buffer *mesh_buf){
+int add_mesh_edge_to_buf(int ist_edge, int line_color, int color_mode, int color_loop, float single_color[4],
+                         int num_grp, int *istack_grp, int *item_grp, int igrp, int *iflag_domain,
+                         struct viewer_mesh *mesh_s, struct gl_strided_buffer *mesh_buf){
 	int ip, inum, iedge, ist, ied;
 	int inum_buf;
 	double f_color[4];

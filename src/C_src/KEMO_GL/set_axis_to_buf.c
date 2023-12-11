@@ -3,31 +3,31 @@
 
 #include "set_axis_to_buf.h"
 
-static const GLfloat red[4] =   {RED_R, RED_G, RED_B, RED_A};
-static const GLfloat blue[4] =  {BLUE_R, BLUE_G, BLUE_B, BLUE_A};
-static const GLfloat green[4] = {L_GREEN_R, L_GREEN_G, L_GREEN_B, L_GREEN_A};
+static const float red[4] =   {RED_R, RED_G, RED_B, RED_A};
+static const float blue[4] =  {BLUE_R, BLUE_G, BLUE_B, BLUE_A};
+static const float green[4] = {L_GREEN_R, L_GREEN_G, L_GREEN_B, L_GREEN_A};
 
 static float set_ratio_4_axislabel(struct view_element *view_s, 
-                                   int end_screen[2], int zero_screen[2], GLfloat l_axis){
-	GLfloat ratio;
-	GLfloat ratio_tmp[2];
+                                   int end_screen[2], int zero_screen[2], float l_axis){
+    float ratio;
+    float ratio_tmp[2];
 	
 	if ( end_screen[0] < view_s->nx_frame/10 ) { 
-		ratio_tmp[0] = (GLfloat) (view_s->nx_frame/10 - zero_screen[0])
-        / (GLfloat) (end_screen[0] - zero_screen[0]);
+		ratio_tmp[0] = (float) (view_s->nx_frame/10 - zero_screen[0])
+        / (float) (end_screen[0] - zero_screen[0]);
 	} else if  ( end_screen[0] > view_s->nx_frame*9/10 ) {
-		ratio_tmp[0] = (GLfloat) (zero_screen[0]-view_s->nx_frame*9/10)
-        / (GLfloat) (zero_screen[0] - end_screen[0]);
+		ratio_tmp[0] = (float) (zero_screen[0]-view_s->nx_frame*9/10)
+        / (float) (zero_screen[0] - end_screen[0]);
 	} else {
 		ratio_tmp[0] = ONE;
 	};
 	
 	if ( end_screen[1] < view_s->ny_frame/10 ) { 
-		ratio_tmp[1] = (GLfloat) (view_s->ny_frame/10 - zero_screen[1])
-        / (GLfloat) (end_screen[1] - zero_screen[1]);
+		ratio_tmp[1] = (float) (view_s->ny_frame/10 - zero_screen[1])
+        / (float) (end_screen[1] - zero_screen[1]);
 	} else if  ( end_screen[1] > view_s->ny_frame*9/10 ) {
-		ratio_tmp[1] = (GLfloat) (zero_screen[1]-view_s->ny_frame*9/10)
-        / (GLfloat) (zero_screen[1] - end_screen[1]);
+		ratio_tmp[1] = (float) (zero_screen[1]-view_s->ny_frame*9/10)
+        / (float) (zero_screen[1] - end_screen[1]);
 	} else {
 		ratio_tmp[1] = ONE;
 	};
@@ -310,17 +310,25 @@ int count_axis_to_buf(int ncorner){
 	return npatch_wall;
 }
 
-int set_axis_to_buf(struct view_element *view_s, double dist, int ncorner, double radius, 
-			struct gl_strided_buffer *strided_buf){
+void set_axis_to_buf(struct view_element *view_s, int iflag_draw_axis,
+                     double dist, int ncorner, double radius,
+                     struct gl_strided_buffer *strided_buf){
 	double x_arrowx[6], x_arrowy[6], x_arrowz[6];
 	double w_ratio[3];
 	double x_charax[12], x_charay[18], x_charaz[18];
 	int icou_patch = 0;
-	
-	set_vertexs_for_axis(view_s, dist, x_arrowx, x_arrowy, x_arrowz, 
-						 w_ratio, x_charax, x_charay, x_charaz, &radius);
-	icou_patch = set_axis_rod_to_buf(ncorner, radius, 
-				x_arrowx, x_arrowy, x_arrowz, x_charax, x_charay, x_charaz,
-				strided_buf);
-	return icou_patch;
+    
+    if(iflag_draw_axis > 0){
+        int n_vertex = ITHREE * count_axis_to_buf(ncorner);
+        set_buffer_address_4_patch(n_vertex, strided_buf);
+        resize_strided_buffer(strided_buf);
+        set_vertexs_for_axis(view_s, dist, x_arrowx, x_arrowy, x_arrowz,
+                             w_ratio, x_charax, x_charay, x_charaz, &radius);
+        icou_patch = set_axis_rod_to_buf(ncorner, radius,
+                                         x_arrowx, x_arrowy, x_arrowz, x_charax, x_charay, x_charaz,
+                                         strided_buf);
+    }else{
+        strided_buf->num_nod_buf = 0;
+    };
+	return;
 };

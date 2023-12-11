@@ -21,7 +21,9 @@
 struct kemoview_mesh{
     struct viewer_mesh        *mesh_d;
     struct mesh_menu_val      *mesh_m;
-    struct msg_work           *msg_wk;
+        
+    float bg_color[4];
+    float text_color[4];
 };
 
 /* prototypes */ 

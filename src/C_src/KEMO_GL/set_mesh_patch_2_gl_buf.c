@@ -16,7 +16,7 @@ static int add_each_mesh_tri_patch(int ie_local, int iele, int shading_mode, int
 		k1 = node_quad_2_linear_tri[3*ie_local+kr] - 1;
 		inod = ie_sf_viewer[abs(iele)-1][k1]-1;
 		
-		set_node_stride_VBO((ITHREE*inum_tri+k), strided_buf);
+        set_node_stride_buffer((ITHREE*inum_tri+k), strided_buf);
 		
 		for(nd=0;nd<3;nd++) {strided_buf->x_draw[nd] = xx_draw[inod][nd];};
 		for(nd=0;nd<4;nd++) {strided_buf->c_draw[nd] = f_color[nd];};
@@ -56,7 +56,7 @@ int count_mesh_patch_buf(int *istack_grp, int *ip_domain_far,
 }
 
 int add_mesh_patch_to_buf(int ist_tri, int shading_mode, int polygon_mode, int surface_color,
-			int color_mode, int color_loop, double opacity, GLfloat single_color[4], 
+			int color_mode, int color_loop, double opacity, float single_color[4], 
 			int num_grp, int *istack_grp, int *item_grp, 
 			double **normal_ele, double **normal_nod, int *isort_grp, 
 			int *ip_domain_far, int igrp, struct viewer_mesh *mesh_s, int *iflag_domain, 
@@ -69,8 +69,10 @@ int add_mesh_patch_to_buf(int ist_tri, int shading_mode, int polygon_mode, int s
 	for(i = 0; i < mesh_s->num_pe_sf; i++){
 		ip = ip_domain_far[i] - 1;
 		if(iflag_domain[ip] != 0){
-			set_patch_color_mode_c(surface_color, color_mode, color_loop, ip, mesh_s->num_pe_sf, 
-						igrp, num_grp, opacity, single_color, f_color);
+			set_patch_color_mode_c(surface_color, color_mode, color_loop,
+                                   ip, mesh_s->num_pe_sf,
+                                   igrp, num_grp, opacity,
+                                   single_color, f_color);
 			
 			ist = istack_grp[ip];
 			ied = istack_grp[ip+1];

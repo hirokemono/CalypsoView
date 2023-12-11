@@ -15,23 +15,34 @@ struct real3_ctl_item * init_real3_ctl_item_c(void){
         printf("malloc error for real3_ctl_item \n");
         exit(0);
     }
+	if((r3_item->f_iflag = (int *)calloc(1, sizeof(int))) == NULL) {
+		printf("malloc error for r3_item->f_iflag\n");
+		exit(0);
+	}
+    r3_item->c_block_name = alloc_string(KCHARA_C);
 
     for (i=0; i<3; i++) {r3_item->r_data[i] = 0.0;};
-	r3_item->iflag = 0;
     return r3_item;
 };
+
+void dealloc_real3_ctl_item(struct real3_ctl_item *r3_item){
+    free(r3_item->c_block_name);
+    free(r3_item->f_iflag);
+    free(r3_item);
+    return;
+}
 
 int read_real3_ctl_item_c(char buf[LENGTHBUF], const char *label, 
                           struct real3_ctl_item *r3_item){
 	char header_chara[KCHARA_C];
 	
-	if(r3_item->iflag > 0) return 0;
+	if(r3_item->f_iflag[0] > 0) return 0;
 	
 	sscanf(buf, "%s", header_chara);
 	if(cmp_no_case_c(header_chara, label) > 0){
 		sscanf(buf, "%s %lf %lf %lf", header_chara, 
 					&r3_item->r_data[0], &r3_item->r_data[1], &r3_item->r_data[2]);
-		r3_item->iflag = 1;
+		r3_item->f_iflag[0] = 1;
 	};
 	return 1;
 };
@@ -39,7 +50,7 @@ int read_real3_ctl_item_c(char buf[LENGTHBUF], const char *label,
 int write_real3_ctl_item_c(FILE *fp, int level, int maxlen, 
                            const char *label, struct real3_ctl_item *r3_item){
     
-	if(r3_item->iflag == 0) return level;
+	if(r3_item->f_iflag[0] == 0) return level;
 	write_space_4_parse_c(fp, level);
 	write_one_label_cont_c(fp, maxlen, label);
 	fprintf(fp, "%.12e  %.12e  %.12e\n", r3_item->r_data[0], 
@@ -50,7 +61,7 @@ int write_real3_ctl_item_c(FILE *fp, int level, int maxlen,
 
 void update_real3_ctl_item_c(double r1_in, double r2_in, double r3_in,
 			struct real3_ctl_item *r3_item){
-	r3_item->iflag = 1;
+	r3_item->f_iflag[0] = 1;
 	r3_item->r_data[0] = r1_in;
 	r3_item->r_data[1] = r2_in;
 	r3_item->r_data[2] = r3_in;
@@ -58,7 +69,7 @@ void update_real3_ctl_item_c(double r1_in, double r2_in, double r3_in,
 };
 void set_from_real3_ctl_item_c(struct real3_ctl_item *r3_item, 
 			double *r1_out, double *r2_out, double *r3_out){
-	if(r3_item->iflag == 0) return;
+	if(r3_item->f_iflag[0] == 0) return;
 	*r1_out = r3_item->r_data[0];
 	*r2_out = r3_item->r_data[1];
 	*r3_out = r3_item->r_data[2];
@@ -212,14 +223,14 @@ void del_real3_ctl_list_by_index(int index, struct real3_ctl_list *head){
 	return;
 };
 
-void update_real3_ctl_list_by_index(int index, double r1_in, double r2_in, double r3_in, 
+static void update_real3_ctl_list_by_index(int index, double r1_in, double r2_in, double r3_in, 
 			struct real3_ctl_list *head){
 	head = find_r3_ctl_list_item_by_index(index, head);
 	if(head != NULL) update_real3_ctl_item_c(r1_in, r2_in, r3_in, head->r3_item);
 	return;
 };
 
-void set_from_real3_ctl_list_at_index(int index, struct real3_ctl_list *head,
+static void set_from_real3_ctl_list_at_index(int index, struct real3_ctl_list *head,
 			double *r1_out, double *r2_out, double *r3_out){
 	head = find_r3_ctl_list_item_by_index(index, head);
 	if(head != NULL) set_from_real3_ctl_item_c(head->r3_item, r1_out, r2_out, r3_out);
@@ -260,7 +271,7 @@ static void add_real3_ctl_list_after_c_tbl(double ref_1, double ref_2, double re
 	update_real3_ctl_item_c(ave[0], ave[1], ave[2], head->r3_item);
 	return;
 };
-void del_real3_ctl_list_by_c_tbl(double ref_1, double ref_2, double ref_3, 
+static void del_real3_ctl_list_by_c_tbl(double ref_1, double ref_2, double ref_3,
 			struct real3_ctl_list *head){
 	head = find_r3_ctl_list_item_by_value(ref_1, ref_2, ref_3, head);
 	if(head != NULL) delete_real3_ctl_list(head);
@@ -337,6 +348,12 @@ void set_from_real3_clist_at_index(int index, struct real3_clist *r3_clst,
     return;
 };
 
+struct real3_ctl_item *real3_clist_at_index(int index, struct real3_clist *r3_clst){
+    struct real3_ctl_list *ct_tmp = find_r3_ctl_list_item_by_index(index, &r3_clst->r3_item_head);
+    return ct_tmp->r3_item;
+}
+
+
 void add_real3_clist_before_c_tbl(double ref_1, double ref_2, double ref_3, 
             struct real3_clist *r3_clst){
     add_real3_ctl_list_before_c_tbl(ref_1, ref_2, ref_3, &r3_clst->r3_item_head);
@@ -365,7 +382,7 @@ void set_from_real3_clist_at_c_tbl(double ref_1, double ref_2, double ref_3,
     return;
 };
 
-void copy_from_real3_ctl_list(struct real3_ctl_list *head, int num,
+static void copy_from_real3_ctl_list(struct real3_ctl_list *head, int num,
 			double *v1, double *v2, double *v3){
 	int i;
     head = head->_next;

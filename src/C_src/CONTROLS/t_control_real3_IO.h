@@ -18,6 +18,10 @@
 
 
 struct real3_ctl_item{
+	void * f_self;
+	int * f_iflag;
+	char * c_block_name;
+	
 	
 	int iflag;
 	double r_data[3];
@@ -33,17 +37,23 @@ struct real3_ctl_list{
 struct real3_clist{
 	struct real3_ctl_list r3_item_head;
 
+    void *f_self;
+
     char *clist_name;
     char *r1_name;
     char *r2_name;
     char *r3_name;
+
+    int index_bc;
 };
 
 /* prototypes */
 
 
 struct real3_ctl_item * init_real3_ctl_item_c(void);
-int read_real3_ctl_item_c(char buf[LENGTHBUF], const char *label, 
+void dealloc_real3_ctl_item(struct real3_ctl_item *r3_item);
+
+int read_real3_ctl_item_c(char buf[LENGTHBUF], const char *label,
 			struct real3_ctl_item *r3_item);
 int write_real3_ctl_item_c(FILE *fp, int level, int maxlen, 
 			const char *label, struct real3_ctl_item *r3_item);
@@ -60,8 +70,6 @@ void copy_from_real3_ctl_item(struct real3_ctl_item *r3_item,
 void copy_to_real3_ctl_item(double r1, double r2, double r3,
 			struct real3_ctl_item *r3_item);
 
-void copy_from_real3_ctl_list(struct real3_ctl_list *head, int num,
-			double *v1, double *v2, double *v3);
 void copy_to_real3_ctl_list(int num, double *v1, double *v2, double *v3,
 			struct real3_ctl_list *head);
 
@@ -81,6 +89,8 @@ void update_real3_clist_by_index(int index, double r1_in, double r2_in, double r
 			struct real3_clist *r3_clst);
 void set_from_real3_clist_at_index(int index, struct real3_clist *r3_clst,
 			double *r1_out, double *r2_out, double *r3_out);
+            
+struct real3_ctl_item *real3_clist_at_index(int index, struct real3_clist *r3_clst);
 
 void add_real3_clist_before_c_tbl(double ref_1, double ref_2, double ref_3, 
 			struct real3_clist *r3_clst);

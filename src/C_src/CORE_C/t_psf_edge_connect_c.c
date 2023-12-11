@@ -92,8 +92,6 @@ static void dealloc_edge_connect_psf(const long nele_viz, struct psf_edge_data_c
 };
 
 static void dealloc_edge_position_psf(struct psf_edge_data_c *psf_edge){
-	int i;
-	
 	free(psf_edge->xx_edge);
 	free(psf_edge->edge_norm);
 	free(psf_edge->edge_dir);
@@ -235,7 +233,7 @@ static void set_edge_normal_4_sf_c(double **norm_nod, struct psf_edge_data_c *ps
 	return;
 };
 
-struct psf_edge_data_c * init_psf_edge_data_c(){
+struct psf_edge_data_c * init_psf_edge_data_c(void){
 	struct psf_edge_data_c *psf_edge = (struct psf_edge_data_c *) malloc(sizeof(struct psf_edge_data_c));
 	if(psf_edge == NULL) {
 		printf("malloc error for psf_edge_data_c \n");

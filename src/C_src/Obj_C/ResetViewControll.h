@@ -6,12 +6,17 @@
 //  Copyright 2010 Department of Geophysical Sciences, University of Chicago. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+@import Cocoa;
+
+#import "KemoViewerObject.h"
+
 #include "kemoviewer.h"
 
 
 @interface ResetViewControll : NSObject {
-	NSInteger xPixel;
+    IBOutlet KemoViewerObject *_kmv;
+    
+    NSInteger xPixel;
 	NSInteger yPixel;
 	
 	CGFloat ViewPointX;
@@ -36,6 +41,12 @@
 	
 	CGFloat FocusPoint;
 	CGFloat eyeRatio;
+    CGFloat eyeAngle;
+    
+    NSInteger Quilt_flag;
+    NSInteger NumberOfRows;
+    NSInteger NumberOfColumns;
+    NSInteger NumberOfQuilts;
 }
 @property NSInteger xPixel;
 @property NSInteger yPixel;
@@ -62,6 +73,33 @@
 
 @property CGFloat FocusPoint;
 @property CGFloat eyeRatio;
+@property CGFloat eyeAngle;
+
+@property NSInteger Quilt_flag;
+@property NSInteger NumberOfRows;
+@property NSInteger NumberOfColumns;
+@property NSInteger NumberOfQuilts;
+
+- (void) initQuiltMode;
+- (int) ToggleQuiltMode;
+
+- (IBAction) SetQuiltRawByInput:(id)sender;
+- (IBAction) SetQuiltColumnByInput:(id)sender;
+- (IBAction) SetEyeSeparationAngleByInput:(id)sender;
+- (IBAction) SetEyeSeparationDistanceByInput:(id)sender;
+- (IBAction) SetFoculPointDistanceByInput:(id)sender;
+
+- (IBAction) SetProjectionAperture:(id)sender;
+
+- (IBAction) SetViewScaleFactor:(id)sender;
+- (IBAction) SetViewPointX:(id)sender;
+- (IBAction) SetViewPointY:(id)sender;
+- (IBAction) SetViewPointZ:(id)sender;
+- (IBAction) SetViewRotationAxisX:(id)sender;
+- (IBAction) SetViewRotationAxisY:(id)sender;
+- (IBAction) SetViewRotationAxisZ:(id)sender;
+- (IBAction) SetViewRotationAngle:(id)sender;
+
 
 - (void) SetViewByInpit;
 - (void) UpdateParameters;

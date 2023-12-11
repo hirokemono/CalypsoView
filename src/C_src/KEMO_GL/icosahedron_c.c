@@ -74,14 +74,14 @@ void init_icosahedron_c(void){
 int set_icosahedron_patch(double size, double x_draw[3], 
 						  double *xyz_draw, double *norm_draw){
 	int icou;
-	GLfloat xyz_plot[12][3];
+    float xyz_plot[12][3];
 	int i, j, nd;
 	int ie1, ie2, ie3;
 	
 	for (i = 0; i < 12; i++) {
-		xyz_plot[i][0]=  x_draw[0] + (GLfloat) xyz_ico[i][0] * size;
-		xyz_plot[i][1]=  x_draw[1] + (GLfloat) xyz_ico[i][1] * size;
-		xyz_plot[i][2]=  x_draw[2] + (GLfloat) xyz_ico[i][2] * size;
+		xyz_plot[i][0]=  x_draw[0] + (float) xyz_ico[i][0] * size;
+		xyz_plot[i][1]=  x_draw[1] + (float) xyz_ico[i][1] * size;
+		xyz_plot[i][2]=  x_draw[2] + (float) xyz_ico[i][2] * size;
 	};
 	
 	/*! add a points to the display list */
@@ -94,7 +94,7 @@ int set_icosahedron_patch(double size, double x_draw[3],
 		for (j = 0; j < 3; j++) {
 			for (nd = 0; nd < 3; nd++) {
 				ie1 = ifac_poi[i][j];
-				xyz_draw[3*icou+nd] = (GLfloat) xyz_plot[ie1][nd];
+				xyz_draw[3*icou+nd] = (float) xyz_plot[ie1][nd];
 				norm_draw[3*icou+nd] =  xyz_ico[ie1][nd];
 			};
 			icou = icou + 1;
@@ -223,8 +223,8 @@ int set_tube_vertex(int ncorner, double radius,
 		nor[3*(6*(ncorner-1)+5)+nd] = norm_w1[3*(ncorner-1)+nd];
 	};
 	for(k=0;k<ncorner;k++){
-		for (nd=0; nd<3; nd++) {
-			col[4*(6*k)+   nd] = color_line[  nd];
+		for (nd=0; nd<4; nd++) {
+			col[4*(6*k)+  nd] = color_line[  nd];
 			col[4*(6*k+1)+nd] = color_line[  nd];
 			col[4*(6*k+2)+nd] = color_line[4+nd];
 			col[4*(6*k+3)+nd] = color_line[4+nd];
@@ -232,7 +232,6 @@ int set_tube_vertex(int ncorner, double radius,
 			col[4*(6*k+5)+nd] = color_line[  nd];
 		};
 	};
-	
 	npatch_wall = 2*ncorner;
 	return npatch_wall;
 }
@@ -296,9 +295,11 @@ int set_tube_strided_buffer(int ist_patch, int ncorner, double radius,
 	npatch_wall = set_tube_vertex(ncorner, radius, x_line, dir_line, norm_line, color_line,
 								   xyz, nor, col);
 	for (k=0; k<3*npatch_wall; k++) {
-		set_node_stride_VBO((ITHREE*ist_patch+k), strided_buf);
+        set_node_stride_buffer((ITHREE*ist_patch+k), strided_buf);
 		for(nd=0;nd<3;nd++){strided_buf->x_draw[nd] = xyz[3*k+nd];};
+        strided_buf->x_draw[3] = 1.0;
 		for(nd=0;nd<3;nd++){strided_buf->n_draw[nd] = nor[3*k+nd];};
+        strided_buf->n_draw[3] = 1.0;
 		for(nd=0;nd<4;nd++){strided_buf->c_draw[nd] = col[4*k+nd];};
 	};
 	

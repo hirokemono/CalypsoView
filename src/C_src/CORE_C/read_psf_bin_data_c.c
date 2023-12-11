@@ -72,7 +72,7 @@ static void read_alloc_psf_node_bin(struct psf_data *psf_b, struct psf_bin_work 
     int i, j;
     
     long *n_inter =  (long *) calloc(psf_b_WK->nprocs,sizeof(long));
-    psf_b_WK->ilength = psf_b_WK->nprocs * sizeof(long);
+    psf_b_WK->ilength = (int) psf_b_WK->nprocs * (int) sizeof(long);
     rawread_64bit_psf(psf_b_WK, psf_b_WK->itmp_mp);
     rawread_64bit_psf(psf_b_WK, n_inter);
     /*
@@ -89,9 +89,9 @@ static void read_alloc_psf_node_bin(struct psf_data *psf_b, struct psf_bin_work 
     double *xx = (double *) calloc(psf_b->nnod_viz,sizeof(double));
     
     for(j=0;j<3;j++){
-        psf_b_WK->ilength = psf_b_WK->nprocs * sizeof(long);
+        psf_b_WK->ilength = psf_b_WK->nprocs * (int) sizeof(long);
         rawread_64bit_psf(psf_b_WK, psf_b_WK->itmp_mp);
-        psf_b_WK->ilength = psf_b->nnod_viz*sizeof(double);
+        psf_b_WK->ilength = psf_b->nnod_viz * (int) sizeof(double);
         rawread_64bit_psf(psf_b_WK, xx);
         for(i=0;i<psf_b->nnod_viz;i++){
             psf_b->xx_viz[i][j] = xx[i];
@@ -170,6 +170,7 @@ static void read_alloc_psf_data_bin(struct psf_data *psf_b, struct psf_bin_work 
         psf_b_WK->ilength = (KCHARA_C-1)*sizeof(char);
         rawread_64bit_psfchara(psf_b_WK, psf_b->data_name[i]);
         psf_b->data_name[i] = trim(psf_b->data_name[i]);
+        psf_b->id_coord[i] = set_field_coordinate_flag(psf_b->data_name[i]);
     }
     psf_b->istack_comp[0] = 0;
     for(i=0;i<psf_b->nfield;i++){

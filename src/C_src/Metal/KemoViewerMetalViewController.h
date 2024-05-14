@@ -12,7 +12,7 @@
 @import AppKit;
 @import MetalKit;
 
-#import "AAPLRenderer.h"
+#import "KemoViewerRenderer.h"
 #import "KemoViewerMetalView.h"
 #import "KemoViewerObject.h"
 
@@ -27,6 +27,8 @@
 
 - (void) RenderUpdate;
 - (void) viewDidLayout;
+
+- (void)refreshKemoViewTripleBuffersForRotation:(struct kemoviewer_type *) kemo_sgl;
 
 -(unsigned char *) getRenderedbyMetalToBGRA:(NSUInteger *) pix_xy
                                PixelPerByte:(NSUInteger *) pixelByte

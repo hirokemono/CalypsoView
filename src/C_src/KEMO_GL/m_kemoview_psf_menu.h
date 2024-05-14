@@ -11,20 +11,12 @@
 #include "calypso_param_c.h"
 #include "kemoviewer_param_c.h"
 #include "kemoviewer_base.h"
+#include "m_vertex_buffer.h"
 #include "m_psf_data_4_viewer_c.h"
 #include "m_color_table_c.h"
-#include "m_colorbar_work.h"
+#include "m_colorbar_buffer.h"
 #include "skip_comment_c.h"
 #include "set_rgba_table_c.h"
-
-struct kemo_PSF_texure{
-    int ipsf_texured;
-    
-    int texure_width;
-    int texure_height;
-    int texure_npix;
-    unsigned char  *texure_rgba;
-};
 
 struct kemo_array_control{
 	int nlimit_loaded;
@@ -40,7 +32,6 @@ struct kemo_array_control{
     long istack_trans_psf_txtur;
     long istack_trans_psf_patch;
     
-    double *z_ele_viz;
     int *ipsf_viz_far;
 	int *iele_viz_far;
 	
@@ -52,7 +43,8 @@ struct kemo_array_control{
     int iflag_draw_file_step;
     int file_step_disp;
     
-    struct kemo_PSF_texure *psf_texure;
+    int ipsf_texured;
+    struct gl_texure_image *psf_texure;
 };
 
 struct psf_menu_val{
@@ -73,7 +65,7 @@ struct psf_menu_val{
 	
 	int if_draw_psf;
 	int ic_draw_psf;
-	int icomp_draw_psf;
+	long icomp_draw_psf;
 	
 	int psf_patch_color;
 	int isoline_color;
@@ -94,12 +86,6 @@ struct psf_menu_val{
 };
 
 /* Prototypes */
-struct kemo_PSF_texure * alloc_kemo_PSF_texure(void);
-void dealloc_kemo_PSF_texure(struct kemo_PSF_texure *psf_texure);
-
-void alloc_draw_psf_texture(struct kemo_PSF_texure *psf_texure);
-void dealloc_draw_psf_texture(struct kemo_PSF_texure *psf_texure);
-
 void set_PSF_component_name(int ncomp, int id_coord, int icomp, char *comp_name);
 
 void alloc_psfs_sorting_list(struct kemo_array_control *psf_a);

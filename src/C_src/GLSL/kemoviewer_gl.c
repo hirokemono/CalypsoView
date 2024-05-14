@@ -61,11 +61,12 @@ void kemoview_modify_view(struct kemoviewer_type *kemo_sgl,
 
 void kemoview_modify_anaglyph(struct kemoviewer_type *kemo_sgl,
                               struct kemoviewer_gl_type *kemo_gl){
-    struct line_text_image *anaglyph_image = draw_anaglyph_to_rgb_gl(kemo_sgl, kemo_gl);
+    struct gl_texure_image *anaglyph_image = alloc_kemoview_gl_texure();
+    draw_anaglyph_to_rgb_gl(kemo_sgl, kemo_gl, anaglyph_image);
 
     glDrawBuffer(GL_BACK);
     move_draw_anaglyph_gl3(kemo_sgl, kemo_gl, anaglyph_image);
-    dealloc_line_text_image(anaglyph_image);
+    dealloc_kemoview_gl_texure(anaglyph_image);
 };
 
 
@@ -123,8 +124,8 @@ int kemoview_get_PSF_file_prefix(struct kemoviewer_type *kemoviewer,
 
 void kemoview_release_PSF_gl_texture(struct kemoviewer_type *kemo_sgl,
                                      struct kemoviewer_gl_type *kemo_gl){
-    release_PSF_texture_from_gl(kemo_sgl->kemo_psf->psf_a->psf_texure,
-                                kemo_gl->kemo_shaders->texture_name);
+    release_PSF_texture_from_gl(kemo_sgl->kemo_psf->psf_a->ipsf_texured,
+                                kemo_gl->kemo_shaders);
     return;
 };
 

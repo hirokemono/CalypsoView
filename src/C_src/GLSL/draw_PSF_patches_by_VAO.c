@@ -8,19 +8,17 @@
 #include "draw_PSF_patches_by_VAO.h"
 
 
-void const_PSF_gl_texure_name(struct kemo_PSF_texure *psf_texure,
+void const_PSF_gl_texure_name(const int ipsf_texured,
+                              struct gl_texure_image *psf_texure,
                               struct kemoview_shaders *kemo_shaders){
-    if(psf_texure->ipsf_texured > -1){
-        kemo_shaders->texture_name = set_texture_to_buffer(psf_texure->texure_width,
-                                                           psf_texure->texure_height,
-                                                           psf_texure->texure_rgba);
+    if(ipsf_texured > -1){
+        kemo_shaders->texture_name = set_texture_to_buffer(psf_texure);
     };
     return;
 };
 
-void release_PSF_texture_from_gl(struct kemo_PSF_texure *psf_texure,
-                                 GLuint *texture_name){
-    if(psf_texure->ipsf_texured > 0){glDeleteTextures(1, texture_name);};
+void release_PSF_texture_from_gl(const int ipsf_texured, struct kemoview_shaders *kemo_shaders){
+    if(ipsf_texured > 0){glDeleteTextures(1, &kemo_shaders->texture_name);};
     return;
 };
 

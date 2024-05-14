@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include "set_cube_to_buf.h"
 #include "m_kemoview_psf_menu.h"
-#include "m_colorbar_work.h"
+#include "m_colorbar_buffer.h"
 #include "m_gl_transfer_matrix.h"
 #include "m_kemoview_mesh.h"
 #include "m_kemoview_psf.h"
@@ -27,6 +27,8 @@
 #include "sort_by_patch_distance.h"
 
 struct kemoview_buffers{
+    int nthreads;
+    
     struct phong_lights *kemo_lights;
     
     struct gl_strided_buffer *cube_buf;
@@ -56,20 +58,16 @@ struct kemoview_buffers{
     int ncorner_axis;
     struct gl_strided_buffer *axis_buf;
     
-    struct gl_strided_buffer *cbar_buf;
-    struct gl_strided_buffer *min_buf;
-    struct gl_strided_buffer *max_buf;
-    struct gl_strided_buffer *zero_buf;
-    struct gl_strided_buffer *time_buf;
-    
-    struct gl_strided_buffer *msg_buf;
+
     struct gl_strided_buffer *screen_buf;
     
-    struct line_text_image *cbar_min_image;
-    struct line_text_image *cbar_max_image;
-    struct line_text_image *cbar_zero_image;
-    struct line_text_image *tlabel_image;
-    struct line_text_image *message_image;
+    struct gl_strided_buffer *cbar_buf;
+    
+    struct gl_textbox_buffer *cbar_min_buf;
+    struct gl_textbox_buffer *cbar_max_buf;
+    struct gl_textbox_buffer *cbar_zero_buf;
+    struct gl_textbox_buffer *timelabel_buf;
+    struct gl_textbox_buffer *message_buf;
 };
 
 
@@ -77,10 +75,18 @@ struct kemoview_buffers{
 
 struct kemoview_buffers * init_kemoview_buffers(void);
 void dealloc_kemoview_buffers(struct kemoview_buffers *kemo_buffers);
+
+void set_number_of_threads(int input, struct kemoview_buffers *kemo_buffers);
+int send_number_of_threads(struct kemoview_buffers *kemo_buffers);
+
 void set_kemoviewer_buffers(struct kemoview_psf *kemo_psf, struct kemoview_fline *kemo_fline,
                             struct kemoview_mesh *kemo_mesh, struct view_element *view_s,
                             struct kemoview_buffers *kemo_buffers);
-void set_transparent_buffers(struct kemoview_psf *kemo_psf, struct kemoview_mesh *kemo_mesh,
-                             struct view_element *view_s, struct kemoview_buffers *kemo_buffers);
+void set_transparent_buffers(struct kemoview_psf *kemo_psf,
+                             struct kemoview_mesh *kemo_mesh,
+                             struct view_element *view_s,
+                             struct kemoview_buffers *kemo_buffers);
+void set_fast_buffers(struct kemoview_psf *kemo_psf, struct kemoview_mesh *kemo_mesh,
+                      struct view_element *view_s, struct kemoview_buffers *kemo_buffers);
 
 #endif /* m_kemoview_object_buffers_h_ */

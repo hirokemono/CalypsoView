@@ -9,9 +9,9 @@
 
 @implementation KemoViewMetalBuffers:NSObject
 
-- (void)setMetalVertexs:(id<MTLDevice> _Nonnull *_Nonnull) device
-                 buffer:(struct gl_strided_buffer * _Nonnull) buf
-                 vertex:(id<MTLBuffer> _Nonnull *_Nonnull)  vertices
+- (NSUInteger) setMetalVertexs:(id<MTLDevice> _Nonnull *_Nonnull) device
+                        buffer:(struct gl_strided_buffer * _Nonnull) buf
+                        vertex:(id<MTLBuffer> _Nonnull *_Nonnull)  vertices
 {
     if(buf->num_nod_buf > 0){
         *vertices = [*device newBufferWithBytesNoCopy:buf->v_buf
@@ -19,13 +19,14 @@
                                               options:MTLResourceStorageModeShared
                                           deallocator:nil];
     };
+    return buf->num_nod_buf;
 };
 
-- (void)setPSFTexture:(id<MTLDevice> _Nonnull *_Nonnull) device
-               buffer:(struct gl_strided_buffer *_Nonnull) buf
-                image:(struct kemo_PSF_texure *_Nonnull) psf_texure
-               vertex:(id<MTLBuffer> _Nonnull *_Nonnull)  vertices
-               texure:(id<MTLTexture> _Nonnull *_Nonnull) texture
+- (NSUInteger) setPSFTexture:(id<MTLDevice> _Nonnull *_Nonnull) device
+                      buffer:(struct gl_strided_buffer *_Nonnull) buf
+                       image:(struct gl_texure_image *_Nonnull) psf_texure
+                      vertex:(id<MTLBuffer> _Nonnull *_Nonnull)  vertices
+                      texure:(id<MTLTexture> _Nonnull *_Nonnull) texture
 {
     if(buf->num_nod_buf > 0){
         *vertices = [*device newBufferWithBytesNoCopy:buf->v_buf
@@ -36,8 +37,8 @@
 /* Construct message texture */
         MTLTextureDescriptor *lineTextureDescriptor = [[MTLTextureDescriptor alloc] init];
         lineTextureDescriptor.pixelFormat = MTLPixelFormatRGBA8Unorm;
-        lineTextureDescriptor.width =  psf_texure->texure_width;
-        lineTextureDescriptor.height = psf_texure->texure_height;
+        lineTextureDescriptor.width =  psf_texure->nipxel_xy[0];
+        lineTextureDescriptor.height = psf_texure->nipxel_xy[1];
 
 /*  Calculate the number of bytes per row in the image. */
         NSUInteger bytesPerRow = 4 * lineTextureDescriptor.width;
@@ -54,25 +55,24 @@
                       withBytes:psf_texure->texure_rgba
                     bytesPerRow:bytesPerRow];
     };
-    return;
+    return buf->num_nod_buf;
 }
 
-- (void)setTextBoxTexture:(id<MTLDevice> _Nonnull *_Nonnull) device
-                   buffer:(struct gl_strided_buffer *_Nonnull) buf
-                    image:(struct line_text_image *_Nonnull) img
-                   vertex:(id<MTLBuffer> _Nonnull *_Nonnull)  vertices
-                   texure:(id<MTLTexture> _Nonnull *_Nonnull) texture
+- (NSUInteger) setTextBoxTexture:(id<MTLDevice> _Nonnull *_Nonnull) device
+                          buffer:(struct gl_textbox_buffer *_Nonnull) buf
+                          vertex:(id<MTLBuffer> _Nonnull *_Nonnull)  vertices
+                          texure:(id<MTLTexture> _Nonnull *_Nonnull) texture
 {
-    if(buf->num_nod_buf > 0){
-        *vertices = [*device newBufferWithBytes:((KemoViewVertex *) buf->v_buf)
-                                         length:(buf->num_nod_buf * sizeof(KemoViewVertex))
+    if(buf->vertex->num_nod_buf > 0){
+        *vertices = [*device newBufferWithBytes:((KemoViewVertex *) buf->vertex->v_buf)
+                                         length:(buf->vertex->num_nod_buf * sizeof(KemoViewVertex))
                                         options:MTLResourceStorageModeShared];
         
 /* Construct message texture */
         MTLTextureDescriptor *lineTextureDescriptor = [[MTLTextureDescriptor alloc] init];
         lineTextureDescriptor.pixelFormat = MTLPixelFormatRGBA8Unorm;
-        lineTextureDescriptor.width =  img->npix_img[0];
-        lineTextureDescriptor.height = img->npix_img[1];
+        lineTextureDescriptor.width =  buf->image->nipxel_xy[0];
+        lineTextureDescriptor.height = buf->image->nipxel_xy[1];
 
 /*  Calculate the number of bytes per row in the image. */
         NSUInteger bytesPerRow = 4 * lineTextureDescriptor.width;
@@ -86,17 +86,17 @@
 /* Copy the bytes from the data object into the texture */
         [*texture replaceRegion:region
                     mipmapLevel:0
-                      withBytes:img->imgBMP
+                      withBytes:buf->image->texure_rgba
                     bytesPerRow:bytesPerRow];
     };
-    return;
+    return buf->vertex->num_nod_buf;
 }
 
-- (void)setCubeVertexs:(id<MTLDevice> _Nonnull *_Nonnull) device
-                buffer:(struct gl_strided_buffer *_Nonnull) buf
-              indexbuf:(struct gl_index_buffer *_Nonnull) index_buf
-                vertex:(id<MTLBuffer> _Nonnull *_Nonnull) vertices
-                 index:(id<MTLBuffer> _Nonnull *_Nonnull) indices
+- (NSUInteger) setCubeVertexs:(id<MTLDevice> _Nonnull *_Nonnull) device
+                       buffer:(struct gl_strided_buffer *_Nonnull) buf
+                     indexbuf:(struct gl_index_buffer *_Nonnull) index_buf
+                       vertex:(id<MTLBuffer> _Nonnull *_Nonnull) vertices
+                        index:(id<MTLBuffer> _Nonnull *_Nonnull) indices
 {
     if(buf->num_nod_buf > 0){
         *vertices = [*device newBufferWithBytes:((KemoViewVertex *) buf->v_buf)
@@ -106,6 +106,7 @@
                                         length:(index_buf->nsize_buf * sizeof(unsigned int))
                                        options:MTLResourceStorageModeShared];
     };
+    return buf->num_nod_buf;
 };
 
 - (void)setAnaglyphTexture:(id<MTLDevice> _Nonnull *_Nonnull) device
@@ -115,17 +116,21 @@
                       left:(id<MTLTexture> _Nonnull *_Nonnull) leftTexture
                      right:(id<MTLTexture> _Nonnull *_Nonnull) rightTexture
 {
+    struct gl_local_buffer_address point_buf;
+    long i;
     if(buf->num_nod_buf > 0){
-        for(int i=0;i<buf->num_nod_buf;i++){
-            set_node_stride_buffer(i, buf);
-            buf->x_draw[1] = npix_img[1] - buf->x_draw[1];
+        for(i=0;i<buf->num_nod_buf;i++){
+            set_node_stride_buffer(i, buf, &point_buf);
+            buf->v_buf[point_buf.igl_xyzw+1]
+                = npix_img[1] - buf->v_buf[point_buf.igl_xyzw+1];
         }
         *vertices = [*device newBufferWithBytes:((KemoViewVertex *) buf->v_buf)
                                          length:(buf->num_nod_buf * sizeof(KemoViewVertex))
                                         options:MTLResourceStorageModeShared];
-        for(int i=0;i<buf->num_nod_buf;i++){
-            set_node_stride_buffer(i, buf);
-            buf->x_draw[1] = npix_img[1] - buf->x_draw[1];
+        for(i=0;i<buf->num_nod_buf;i++){
+            set_node_stride_buffer(i, buf, &point_buf);
+            buf->v_buf[point_buf.igl_xyzw+1]
+                = npix_img[1] - buf->v_buf[point_buf.igl_xyzw+1];
         }
         
 /* Construct message texture */

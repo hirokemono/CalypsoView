@@ -12,12 +12,11 @@
 @import MetalKit;
 @import simd;
 
-#import "AAPLShaderTypes.h"
+#import  "KemoViewShaderTypes.h"
 #include "kemoviewer.h"
 #include "m_kemoviewer_data.h"
 #include "m_kemoview_object_buffers.h"
 #include "m_transfer_matrices.h"
-#include "m_gl_transfer_matrix.h"
 
 typedef struct
 {
@@ -33,6 +32,8 @@ typedef struct
 } KemoViewUnites;
 
 @interface KemoViewRendererTools : NSObject
+- (void)colormapToMetalShader:(struct kemoviewer_type *) kemo_sgl
+                     colorMap:(KemoViewNormalize *) metalColormap;
 
 - (void)setTransferMatrices:(struct kemoviewer_type *) kemo_sgl
                      unites:(KemoViewUnites *) monoViewUnites;

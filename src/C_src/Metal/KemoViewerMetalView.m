@@ -147,15 +147,7 @@
     [self setNeedsDisplay: YES];
     return;
 }
--(void) FastUpdateImage
-{
-    struct kemoviewer_type *kemo_sgl = [_kmv KemoViewPointer];
-    kemoview_set_view_integer(ISET_DRAW_MODE, FAST_DRAW, kemo_sgl);
-    [_resetview UpdateParameters];
 
-    [self setNeedsDisplay: YES];
-    return;
-}
 -(void) QuickUpdateImage
 {
     struct kemoviewer_type *kemo_sgl = [_kmv KemoViewPointer];
@@ -168,6 +160,17 @@
     return;
 }
 
+-(void) TripleUpdateImage:(struct kemoviewer_type *) kemo_sgl
+{
+    kemoview_set_view_integer(ISET_DRAW_MODE, TRIPLE_UPDATE, kemo_sgl);
+    kemoview_set_view_integer(ISET_ROTATE_INCREMENT, IZERO,  kemo_sgl);
+    kemoview_mono_viewmatrix(kemo_sgl);
+    [_resetview UpdateParameters];
+    
+    [self setNeedsDisplay: YES];
+    return;
+}
+
 -(id) DrawQuilt:(NSInteger) istep_quilt
          degree:(NSInteger) int_degree
            axis:(NSInteger) rotationaxis
@@ -175,11 +178,9 @@
 {
     kemoview_set_view_integer(ISET_ROTATE_AXIS, (int) rotationaxis, kemo_sgl);
     kemoview_set_view_integer(ISET_ROTATE_INCREMENT, (int) int_degree, kemo_sgl);
-    kemoview_set_view_integer(ISET_DRAW_MODE, FAST_DRAW, kemo_sgl);
-    kemoview_step_viewmatrix(istep_quilt, kemo_sgl);
+    kemoview_step_viewmatrix((int) istep_quilt, kemo_sgl);
 
-    kemoview_set_view_integer(ISET_DRAW_MODE, FAST_DRAW, kemo_sgl);
-    [self setNeedsDisplay: YES];
+    [self draw];
     return self;
 }
 
@@ -188,7 +189,6 @@
 {
     kemoview_viewer_evolution((int) timeStep, kemo_sgl);
     kemoview_set_view_integer(ISET_ROTATE_INCREMENT, IZERO, kemo_sgl);
-    kemoview_set_view_integer(ISET_DRAW_MODE, FULL_DRAW, kemo_sgl);
     kemoview_step_viewmatrix(IZERO, kemo_sgl);
 //    [self setNeedsDisplay: YES];
     [self draw];
@@ -266,7 +266,7 @@
         kemoview_startTrackball(xmove, ymove, kemo_sgl);
 //        gTrackingViewInfo = self;
     }
-    [self QuickUpdateImage];
+    [self TripleUpdateImage:kemo_sgl];
     return;
 }
 // ---------------------------------
@@ -322,7 +322,8 @@
         [_resetview UpdateParameters];
     }
 //    gTrackingViewInfo = NULL;
-    [self FastUpdateImage];
+    struct kemoviewer_type *kemo_sgl = [_kmv KemoViewPointer];
+    [self UpdateImage:kemo_sgl];
 }
 
 // ---------------------------------

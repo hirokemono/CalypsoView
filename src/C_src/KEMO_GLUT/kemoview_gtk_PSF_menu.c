@@ -47,7 +47,7 @@ static GtkWidget * init_gtk_psf_colormap_expander(struct kemoviewer_type *kemo_s
 				G_CALLBACK(save_colormap_file_panel_CB), G_OBJECT(window));
 	
 	GtkWidget *loadButton = gtk_button_new_with_label("Load colormap...");
-    g_object_set_data(window, "kemoview",  (gpointer) kemo_sgl);
+    g_object_set_data(G_OBJECT(window), "kemoview",  (gpointer) kemo_sgl);
 	g_signal_connect(G_OBJECT(loadButton), "clicked",
 				G_CALLBACK(load_colormap_file_panel_CB), G_OBJECT(window));
 	
@@ -106,7 +106,8 @@ void dealloc_psf_gtk_menu(struct psf_gtk_menu *psf_gmenu){
 void set_vector_plot_availablity(struct kemoviewer_type *kemo_sgl,
                                  struct psf_gtk_menu *psf_gmenu){
     int if_psf = kemoview_get_each_PSF_field_param(kemo_sgl, FIELD_SEL_FLAG);
-    if(kemoview_get_PSF_num_component(kemo_sgl, if_psf) == 3){
+    int ncomp = (int) kemoview_get_PSF_num_component(kemo_sgl, if_psf);
+    if(ncomp == 3){
         gtk_widget_set_sensitive(psf_gmenu->expander_vect, TRUE);
     } else {
         gtk_widget_set_sensitive(psf_gmenu->expander_vect, FALSE);
@@ -134,4 +135,3 @@ void init_psf_menu_hbox(struct kemoviewer_type *kemo_sgl,
     set_vector_plot_availablity(kemo_sgl, psf_gmenu);
     return;
 }
-

@@ -40,8 +40,11 @@ NSData *SnapshotData;
     
     CVPixelBufferRef pxbuffer = NULL;
     
-/*    width is required producs of 16 pixels*/
+/*    width is required producs of 16 pixels */
     CGFloat width  = 16 * (int) (1 + CGImageGetWidth(image) / 16);
+/*
+    CGFloat width  = CGImageGetWidth(image);
+ */
     CGFloat height = CGImageGetHeight(image);
     CVPixelBufferCreate(kCFAllocatorDefault,
                         width,
@@ -284,15 +287,21 @@ NSData *SnapshotData;
                        kemoview:(struct kemoviewer_type *) kemo_sgl
 {
 	// Adds an image for the specified duration to the QTMovie
-    CGImageRef dstImage = [_metalViewController getRenderedbyMetalToCGref:kemo_sgl];
-    
-    CVPixelBufferRef buffer = [self pixelBufferFromCGImage:dstImage];
+    NSImage *SnapshotImage = [[NSImage alloc] init];
+    NSBitmapImageRep * imageRep = [NSBitmapImageRep alloc];
+    [_metalViewController getRenderedbyMetal:imageRep
+                                    kemoview:kemo_sgl];
+    [SnapshotImage addRepresentation:imageRep];
+
+    CGImageRef CGImage = [SnapshotImage CGImageForProposedRect:nil context:nil hints:nil];
+    CVPixelBufferRef buffer = [self pixelBufferFromCGImage:CGImage];
     // Append Image buffer
     if (![adaptor appendPixelBuffer:buffer withPresentationTime:frameTime]) {
         NSLog(@"Adapter Failure");
     }
-    if (dstImage) {CGImageRelease(dstImage);};
     if (buffer) {CVBufferRelease(buffer);};
+    CGImageRelease(CGImage);
+    [imageRep release];
 }
 
 -(void) AddKemoviewQuiltToMovie:(CMTime)frameTime
@@ -476,7 +485,6 @@ NSData *SnapshotData;
 {
     kemoview_set_view_integer(ISET_ROTATE_AXIS, (int) rotationaxis, kemo_sgl);
     kemoview_set_view_integer(ISET_ROTATE_INCREMENT, (int) int_degree, kemo_sgl);
-    kemoview_set_view_integer(ISET_DRAW_MODE, FAST_DRAW, kemo_sgl);
     kemoview_step_viewmatrix(IZERO, kemo_sgl);
     return self;
 }
@@ -486,6 +494,10 @@ NSData *SnapshotData;
     NSInteger ied_deg = 360/self.RotationIncrement;
     NSInteger int_degree, icount;
     
+    [_metalViewController refreshKemoViewTripleBuffersForRotation:kemo_sgl];
+    kemoview_set_view_integer(ISET_DRAW_MODE, FAST_DRAW, kemo_sgl);
+    kemoview_set_view_integer(ISET_DRAW_MODE, FULL_DRAW, kemo_sgl);
+
     if (CurrentMovieFormat == SAVE_QT_MOVIE){
         if(kemoview_get_quilt_nums(kemo_sgl, ISET_QUILT_MODE) == 1){
             if([self OpenQuiltQTMovieFile:RotateImageFilenameNoStep
@@ -547,7 +559,7 @@ NSData *SnapshotData;
                 [self SaveKemoviewPDFFile:ImageFilehead];
             }
         }else{
-            [_metalView FastUpdateImage];
+            [_metalView draw];
         }
         
         [[NSRunLoop mainRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.0]];
@@ -567,11 +579,14 @@ NSData *SnapshotData;
     [self setRotation:IZERO
                  axis:RotationAxisID
              kemoview:kemo_sgl];
-    [_metalView FastUpdateImage];
+    [_metalView setNeedsDisplay:YES];
 }
 
 -(void) PreviewQuiltImages:(struct kemoviewer_type *) kemo_sgl
 {
+    [_metalViewController refreshKemoViewTripleBuffersForRotation:kemo_sgl];
+    kemoview_set_view_integer(ISET_DRAW_MODE, FAST_DRAW, kemo_sgl);
+
     NSInteger num_step
         = (NSInteger) kemoview_get_quilt_nums(kemo_sgl, ISET_QUILT_NUM);
 
@@ -618,6 +633,8 @@ NSData *SnapshotData;
         }
     }
     
+    kemoview_set_view_integer(ISET_DRAW_MODE, FULL_DRAW, kemo_sgl);
+
     [evolutionProgreessBar setHidden:NO];
     [evolutionProgreessBar setUsesThreadedAnimation:YES];
     [evolutionProgreessBar setMinValue:(double) self.EvolutionStartStep];
@@ -689,7 +706,7 @@ NSData *SnapshotData;
     if (CurrentMovieFormat == SAVE_QT_MOVIE) [self CloseKemoviewMovieFile];
         
     kemoview_step_viewmatrix(IZERO, kemo_sgl);
-    [_metalView FastUpdateImage];
+    [_metalView UpdateImage:kemo_sgl];
 }
 
 

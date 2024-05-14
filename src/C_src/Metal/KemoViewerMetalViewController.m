@@ -12,7 +12,7 @@
 {
     IBOutlet KemoViewerMetalView *_metalView;
 
-    IBOutlet AAPLRenderer *_renderer;
+    IBOutlet KemoViewerRenderer *_renderer;
 }
 
 -(void) awakeFromNib
@@ -21,7 +21,7 @@
     kemoviewer_reset_to_init_angle(kemo_sgl);
     kemoview_init_lighting(kemo_sgl);
 
-    _metalView.enableSetNeedsDisplay = FALSE;
+    _metalView.enableSetNeedsDisplay = TRUE;
 /*    viewDidLoad is called by linkning self.viwew to metal view */
     self.view = _metalView;
 
@@ -39,7 +39,7 @@
     struct kemoviewer_type *kemo_sgl = [_kmv KemoViewPointer];
     [_metalView updateBackground:kemo_sgl];
 
-    _renderer = [[AAPLRenderer alloc] initWithMetalKitView:_metalView];
+    _renderer = [[KemoViewerRenderer alloc] initWithMetalKitView:_metalView];
     [_renderer setKemoViewPointer:[_kmv KemoViewPointer]];
 
     if(!_renderer)
@@ -68,14 +68,19 @@
     return;
 };
 
+- (void)refreshKemoViewTripleBuffersForRotation:(struct kemoviewer_type *) kemo_sgl
+{
+    [_renderer refreshKemoViewTripleBuffers:kemo_sgl];
+    return;
+}
+
+
 -(unsigned char *) getRenderedbyMetalToBGRA:(NSUInteger *) pix_xy
                                PixelPerByte:(NSUInteger *) pixelByte
                                    kemoview:(struct kemoviewer_type *) kemo_sgl
 {
-    kemoview_set_view_integer(ISET_DRAW_MODE, FAST_DRAW, kemo_sgl);
     id<MTLTexture> _imageOutputTexture = [_renderer KemoViewToTexure:_metalView
                                                             kemoview:kemo_sgl];
-    kemoview_set_view_integer(ISET_DRAW_MODE, FULL_DRAW, kemo_sgl);
 
     /*    Texture to render screen to texture */
     pix_xy[0] = _imageOutputTexture.width;
@@ -103,11 +108,9 @@
     NSUInteger i;
     NSUInteger pix_xy[2];
     NSUInteger pixelByte[1];
-    unsigned char *bgra;
-    
-    bgra = [self getRenderedbyMetalToBGRA:pix_xy
-                             PixelPerByte:pixelByte
-                                 kemoview:kemo_sgl];
+    unsigned char *bgra = [self getRenderedbyMetalToBGRA:pix_xy
+                                            PixelPerByte:pixelByte
+                                                kemoview:kemo_sgl];
     NSUInteger num_pixel = pix_xy[0] * pix_xy[1];
     NSUInteger bpRaw =     pixelByte[0] * pix_xy[0];
 
@@ -116,6 +119,8 @@
         rtmp = bgra[4*i];
         bgra[4*i] = bgra[4*i+2];
         bgra[4*i+2] = rtmp;
+        bgra[4*i+3] = 255;
+
     }
     
     int bitsPerComponent = 8;

@@ -23,7 +23,7 @@ struct VAO_ids{
 
     unsigned int id_index;
 	
-    unsigned int npoint_draw;
+    unsigned long npoint_draw;
 };
 
 /* Prototypes */
@@ -44,10 +44,10 @@ void Const_FBO(unsigned int width, unsigned int height,
                struct VAO_ids *FBO);
 void Destroy_FBO(struct VAO_ids *FBO);
 
-GLuint set_texture_to_buffer(const int iwidth, const int iheight, 
-                             const unsigned char *rgba);
-void const_texture_VBO(const int iwidth, const int iheight, const unsigned char *rgba,
-                       struct VAO_ids *VAO, struct gl_strided_buffer *strided_buf);
+GLuint set_texture_to_buffer(struct gl_texure_image *kemo_texure);
+void const_texture_VBO(struct gl_texure_image *kemo_texure,
+                       struct gl_strided_buffer *strided_buf,
+                       struct VAO_ids *VAO);
 void DestroyVBO(struct VAO_ids *VAO);
 
 #endif /* vartex_array_object_gl_h__ */

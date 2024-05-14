@@ -8,7 +8,7 @@
 @import Cocoa;
 @import MetalKit;
 
-#import "AAPLRenderer.h"
+#import "KemoViewerRenderer.h"
 
 #import "KemoViewerObject.h"
 #import "ResetViewControll.h"
@@ -41,9 +41,9 @@
 
     CFTimeInterval reftime_msg;
 
-    int id_window;
+//    int id_window;
 }
-@property int id_window;
+// @property int id_window;
 
 -(void) updateBackground:(struct kemoviewer_type *) kemo_sgl;
 
@@ -56,8 +56,6 @@
 - (void)messageTimer:(NSTimer *)timer;
 
 -(void) UpdateImage:(struct kemoviewer_type *) kemo_sgl;
--(void) FastUpdateImage;
--(void) QuickUpdateImage;
 
 -(id) DrawQuilt:(NSInteger) istep_quilt
          degree:(NSInteger) int_degree

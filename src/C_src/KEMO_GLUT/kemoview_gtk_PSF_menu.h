@@ -37,6 +37,7 @@ struct psf_color_gtk_menu{
 	GtkWidget *switch_draw, *switch_bar;
 	
 	GtkWidget *combobox_sfcolor;
+	GtkWidget *colorcell_sfcolor;
 	
 	GtkWidget *spin_opacity1;	
 	GtkWidget *spin_range_min, *spin_digit_min; 
@@ -45,23 +46,26 @@ struct psf_color_gtk_menu{
 };
 
 struct psf_gtk_menu{
+    int iflag_psfBox;
+    GtkWidget *psfWin;
+
     GtkWidget *psf_frame;
 
 	GtkWidget *closeButton;
     
     GtkWidget *combobox_psfs;
     GtkWidget *psf_label_tree_view;
-    GtkWidget *renderer_psfs;
+    GtkCellRenderer *renderer_psfs;
     GtkWidget *psf_vbox;
 
     GtkWidget *combobox_field;
     GtkWidget *field_label_tree_view;
-    GtkWidget *renderer_field;
+    GtkCellRenderer *renderer_field;
     GtkWidget *hbox_field;
 
 	GtkWidget *combobox_comp;
     GtkWidget *comp_label_tree_view;
-    GtkWidget *renderer_comp;
+    GtkCellRenderer *renderer_comp;
     GtkWidget *hbox_comp;
 
     int num_psfs;

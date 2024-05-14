@@ -24,9 +24,11 @@
 #define TWO_CENT   0.02
 #define TWO_MILI   0.002
 
+#define TRIPLE_UPDATE 99
 #define FULL_DRAW      0
 #define FAST_DRAW      1
 #define SIMPLE_DRAW    2
+#define QUILT_DRAW     3
 
 #define VIEW_3D        0
 #define VIEW_STEREO    1
@@ -60,6 +62,7 @@
 #define NODE_GRP_FLAG   1
 #define ELEM_GRP_FLAG   2
 #define SURF_GRP_FLAG   3
+
 
 #define PSFSOLID_TOGGLE      1
 #define PSFGRID_TOGGLE       2
@@ -136,6 +139,9 @@
 #define GRAYSCALE_MODE  1
 #define RED_BLUE_MODE   2
 #define SYM_GRAY_MODE   3
+#define ORANGE_CYAN_MODE   4
+#define MOLTEN_METAL_MODE  5
+#define SPACE_COLOR_MODE   6
 
 #define FLAT_SHADE    0
 #define SMOOTH_SHADE  1
@@ -178,8 +184,6 @@
 #define IFLAG_SURF_VTK_GZ   121
 #define IFLAG_SURF_SDT_GZ   130
 #define IFLAG_PSF_BIN_GZ    131
-
-#define IFLAG_SWAP  1
 
 #define ISET_ROTATE     0
 #define ISET_SHIFT      1
@@ -231,12 +235,16 @@
 #define NTOT_COMPONENT_FLAG  3
 #define DRAW_ADDRESS_FLAG    4
 #define COORDINATE_FLAG      5
-#define LINETYPE_FLAG       46
+#define LINETYPE_FLAG          46
+#define NUM_TUBE_CORNERS_FLAG  47
 
 #define EPSILON  1.e-9
 
 #define OFF 0
 #define ON  1
+
+#define IFLAG_OFF  0
+#define IFLAG_ON   1
 
 /*
  Kemoviewer_t: Structure to run kemoviewer in one window.
@@ -261,10 +269,13 @@ extern "C" {
 	void kemoview_free_kvstring(struct kv_string *kvstring);
 
 	struct kemoviewer_type * kemoview_allocate_single_viwewer_struct(void);
-
     void kemoview_deallocate_pointers(struct kemoviewer_type *kemoviewer_data);
+    void kemoview_init_cube_buf(struct kemoviewer_type *kemoviewer_data);
 
     void kemoview_set_current_viewer_id(int id_window, struct mul_kemoviewer_type *kemoview_array);
+
+    void kemoview_set_number_of_threads(int input, struct kemoviewer_type *kemoviewer);
+    int kemoview_get_number_of_threads(struct kemoviewer_type *kemoviewer);
 
     void kemoview_init_background_color(struct kemoviewer_type *kemoviewer);
     void kemoview_set_background_color(float color[4],
@@ -318,54 +329,6 @@ extern "C" {
                                          struct kemoviewer_type *kemoviewer);
 	float kemoview_get_material_parameter(struct kemoviewer_type *kemoviewer, int itype);
 	
-/* subroutines for mesh */
-    void kemoview_draw_with_modified_domain_distance(struct kemoviewer_type *kemoviewer);
-
-    void kemoview_set_mesh_color_mode(int icolor, struct kemoviewer_type *kemoviewer);
-    int kemoview_get_mesh_color_mode(struct kemoviewer_type *kemoviewer);
-    void kemoview_set_num_of_color_loop(int icolor, struct kemoviewer_type *kemoviewer);
-    int kemoview_get_num_of_color_loop(struct kemoviewer_type *kemoviewer);
-
-    void kemoview_set_node_diamater(double factor, int i_digit,
-                                    struct kemoviewer_type *kemoviewer);
-	void kemoview_get_node_diamater(struct kemoviewer_type *kemoviewer,
-                                    double *factor, int *i_digit);
-
-	void kemoview_set_domain_distance(double dist, struct kemoviewer_type *kemoviewer);
-    double kemoview_get_domain_distance(struct kemoviewer_type *kemoviewer);
-
-	void kemoview_set_mesh_color_flag(int iflag_group, int selected, int icolor,
-                                      struct kemoviewer_type *kemoviewer);
-	int kemoview_get_mesh_color_flag(struct kemoviewer_type *kemoviewer,
-                                     int iflag_group, int selected);
-    
-	void kemoview_set_mesh_color_code(int iflag_group, int selected, float color_code4[4],
-                                      struct kemoviewer_type *kemoviewer);
-	void kemoview_get_mesh_color_code(struct kemoviewer_type *kemoviewer,
-                                      int iflag_group, int selected, float color_code4[4]);
-	
-	void kemoview_set_mesh_opacity(int iflag_group, double opacity_in,
-                                   struct kemoviewer_type *kemoviewer);
-	double kemoview_get_mesh_opacity(struct kemoviewer_type *kemoviewer,
-                                     int iflag_group);
-    
-
-    void kemoview_set_mesh_draw_flag(int selected, int iflag,
-                                     struct kemoviewer_type *kemoviewer);
-	void kemoview_set_draw_mesh_item(int iflag_group, int selected, int igrp, int iflag,
-                                     struct kemoviewer_type *kemoviewer);
-
-    int kemoview_get_draw_mesh_flag(struct kemoviewer_type *kemoviewer);
-    int kemoview_get_num_of_mesh_group(struct kemoviewer_type *kemoviewer,
-                                       int iflag_group);
-	int kemoview_get_draw_mesh_item(struct kemoviewer_type *kemoviewer,
-                                    int iflag_group, int selected, int igrp);    
-    void kemoview_get_node_grp_name(struct kemoviewer_type *kemoviewer,
-                                    int i, struct kv_string *groupname);
-    void kemoview_get_ele_grp_name(struct kemoviewer_type *kemoviewer,
-                                   int i, struct kv_string *groupname);
-    void kemoview_get_surf_grp_name(struct kemoviewer_type *kemoviewer,
-                                    int i, struct kv_string *groupname);
     
 /* Parameters for Views */
     int kemoview_get_view_type_flag(struct kemoviewer_type *kemoviewer);
@@ -377,6 +340,7 @@ extern "C" {
 
     void kemoview_const_buffers(struct kemoviewer_type *kemoviewer);
     void kemoview_transparent_buffers(struct kemoviewer_type *kemoviewer);
+    void kemoview_fast_buffers(struct kemoviewer_type *kemoviewer);
 
     void kemoview_mono_viewmatrix(struct kemoviewer_type *kemoviewer);
     void kemoview_step_viewmatrix(int istep, struct kemoviewer_type *kemoviewer);
@@ -451,7 +415,7 @@ extern "C" {
 	int kemoview_get_each_PSF_field_param(struct kemoviewer_type *kemoviewer,
                                           int selected);
 	
-    int kemoview_get_PSF_num_component(struct kemoviewer_type *kemoviewer, int i);
+    long kemoview_get_PSF_num_component(struct kemoviewer_type *kemoviewer, int i);
 	void kemoview_get_PSF_field_name(struct kemoviewer_type *kemoviewer,
                                      struct kv_string *colorname, int i);
     
@@ -466,6 +430,8 @@ extern "C" {
 
 	int kemoview_select_PSF_draw_switch(struct kemoviewer_type *kemoviewer,
                                         int selected);
+    void kemoview_set_PSF_draw_flags(int selected, int iflag,
+                                     struct kemoviewer_type *kemoviewer);
 	int kemoview_get_PSF_draw_flags(struct kemoviewer_type *kemoviewer,
                                     int selected);
 	
@@ -515,6 +481,10 @@ extern "C" {
                                       int i_point, double *value, double *color);
     void kemoview_get_PSF_opacity_items(struct kemoviewer_type *kemoviewer,
                                         int i_point, double *value, double *opacity);
+    void kemoview_get_PSF_colormap_tables(struct kemoviewer_type *kemoviewer, 
+                                          int *id_cmap, int *num_cmap, int *num_alpha,
+                                          float *cmap_data, float *cmap_norm, 
+                                          float *alpha_data, float *alpha_norm);
     
     void kemoview_write_PSF_colormap_file(struct kv_string *filename,
                                           struct kemoviewer_type *kemoviewer);
@@ -577,11 +547,63 @@ extern "C" {
                                        int i_point, double *value, double *color);
     void kemoview_get_fline_opacity_item(struct kemoviewer_type *kemoviewer,
                                          int i_point, double *value, double *opacity);
+    void kemoview_get_fline_colormap_tables(struct kemoviewer_type *kemoviewer, 
+                                            int *id_cmap, int *num_cmap, int *num_alpha,
+                                            float *cmap_data, float *cmap_norm,
+                                            float *alpha_data, float *alpha_norm);
     
     void kemoview_write_fline_colormap_file(struct kv_string *filename,
                                             struct kemoviewer_type *kemoviewer);
     void kemoview_read_fline_colormap_file(struct kv_string *filename,
                                            struct kemoviewer_type *kemoviewer);
+
+
+/* subroutines for mesh */
+    void kemoview_draw_with_modified_domain_distance(struct kemoviewer_type *kemoviewer);
+
+    void kemoview_set_mesh_color_mode(int icolor, struct kemoviewer_type *kemoviewer);
+    int kemoview_get_mesh_color_mode(struct kemoviewer_type *kemoviewer);
+    void kemoview_set_num_of_color_loop(int icolor, struct kemoviewer_type *kemoviewer);
+    int kemoview_get_num_of_color_loop(struct kemoviewer_type *kemoviewer);
+
+    void kemoview_set_node_diamater(double factor, int i_digit,
+                                    struct kemoviewer_type *kemoviewer);
+    void kemoview_get_node_diamater(struct kemoviewer_type *kemoviewer,
+                                    double *factor, int *i_digit);
+
+    void kemoview_set_domain_distance(double dist, struct kemoviewer_type *kemoviewer);
+    double kemoview_get_domain_distance(struct kemoviewer_type *kemoviewer);
+
+    void kemoview_set_mesh_color_flag(int iflag_group, int selected, int icolor,
+                                      struct kemoviewer_type *kemoviewer);
+    int kemoview_get_mesh_color_flag(struct kemoviewer_type *kemoviewer,
+                                     int iflag_group, int selected);
+    
+    void kemoview_set_mesh_color_code(int iflag_group, int selected, float color_code4[4],
+                                      struct kemoviewer_type *kemoviewer);
+    void kemoview_get_mesh_color_code(struct kemoviewer_type *kemoviewer,
+                                      int iflag_group, int selected, float color_code4[4]);
+    
+    void kemoview_set_mesh_opacity(int iflag_group, double opacity_in,
+                                   struct kemoviewer_type *kemoviewer);
+    double kemoview_get_mesh_opacity(struct kemoviewer_type *kemoviewer,
+                                     int iflag_group);
+    
+
+    void kemoview_set_mesh_draw_flag(int selected, int iflag,
+                                     struct kemoviewer_type *kemoviewer);
+    void kemoview_set_draw_mesh_item(int iflag_group, int selected, int igrp, int iflag,
+                                     struct kemoviewer_type *kemoviewer);
+
+    int kemoview_get_draw_mesh_flag(struct kemoviewer_type *kemoviewer);
+    int kemoview_get_num_of_mesh_group(struct kemoviewer_type *kemoviewer,
+                                       int iflag_group);
+    int kemoview_get_draw_mesh_item(struct kemoviewer_type *kemoviewer,
+                                    int iflag_group, int selected, int igrp);
+
+    struct kv_string * kemoview_get_group_name(struct kemoviewer_type *kemoviewer,
+                                               int selected, int i);
+
 #ifdef __cplusplus
 }
 #endif

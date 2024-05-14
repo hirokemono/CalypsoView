@@ -19,8 +19,9 @@ struct chara2_real_ctl_item * init_c2r_ctl_item_c(void){
 		exit(0);
 	}
 
-	c2r_item->c1_tbl = (char *)calloc(KCHARA_C, sizeof(char));
-	c2r_item->c2_tbl = (char *)calloc(KCHARA_C, sizeof(char));
+    c2r_item->c_block_name = (char *)calloc(KCHARA_C, sizeof(char));
+	c2r_item->c1_tbl =       (char *)calloc(KCHARA_C, sizeof(char));
+	c2r_item->c2_tbl =       (char *)calloc(KCHARA_C, sizeof(char));
 	c2r_item->r_data = 0.0;
     return c2r_item;
 };
@@ -309,7 +310,7 @@ static void set_from_chara2_real_ctl_list_at_c_tbl(char *ref_1, char *ref_2,
 
 
 
-struct chara2_real_clist * init_chara2_real_clist(){
+struct chara2_real_clist * init_chara2_real_clist(void){
     struct chara2_real_clist *c2r_clst;
     if((c2r_clst = (struct chara2_real_clist *) malloc(sizeof(struct chara2_real_clist))) == NULL) {
         printf("malloc error for chara2_real_clist\n");

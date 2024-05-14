@@ -286,7 +286,8 @@ static void set_draw_objects_to_VAO(struct kemoview_psf *kemo_psf,
         Const_VAO_4_Phong(kemo_VAOs->fline_VAO[0], kemo_buffers->FLINE_tube_buf);
         Const_VAO_4_Simple(kemo_VAOs->fline_VAO[1], kemo_buffers->FLINE_line_buf);
         
-        const_PSF_gl_texure_name(kemo_psf->psf_a->psf_texure, kemo_shaders);
+        const_PSF_gl_texure_name(kemo_psf->psf_a->ipsf_texured,
+                                 kemo_psf->psf_a->psf_texure, kemo_shaders);
         set_PSF_solid_objects_VAO(kemo_buffers->PSF_solid_buf, kemo_buffers->PSF_stxur_buf,
                                   kemo_buffers->PSF_isoline_buf, kemo_buffers->PSF_arrow_buf,
                                   kemo_VAOs->psf_solid_VAO);
@@ -303,19 +304,12 @@ static void set_draw_objects_to_VAO(struct kemoview_psf *kemo_psf,
     };
     
     Const_VAO_4_Simple(kemo_VAOs->cbar_VAO[0], kemo_buffers->cbar_buf);
-    const_texture_VBO(kemo_buffers->cbar_min_image->npix_img[0], kemo_buffers->cbar_min_image->npix_img[1],
-                      kemo_buffers->cbar_min_image->imgBMP, kemo_VAOs->cbar_VAO[1], kemo_buffers->min_buf);
-    const_texture_VBO(kemo_buffers->cbar_max_image->npix_img[0], kemo_buffers->cbar_max_image->npix_img[1],
-                      kemo_buffers->cbar_max_image->imgBMP, kemo_VAOs->cbar_VAO[2], kemo_buffers->max_buf);
-    const_texture_VBO(kemo_buffers->cbar_zero_image->npix_img[0], kemo_buffers->cbar_zero_image->npix_img[1],
-                      kemo_buffers->cbar_zero_image->imgBMP, kemo_VAOs->cbar_VAO[3], kemo_buffers->zero_buf);
-    const_texture_VBO(kemo_buffers->tlabel_image->npix_img[0], kemo_buffers->tlabel_image->npix_img[1],
-                      kemo_buffers->tlabel_image->imgBMP, kemo_VAOs->time_VAO, kemo_buffers->time_buf);
+    const_texture_VBO(kemo_buffers->cbar_min_buf->image,  kemo_buffers->cbar_min_buf->vertex,  kemo_VAOs->cbar_VAO[1]);
+    const_texture_VBO(kemo_buffers->cbar_max_buf->image,  kemo_buffers->cbar_max_buf->vertex,  kemo_VAOs->cbar_VAO[2]);
+    const_texture_VBO(kemo_buffers->cbar_zero_buf->image, kemo_buffers->cbar_zero_buf->vertex, kemo_VAOs->cbar_VAO[3]);
+    const_texture_VBO(kemo_buffers->timelabel_buf->image, kemo_buffers->timelabel_buf->vertex, kemo_VAOs->time_VAO);
     
-    const_texture_VBO(kemo_buffers->message_image->npix_img[0],
-                      kemo_buffers->message_image->npix_img[1],
-                      kemo_buffers->message_image->imgBMP,
-                      kemo_VAOs->msg_VAO, kemo_buffers->msg_buf);
+    const_texture_VBO(kemo_buffers->message_buf->image,   kemo_buffers->message_buf->vertex,  kemo_VAOs->msg_VAO);
     set_initial_cube_VAO(kemo_buffers->cube_buf, kemo_buffers->cube_index_buf, kemo_VAOs->cube_VAO);
     return;
 };
@@ -332,17 +326,22 @@ static void update_draw_objects(struct kemoview_psf *kemo_psf, struct kemoview_f
                            view_s, kemo_buffers->kemo_lights,
                            kemo_VAOs, kemo_shaders);
 
-    }else if(view_s->iflag_draw_mode == FAST_DRAW){
-        if(view_s->iflag_view_type != VIEW_MAP){
+    }else{
+        if(view_s->iflag_draw_mode == FAST_DRAW
+           && view_s->iflag_view_type != VIEW_MAP){
+            set_fast_buffers(kemo_psf, kemo_mesh, view_s, kemo_buffers);
+            
+            Const_VAO_4_Phong(kemo_VAOs->grid_VAO[2], kemo_buffers->axis_buf);
+            set_transparent_objects_to_VAO(kemo_buffers, kemo_VAOs, kemo_shaders);
+        }else if(view_s->iflag_draw_mode == QUILT_DRAW
+                 && view_s->iflag_view_type != VIEW_MAP){
             set_transparent_buffers(kemo_psf, kemo_mesh, view_s, kemo_buffers);
             set_transparent_objects_to_VAO(kemo_buffers, kemo_VAOs, kemo_shaders);
+        }else{
+            set_kemoviewer_buffers(kemo_psf, kemo_fline, kemo_mesh, view_s, kemo_buffers);
+            set_draw_objects_to_VAO(kemo_psf, view_s, kemo_buffers,
+                                    kemo_VAOs, kemo_shaders);
         }
-        full_draw_objects(kemo_psf, kemo_fline, kemo_mesh, view_s,
-                          kemo_buffers->kemo_lights, kemo_VAOs, kemo_shaders);
-    }else{
-        set_kemoviewer_buffers(kemo_psf, kemo_fline, kemo_mesh, view_s, kemo_buffers);
-        set_draw_objects_to_VAO(kemo_psf, view_s, kemo_buffers,
-                                kemo_VAOs, kemo_shaders);
         full_draw_objects(kemo_psf, kemo_fline, kemo_mesh, view_s,
                           kemo_buffers->kemo_lights, kemo_VAOs, kemo_shaders);
     }
@@ -358,56 +357,57 @@ void update_draw_objects_gl3(struct kemoviewer_type *kemoview,
 	return;
 }
 
-struct line_text_image * draw_objects_to_rgb_gl(struct kemoviewer_type *kemoview,
-                                                struct kemoviewer_gl_type *kemo_gl){
-    GLuint npix_xy[2];
-    npix_xy[0] = (GLuint) kemoview->view_s->nx_frame;
-    npix_xy[1] = (GLuint) kemoview->view_s->ny_frame;
-    struct line_text_image * image = alloc_line_text_image(npix_xy[0], npix_xy[1], 20);
+void draw_objects_to_rgb_gl(struct kemoviewer_type *kemoview,
+                            struct kemoviewer_gl_type *kemo_gl,
+                            struct gl_texure_image *image){
+    alloc_draw_psf_texture(kemoview->view_s->nx_frame,
+                           kemoview->view_s->ny_frame,
+                           image);
 
     glDrawBuffer(GL_BACK);
     update_draw_objects_gl3(kemoview, kemo_gl);
     glReadBuffer(GL_BACK);
     glPixelStorei(GL_PACK_ALIGNMENT, IONE);
-    glReadPixels(IZERO, IZERO, image->npix_img[0], image->npix_img[1],
-                 GL_RGB, GL_UNSIGNED_BYTE, image->imgBMP);
-    return image;
+    glReadPixels(IZERO, IZERO, image->nipxel_xy[0], image->nipxel_xy[1],
+                 GL_RGB, GL_UNSIGNED_BYTE, image->texure_rgba);
+    return;
 };
 
-struct line_text_image * draw_anaglyph_to_rgb_gl(struct kemoviewer_type *kemoview,
-                                                 struct kemoviewer_gl_type *kemo_gl){
-    struct line_text_image *anaglyph_image;
-    
+void draw_anaglyph_to_rgb_gl(struct kemoviewer_type *kemoview,
+                             struct kemoviewer_gl_type *kemo_gl,
+                             struct gl_texure_image *anaglyph_image){
+    struct gl_texure_image *left_img =  alloc_kemoview_gl_texure();
+    struct gl_texure_image *right_img = alloc_kemoview_gl_texure();
+
+    alloc_draw_psf_texture(kemoview->view_s->nx_frame,
+                           kemoview->view_s->ny_frame,
+                           anaglyph_image);
+
     modify_left_viewmat(kemoview->view_s);
-    struct line_text_image *left_img = draw_objects_to_rgb_gl(kemoview, kemo_gl);
+    draw_objects_to_rgb_gl(kemoview, kemo_gl, left_img);
     
     modify_right_viewmat(kemoview->view_s);
-    struct line_text_image *right_img = draw_objects_to_rgb_gl(kemoview, kemo_gl);
+    draw_objects_to_rgb_gl(kemoview, kemo_gl, right_img);
 
-    anaglyph_image = alloc_line_text_image(left_img->npix_img[0],
-                                           left_img->npix_img[1], 20);
-    half_anaglyph_rgba_by_rgbs(left_img->npix_img[0], left_img->npix_img[1],
-                               left_img->imgBMP, right_img->imgBMP,
-                               anaglyph_image->imgBMP);
-    dealloc_line_text_image(left_img);
-    dealloc_line_text_image(right_img);
-    return anaglyph_image;
+    half_anaglyph_rgba_by_rgbs(left_img->nipxel_xy[0], left_img->nipxel_xy[1],
+                               left_img->texure_rgba, right_img->texure_rgba,
+                               anaglyph_image->texure_rgba);
+    dealloc_kemoview_gl_texure(left_img);
+    dealloc_kemoview_gl_texure(right_img);
+    return;
 };
 
 
 void move_draw_anaglyph_gl3(struct kemoviewer_type *kemoview,
                             struct kemoviewer_gl_type *kemo_gl,
-                            struct line_text_image *anaglyph_image){
+                            struct gl_texure_image *anaglyph_image){
     const_screen_buffer(kemoview->view_s->iflag_view_type,
                         kemoview->view_s->nx_frame,
                         kemoview->view_s->ny_frame,
                         kemoview->kemo_buffers->screen_buf);
 
-    const_texture_VBO(anaglyph_image->npix_img[0],
-                      anaglyph_image->npix_img[1],
-                      anaglyph_image->imgBMP,
-                      kemo_gl->kemo_VAOs->screen_VAO,
-                      kemoview->kemo_buffers->screen_buf);
+    const_texture_VBO(anaglyph_image, kemoview->kemo_buffers->screen_buf,
+                      kemo_gl->kemo_VAOs->screen_VAO);
 
     double *orthogonal = orthogonal_projection_mat_c(0.0, kemoview->view_s->nx_frame,
                                                      0.0, kemoview->view_s->ny_frame,

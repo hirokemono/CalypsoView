@@ -101,6 +101,7 @@ depends:
 		C_INCLUDE='$(C_INCLUDE)' \
 		GTK3_CFLAGS='$(GTK3_CFLAGS)' \
 		GLFW_CFLAGS='$(GLFW_CFLAGS)' \
+		GLFW_LIBS='$(GLFW_LIBS)' \
 		MAKE_MOD_DEP='$(MAKE_MOD_DEP)' \
 		depends; \
 		) \

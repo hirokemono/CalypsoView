@@ -17,6 +17,7 @@
 #include "m_colorbar_buffer.h"
 #include "skip_comment_c.h"
 #include "set_rgba_table_c.h"
+#include "set_psf_viewer.h"
 
 struct kemo_array_control{
 	int nlimit_loaded;
@@ -87,6 +88,7 @@ struct psf_menu_val{
 	double vector_thick;
     
     long nadded_for_phi0;
+    struct map_interpolate *map_itp;
 };
 
 /* Prototypes */
@@ -95,6 +97,9 @@ void set_PSF_component_name(int ncomp, int id_coord, int icomp, char *comp_name)
 void alloc_psfs_sorting_list(struct kemo_array_control *psf_a);
 void dealloc_psfs_sorting_list(struct kemo_array_control *psf_a);
 
+
+struct psf_menu_val *  init_psf_menu_val(void);
+void dealloc_psf_menu_val(struct psf_menu_val *psf_m);
 
 void alloc_draw_psf_flags(struct psf_data *psf_s, struct psf_menu_val *psf_m);
 void dealloc_draw_psf_flags(struct psf_data *psf_s, struct psf_menu_val *psf_m);

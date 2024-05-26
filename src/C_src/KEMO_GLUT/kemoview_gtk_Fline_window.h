@@ -14,17 +14,18 @@
 #include <string.h>
 
 #include "calypso_GTK.h"
-#include "kemoviewer.h"
 #include "kemoviewer_gl.h"
 #include "m_kemoviewer_data.h"
 #include "tree_views_4_fixed_lists_GTK.h"
 #include "tree_view_viewer_colormap.h"
 #include "kemoview_gtk_fileselector.h"
 #include "kemoview_gtk_fieldline_menu.h"
+#include "kemoview_gtk_evolution_menu.h"
 
 /* prototypes */
 
-void init_fline_window(struct kemoviewer_type *kemo_sgl,
-                       struct fieldline_gtk_menu *fline_menu);
+void init_fline_window(struct kemoviewer_gl_type *kemo_gl,
+                       struct fieldline_gtk_menu *fline_menu,
+                       GtkWidget *main_window, GtkWidget *itemTEvo);
 
 #endif /*  KEMOVIEW_GTK_FLINE_WINDOW_  */

@@ -16,6 +16,7 @@
 #import "AAPLImage.h"
 #import "KemoViewMetalBuffers.h"
 #import "KemoViewRendererTools.h"
+#import "KemoView3DBaseRenderer.h"
 
 #include "m_kemoviewer_data.h"
 
@@ -102,44 +103,6 @@ typedef struct
     NSUInteger numAxisVertice;
 } KemoView3DBuffers;
 
-typedef struct
-{
-    /*  Shader functions for simple shader  */
-    id<MTLFunction>            _Nonnull simpleVertexFunction;
-    id<MTLFunction>            _Nonnull simpleFragmentFunction;
-    
-    /*  Shader functions for textured  shader  */
-    id<MTLFunction>            _Nonnull texuredVertexFunction;
-    id<MTLFunction>            _Nonnull texuredFragmentFunction;
-    
-    /*  Shader functions for Phong shader  */
-    id<MTLFunction> _Nonnull phongVertexFunction;
-    id<MTLFunction> _Nonnull phongFragmentFunction;
-    
-    /*  Shader functions for Phong shader with colormap */
-    id<MTLFunction> _Nonnull phongColorMapVertexFunction;
-    id<MTLFunction> _Nonnull phongColorMapFragmentFunction;
-    
-    /*  Shader functions for textured Phong shader  */
-    id<MTLFunction> _Nonnull texuredPhongVertexFunction;
-    id<MTLFunction> _Nonnull texuredPhongFragmentFunction;
-} KemoViewMetalShaders;
-
-typedef struct
-{
-    /*  Shader functions for simple shader  */
-    id<MTLRenderPipelineState> _Nonnull simplePipelineState;
-    /*  Shader functions for Phong shader  */
-    id<MTLRenderPipelineState> _Nonnull phongPipelineState;
-    /*  Shader functions for Phong shader with colormap construction */
-    id<MTLRenderPipelineState> _Nonnull phongColorMapPipelineState;
-    /*  Shader functions for textured Phong shader  */
-    id<MTLRenderPipelineState> _Nonnull phongTexturedPipelineState;
-
-    /*  Shader functions for textured  shader  */
-    id<MTLRenderPipelineState> _Nonnull texuredPipelineState;
-} KemoView3DPipelines;
-
 @interface KemoView3DRenderer : NSObject
 {
     KemoViewMetalBuffers * _kemo3DMetalBufBase;
@@ -164,15 +127,10 @@ typedef struct
 -(void) addKemoView3DPipelines:(nonnull MTKView *)mtkView
                    targetPixel:(MTLPixelFormat) pixelformat;
 
-- (void) encodeKemoSimpleObjects:(id<MTLRenderCommandEncoder> _Nonnull  *_Nonnull) renderEncoder
-                           depth:(id<MTLDepthStencilState> _Nonnull *_Nonnull) depthState
-                          unites:(KemoViewUnites *_Nonnull) monoViewUnites
-                           sides:(int) iflag_polygon;
-
-- (void) encodeKemoView3DObjects:(id<MTLRenderCommandEncoder> _Nonnull  *_Nonnull) renderEncoder
-                           depth:(id<MTLDepthStencilState> _Nonnull *_Nonnull) depthState
-                          unites:(KemoViewUnites *_Nonnull) monoViewUnites
-                           sides:(int) iflag_polygon;
+-(void) encodeKemoView3DObjects:(id<MTLRenderCommandEncoder> _Nonnull  *_Nonnull) renderEncoder
+                          depth:(id<MTLDepthStencilState> _Nonnull *_Nonnull) depthState
+                         unites:(KemoViewUnites *_Nonnull) monoViewUnites
+                          sides:(int) iflag_polygon;
 @end
 
 

@@ -16,7 +16,6 @@
 #include "skip_comment_c.h"
 #include "t_psf_edge_connect_c.h"
 
-
 struct psf_data{
 	long nnod_viz;
 	long nele_viz;
@@ -61,7 +60,7 @@ struct psf_data{
 	double *color_nod;
 	
 
-    struct psf_edge_data_c *psf_edge; 
+    struct psf_edge_data_c *psf_edge;
 };
 
 
@@ -83,6 +82,9 @@ struct vtk_field{
 };
 
 /* prototypes */
+
+struct psf_data * init_psf_data(void);
+void dealloc_psf_data(struct psf_data *psf_s);
 
 void alloc_viz_node_s(struct psf_data *psf_s);
 void alloc_viz_ele_s(struct psf_data *psf_s);

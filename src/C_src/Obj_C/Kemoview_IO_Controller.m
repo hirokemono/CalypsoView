@@ -124,7 +124,7 @@
     
     NSString * ImageFilehead =  [ImageFilename stringByDeletingPathExtension];
     NSString * ImageFileext =   [ImageFilename pathExtension];
-    NSInteger id_format = [_movieMakerController SetImageFileFormatID:ImageFileext];
+    NSInteger id_format = [_kemoImageMaker SetImageFileFormatID:ImageFileext];
     // NSLog(@" ImageFilename = %@",  ImageFilename);
     // NSLog(@" ImageFilehead = %@",  ImageFilehead);
     
@@ -134,29 +134,14 @@
     }
     
     if(kemoview_get_quilt_nums(kemo_sgl, ISET_QUILT_MODE) == 1){
-        if(id_format == SAVE_PNG){
-            [_movieMakerController SaveKemoviewQuiltPNGFile:ImageFilehead
-                                                    degree:IZERO
-                                                       axis:IONE
-                                                   kemoview:kemo_sgl];
-        } else if(id_format == SAVE_BMP){
-            [_movieMakerController SaveKemoviewQuiltBMPFile:ImageFilehead
-                                                     degree:IZERO
-                                                       axis:IONE
-                                                   kemoview:kemo_sgl];
-        } else {
-            [_movieMakerController SaveKemoviewQuiltPDFFile:ImageFilehead
-                                                     degree:IZERO
-                                                       axis:IONE kemoview:kemo_sgl];
-        }
+        [_kemoImageMaker SalectSaveKemoQuiltImageFile:id_format
+                                           filePrefix:ImageFilehead
+                                               degree:IZERO
+                                                 axis:IONE
+                                             kemoview:kemo_sgl];
     } else {
-        if(id_format == SAVE_PNG){
-            [_movieMakerController SaveKemoviewPNGFile:ImageFilehead];
-        } else if(id_format == SAVE_BMP){
-            [_movieMakerController SaveKemoviewBMPFile:ImageFilehead];
-        } else {
-            [_movieMakerController SaveKemoviewPDFFile:ImageFilehead];
-        }
+        [_kemoImageMaker SalectSaveKemoviewImageFile:id_format
+                                          filePrefix:ImageFilehead];
     };
     
     [_metalView UpdateImage:kemo_sgl];

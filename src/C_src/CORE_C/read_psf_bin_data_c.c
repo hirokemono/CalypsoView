@@ -80,7 +80,8 @@ static void read_psf_numnod_bin(struct psf_data *psf_b, struct psf_bin_work *psf
      */
     
     psf_b->nnod_viz = 0;
-    for(int i=0;i<psf_b_WK->nprocs;i++){
+    int i;
+    for(i=0;i<psf_b_WK->nprocs;i++){
         psf_b->nnod_viz = psf_b->nnod_viz + n_inter[i];
     };
     free(n_inter);
@@ -117,7 +118,11 @@ static int read_alloc_psf_ele_bin(struct psf_data *psf_b, struct psf_bin_work *p
     rawread_64bit_psf(psf_b_WK, &eletype);
     /*    printf("eletype %d \n", eletype); */
 	
-	if(psf_b->nnod_4_ele_viz == 2){iflag_datatype = IFLAG_LINES;};
+	if(psf_b->nnod_4_ele_viz == 2){
+        iflag_datatype = IFLAG_LINES;
+    }else if(psf_b->nnod_4_ele_viz == 1){
+        iflag_datatype = IFLAG_POINTS;
+    };
 	
     long *nele = (long *) calloc(psf_b_WK->nprocs,sizeof(long));
     psf_b_WK->ilength = psf_b_WK->nprocs * sizeof(long);
@@ -184,8 +189,12 @@ static void read_alloc_psf_data_bin(struct psf_data *psf_b, struct psf_bin_work 
     psf_b->ncomptot = psf_b->istack_comp[psf_b->nfield];
     
     alloc_psf_field_data_c(psf_b);
-    alloc_psf_data_s(psf_b);
+    
     double *d_nod = (double *) calloc(psf_b->nnod_viz,sizeof(double));
+	if (d_nod == NULL) {
+		fprintf(stderr, "Failed allocation for d_nod\n");
+        exit(1);
+    };
     
     for(j=0;j<psf_b->ncomptot;j++){
         psf_b_WK->ilength = psf_b_WK->nprocs * sizeof(long);
@@ -196,6 +205,7 @@ static void read_alloc_psf_data_bin(struct psf_data *psf_b, struct psf_bin_work 
             psf_b->d_nod[i*psf_b->ncomptot + j] = d_nod[i];
         };
     };
+    free(d_nod);
     return;
 };
 

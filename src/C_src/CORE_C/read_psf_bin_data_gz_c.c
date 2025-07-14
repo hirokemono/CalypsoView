@@ -47,7 +47,8 @@ static void read_num_node_bin_gz(void *FP_gzip, struct psf_data *psf_z,
     gzread_64bit_psf(FP_gzip, psf_z_WK, (char *) n_inter_gz);
     
     psf_z->nnod_viz = 0;
-    for(int i=0;i<psf_z_WK->nprocs;i++){
+    int i;
+    for(i=0;i<psf_z_WK->nprocs;i++){
         psf_z->nnod_viz = psf_z->nnod_viz + n_inter_gz[i];
     };
     /*
@@ -91,7 +92,11 @@ static int read_alloc_psf_ele_bin_gz(void *FP_gzip, struct psf_data *psf_z,
     gzread_64bit_psf(FP_gzip, psf_z_WK, (char *) &eletype_gz);
     /*    printf("eletype_gz %d \n", eletype_gz); */
 	
-	if(psf_z->nnod_4_ele_viz == 2){iflag_datatype = IFLAG_LINES;};
+	if(psf_z->nnod_4_ele_viz == 2){
+        iflag_datatype = IFLAG_LINES;
+    }else if(psf_z->nnod_4_ele_viz == 1){
+        iflag_datatype = IFLAG_POINTS;
+    };
     
     long *nele_gz = (long *)calloc(psf_z_WK->nprocs,sizeof(long));
     psf_z_WK->ilength = psf_z_WK->nprocs * sizeof(long);
@@ -162,8 +167,13 @@ static void read_alloc_psf_data_bin_gz(void *FP_gzip, struct psf_data *psf_z,
     psf_z->ncomptot = psf_z->istack_comp[psf_z->nfield];
     
     alloc_psf_field_data_c(psf_z);
-    alloc_psf_data_s(psf_z);
+    
     double *d_nod_gz = (double *) calloc(psf_z->nnod_viz,sizeof(double));
+	if (d_nod_gz == NULL) {
+		fprintf(stderr, "Failed allocation for d_nod\n");
+        exit(1);
+    };
+    
     
     for(j=0;j<psf_z->ncomptot;j++){
         psf_z_WK->ilength = psf_z_WK->nprocs*sizeof(long);

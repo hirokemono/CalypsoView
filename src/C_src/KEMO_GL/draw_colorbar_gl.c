@@ -40,7 +40,8 @@ struct initial_cube_lighting * init_inital_cube_lighting(void){
         exit(0);
     }
     init_light->num_light = num_light;
-    for(int i=0;i<4;i++){
+    int i;
+    for(i=0;i<4;i++){
         init_light->lightposition[0][i] = lightposition[i];
         init_light->lightposition[1][i] = light2position[i];
         init_light->whitelight[0][i] = 0.2*white1[i];
@@ -59,64 +60,43 @@ int count_colorbar_box_buffer(int iflag_zero, int num_quad){
 
 void const_colorbar_box_buffer(int iflag_retina, int nx_win, int ny_win,
                                float text_color[4], float bg_color[4],
-                               struct psf_menu_val **psf_m,
-                               struct kemo_array_control *psf_a,
+                               struct psf_menu_val *psf_m,
                                struct cbar_work *cbar_wk,
-                               struct gl_strided_buffer *cbar_buf){
-    int i;
-    long icomp;
-    cbar_buf->num_nod_buf = 0;
-    for(i=0; i<psf_a->nmax_loaded; i++){
-        if(psf_a->iflag_loaded[i] != 0 && psf_m[i]->draw_psf_cbar > 0) {
-            icomp = psf_m[i]->icomp_draw_psf;
-            set_colorbar_position(iflag_retina, (int) nx_win, (int) ny_win,
-                                  psf_m[i]->cmap_psf_comp[icomp], cbar_wk);
+                               struct gl_strided_buffer *cbar_buf,
+                               struct gl_textbox_buffer *cbar_min_buf,
+                               struct gl_textbox_buffer *cbar_max_buf,
+                               struct gl_textbox_buffer *cbar_zero_buf){
+    long icomp = psf_m->icomp_draw_viz;
+    set_colorbar_position(iflag_retina, (int) nx_win, (int) ny_win,
+                          psf_m->cmap_viz_comp[icomp], cbar_wk);
     
-            cbar_buf->num_nod_buf = count_colorbar_box_buffer(cbar_wk->iflag_zero, cbar_wk->num_quad);
-            
-            long inum_quad = 0;
-            inum_quad = solid_colorbar_box_to_buf(inum_quad, psf_m[i]->cmap_psf_comp[icomp],
-                                                  cbar_wk, cbar_buf);
-            inum_quad = fade_colorbar_box_to_buf(inum_quad, psf_m[i]->cmap_psf_comp[icomp],
-                                                 bg_color, cbar_wk, cbar_buf);
-            inum_quad = colorbar_frame_to_buf(inum_quad, iflag_retina, text_color,
-                                              cbar_wk, cbar_buf);
-            break;
-        };
+    cbar_buf->num_nod_buf = count_colorbar_box_buffer(cbar_wk->iflag_zero,
+                                                      cbar_wk->num_quad);
+    
+    long inum_quad = 0;
+    inum_quad = solid_colorbar_box_to_buf(inum_quad, psf_m->cmap_viz_comp[icomp],
+                                          cbar_wk, cbar_buf);
+    inum_quad = fade_colorbar_box_to_buf(inum_quad, psf_m->cmap_viz_comp[icomp],
+                                         bg_color, cbar_wk, cbar_buf);
+    inum_quad = colorbar_frame_to_buf(inum_quad, iflag_retina, text_color,
+                                      cbar_wk, cbar_buf);
+    
+    set_colorbar_text_image(text_color, cbar_wk->psf_min, cbar_min_buf);
+    set_colorbar_text_image(text_color, cbar_wk->psf_max, cbar_max_buf);
+    if(cbar_wk->iflag_zero == 1){
+        set_colorbar_text_image(text_color, ZERO, cbar_zero_buf);
+    }
+    
+    cbar_min_buf->vertex->num_nod_buf =  (ITHREE*2);
+    cbar_max_buf->vertex->num_nod_buf =  (ITHREE*2);
+    if(cbar_wk->iflag_zero == 1){
+        cbar_zero_buf->vertex->num_nod_buf = (ITHREE*2);
     };
+    colorbar_mbox_to_buf(iflag_retina, text_color, cbar_wk,
+                         cbar_min_buf->vertex, cbar_max_buf->vertex,
+                         cbar_zero_buf->vertex);
     return;
 };
-
-void const_cbar_text_buffer(int iflag_retina,  float text_color[4],
-                            struct psf_menu_val **psf_m, struct kemo_array_control *psf_a,
-                            struct cbar_work *cbar_wk,
-                            struct gl_textbox_buffer *cbar_min_buf,
-                            struct gl_textbox_buffer *cbar_max_buf,
-                            struct gl_textbox_buffer *cbar_zero_buf){
-    int i;
-    cbar_min_buf->vertex->num_nod_buf =  0;
-    cbar_max_buf->vertex->num_nod_buf =  0;
-    cbar_zero_buf->vertex->num_nod_buf = 0;
-    for(i=0; i<psf_a->nmax_loaded; i++){
-        if(psf_a->iflag_loaded[i] != 0 && psf_m[i]->draw_psf_cbar > 0){
-            set_colorbar_text_image(text_color, cbar_wk->psf_min, cbar_min_buf);
-            set_colorbar_text_image(text_color, cbar_wk->psf_max, cbar_max_buf);
-            if(cbar_wk->iflag_zero == 1){
-                set_colorbar_text_image(text_color, ZERO, cbar_zero_buf);
-            }
-
-            cbar_min_buf->vertex->num_nod_buf =  (ITHREE*2);
-            cbar_max_buf->vertex->num_nod_buf =  (ITHREE*2);
-            if(cbar_wk->iflag_zero == 1) cbar_zero_buf->vertex->num_nod_buf = (ITHREE*2);
-            colorbar_mbox_to_buf(iflag_retina, text_color, cbar_wk,
-                                 cbar_min_buf->vertex, cbar_max_buf->vertex,
-                                 cbar_zero_buf->vertex);
-            break;
-        };
-    };
-    return;
-};
-
 
 void const_timelabel_buffer(int iflag_retina, int nx_win, int ny_win,
                             float text_color[4], float bg_color[4],

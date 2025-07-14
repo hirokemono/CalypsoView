@@ -59,9 +59,6 @@ mod_list:
 	@echo  $(MOD_KEMOVIEW_GLFW) >> $(MAKENAME)
 	@echo   >> $(MAKENAME)
 
-module:
-	@cat Makefile.depends >> $(MAKENAME)
-
 depends:
 	@echo '#' > $(MAKENAME).tmp
 	@for sources in $(SRC_C) ; do \
@@ -71,7 +68,7 @@ depends:
 		echo '	$$(CC) -c $$(OPTFLAGS_GL) $(GLUT_INCLUDES) $$<' >> $(MAKENAME).tmp \
 		) \
 	done
-	@sed -e 's@'$(MHDDIR)'@'$$\(MHDDIR\)'@g' $(MAKENAME).tmp > $(CURRENTDIR)/Makefile.depends
+	@sed -e 's@'$(MHDDIR)'@'$$\(MHDDIR\)'@g' $(MAKENAME).tmp >> $(MAKENAME).depends
 	@rm $(MAKENAME).tmp
 
 clean:

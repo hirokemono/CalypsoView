@@ -17,14 +17,19 @@
 #include "m_vertex_buffer.h"
 
 #include "draw_coastline.h"
+#include "draw_patches_4_PSF.h"
 
 struct PSF_line_buffers{
     struct gl_strided_buffer *PSF_isoline_buf;
     struct gl_strided_buffer *PSF_isotube_buf;
+    struct gl_index_buffer   *PSF_isotube_index_buf;
+
     struct gl_strided_buffer *PSF_arrow_buf;
-    
+    struct gl_index_buffer   *PSF_arrow_index_buf;
+
     struct gl_strided_buffer *coast_line_buf;
     struct gl_strided_buffer *coast_tube_buf;
+    struct gl_index_buffer   *coast_index_buf;
 };
 
 /* prototypes */
@@ -32,8 +37,8 @@ struct PSF_line_buffers{
 struct PSF_line_buffers * init_PSF_line_buffers(void);
 void dealloc_PSF_line_buffers(struct PSF_line_buffers *PSF_lines);
 
-void const_PSF_isolines_buffer(const int nthreads,
-                               struct view_element *view_s, struct psf_data **psf_s,
+void const_PSF_isolines_buffer(const int nthreads, struct view_element *view_s,
+                               struct psf_data **psf_s, struct psf_normals **psf_n,
                                struct psf_menu_val **psf_m, struct kemo_array_control *psf_a,
                                struct mesh_menu_val *mesh_m, 
                                struct PSF_line_buffers *PSF_lines);

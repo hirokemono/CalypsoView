@@ -31,14 +31,16 @@ struct kemoview_VAOs{
     struct VAO_ids *mesh_trans_VAO;
     
     struct VAO_ids **fline_VAO;
+    struct VAO_ids *tracer_VAO;
+    struct VAO_ids *tracer_index_VAO;
 
     struct VAO_ids **psf_solid_index_VAO;
     struct VAO_ids **psf_trans_index_VAO;
-    struct VAO_ids *map_index_VAO;
+    struct VAO_ids **map_index_VAO;
 
     struct VAO_ids **psf_solid_VAO;
     struct VAO_ids **psf_trans_VAO;
-    struct VAO_ids *psf_liness_VAO;
+    struct VAO_ids *psf_lines_VAO;
 
     struct VAO_ids *axis_VAO;
     struct VAO_ids *grid_line_VAO;
@@ -61,7 +63,7 @@ void dealloc_kemoview_VAOs(struct kemoview_VAOs *kemo_VAOs);
 
 void set_transparent_objects_to_VAO(struct kemoview_buffers *kemo_buffers,
                                     struct kemoview_VAOs *kemo_VAOs);
-void set_draw_objects_to_VAO(struct kemoview_psf *kemo_psf,
+void set_draw_objects_to_VAO(struct kemoview_mul_psf *kemo_mul_psf,
                              struct view_element *view_s,
                              struct kemoview_buffers *kemo_buffers,
                              struct kemoview_VAOs *kemo_VAOs,

@@ -60,7 +60,8 @@ static void draw_all_ele_grp_patch_CB(GtkButton *button, gpointer user_data)
     struct kemoviewer_gl_type *kemo_gl
             = (struct kemoviewer_gl_type *) g_object_get_data(G_OBJECT(user_data), "kemoview_gl");
 	int num = set_all_draw_flags(IONE, COLUMN_MESH_THIRD, grp_vws);
-	for(int i=0;i<num;i++){
+    int i;
+	for(i=0;i<num;i++){
 		kemoview_set_draw_mesh_item(ELEM_GRP_FLAG, SURFSOLID_TOGGLE,
                                     i, IONE, kemo_gl->kemoview_data);
 	};
@@ -75,7 +76,8 @@ static void draw_all_ele_grp_grids_CB(GtkButton *button, gpointer user_data)
     struct kemoviewer_gl_type *kemo_gl
             = (struct kemoviewer_gl_type *) g_object_get_data(G_OBJECT(user_data), "kemoview_gl");
 	int num = set_all_draw_flags(IONE, COLUMN_MESH_FORTH, grp_vws);
-	for(int i=0;i<num;i++){
+    int i;
+	for(i=0;i<num;i++){
 		kemoview_set_draw_mesh_item(ELEM_GRP_FLAG, SURFGRID_TOGGLE, 
                                     i, IONE, kemo_gl->kemoview_data);
 	};
@@ -90,7 +92,8 @@ static void draw_all_ele_grp_nodes_CB(GtkButton *button, gpointer user_data)
     struct kemoviewer_gl_type *kemo_gl
             = (struct kemoviewer_gl_type *) g_object_get_data(G_OBJECT(user_data), "kemoview_gl");
 	int num = set_all_draw_flags(IONE, COLUMN_MESH_FIFTH, grp_vws);
-	for(int i=0;i<num;i++){
+    int i;
+	for(i=0;i<num;i++){
 		kemoview_set_draw_mesh_item(ELEM_GRP_FLAG, SURFNOD_TOGGLE,
                                     i, IONE, kemo_gl->kemoview_data);
 	};
@@ -105,7 +108,8 @@ static void hide_all_ele_grp_patch_CB(GtkButton *button, gpointer user_data)
     struct kemoviewer_gl_type *kemo_gl
             = (struct kemoviewer_gl_type *) g_object_get_data(G_OBJECT(user_data), "kemoview_gl");
 	int num = set_all_draw_flags(IZERO, COLUMN_MESH_THIRD, grp_vws);
-	for(int i=0;i<num;i++){
+    int i;
+	for(i=0;i<num;i++){
 		kemoview_set_draw_mesh_item(ELEM_GRP_FLAG, SURFSOLID_TOGGLE,
                                     i, IZERO, kemo_gl->kemoview_data);
 	};
@@ -120,7 +124,8 @@ static void hide_all_ele_grp_grids_CB(GtkButton *button, gpointer user_data)
     struct kemoviewer_gl_type *kemo_gl
             = (struct kemoviewer_gl_type *) g_object_get_data(G_OBJECT(user_data), "kemoview_gl");
 	int num = set_all_draw_flags(IZERO, COLUMN_MESH_FORTH, grp_vws);
-	for(int i=0;i<num;i++){
+    int i;
+	for(i=0;i<num;i++){
 		kemoview_set_draw_mesh_item(ELEM_GRP_FLAG, SURFGRID_TOGGLE,
                                     i, IZERO, kemo_gl->kemoview_data);
 	};
@@ -135,7 +140,8 @@ static void hide_all_ele_grp_nodes_CB(GtkButton *button, gpointer user_data)
     struct kemoviewer_gl_type *kemo_gl
             = (struct kemoviewer_gl_type *) g_object_get_data(G_OBJECT(user_data), "kemoview_gl");
 	int num = set_all_draw_flags(IZERO, COLUMN_MESH_FIFTH, grp_vws);
-	for(int i=0;i<num;i++){
+    int i;
+	for(i=0;i<num;i++){
 		kemoview_set_draw_mesh_item(ELEM_GRP_FLAG, SURFNOD_TOGGLE, 
                                     i, IZERO, kemo_gl->kemoview_data);
 	};
@@ -270,47 +276,34 @@ static void create_element_group_columns(struct kemoviewer_gl_type *kemo_gl,
                                          struct ci3_clist_view *ele_grp_vws,
                                          GtkWidget *dummy_entry)
 {
-    GtkCellRenderer *textRenderer1;
-    GtkCellRenderer *textRenderer2;
-    GtkCellRenderer *toggleRenderer1;
-    GtkCellRenderer *toggleRenderer2;
-    GtkCellRenderer *toggleRenderer3;
-	
-	GtkTreeViewColumn *column_1st;
-    GtkTreeViewColumn *column_2nd;
-    GtkTreeViewColumn *column_3rd;
-    GtkTreeViewColumn *column_4th;
-    GtkTreeViewColumn *column_5th;
-
-    
-    /* First raw */
-	column_1st = create_each_column_no_sort(ele_grp_vws->tree_view, 
-				"Index", COLUMN_MESH_INDEX);
-	textRenderer1 = create_each_text_renderer(column_1st, 60, COLUMN_MESH_INDEX);
-    
-    /* Second row */
-	column_2nd = create_each_column_no_sort(ele_grp_vws->tree_view, 
-				"Group name", COLUMN_MESH_NAME);
-	textRenderer2 = create_each_text_renderer(column_2nd, 180, COLUMN_MESH_NAME);
-   
+    /* First raw 
+    GtkTreeViewColumn *column_1st = create_each_column_no_sort(ele_grp_vws->tree_view,
+                                                               "Index", COLUMN_MESH_INDEX);
+    GtkCellRenderer *textRenderer1 = create_each_text_renderer(column_1st, 60, COLUMN_MESH_INDEX);
+*/
+    /* Second row
+    GtkTreeViewColumn *column_2nd = create_each_column_no_sort(ele_grp_vws->tree_view,
+                                                               "Group name", COLUMN_MESH_NAME);
+    GtkCellRenderer *textRenderer2 = create_each_text_renderer(column_2nd, 180, COLUMN_MESH_NAME);
+ */
     /* Third row */
-	column_3rd = create_each_column_no_sort(ele_grp_vws->tree_view,
-				"Patch", COLUMN_MESH_THIRD);
-	toggleRenderer1 = create_each_toggle_renderer(column_3rd, 60, COLUMN_MESH_THIRD);
+    GtkTreeViewColumn *column_3rd = create_each_column_no_sort(ele_grp_vws->tree_view,
+                                                               "Patch", COLUMN_MESH_THIRD);
+    GtkCellRenderer *toggleRenderer1 = create_each_toggle_renderer(column_3rd, 60, COLUMN_MESH_THIRD);
 	g_signal_connect(G_OBJECT(toggleRenderer1), "toggled",
-				G_CALLBACK(toggle_draw_ele_grp_patch_CB), (gpointer) dummy_entry);
+                     G_CALLBACK(toggle_draw_ele_grp_patch_CB), (gpointer) dummy_entry);
     
     /* Forth row */
-	column_4th = create_each_column_no_sort(ele_grp_vws->tree_view,
-				"Grid", COLUMN_MESH_FORTH);
-	toggleRenderer2 = create_each_toggle_renderer(column_4th, 60, COLUMN_MESH_FORTH);
+    GtkTreeViewColumn *column_4th = create_each_column_no_sort(ele_grp_vws->tree_view,
+                                                               "Grid", COLUMN_MESH_FORTH);
+    GtkCellRenderer *toggleRenderer2 = create_each_toggle_renderer(column_4th, 60, COLUMN_MESH_FORTH);
 	g_signal_connect(G_OBJECT(toggleRenderer2), "toggled",
-				G_CALLBACK(toggle_draw_ele_grp_grid_CB), (gpointer) dummy_entry);
+                     G_CALLBACK(toggle_draw_ele_grp_grid_CB), (gpointer) dummy_entry);
 	
     /* Fifth row */
-	column_5th = create_each_column_no_sort(ele_grp_vws->tree_view,
-				"Node", COLUMN_MESH_FIFTH);
-	toggleRenderer3 = create_each_toggle_renderer(column_5th, 60, COLUMN_MESH_FIFTH);
+    GtkTreeViewColumn *column_5th = create_each_column_no_sort(ele_grp_vws->tree_view,
+                                                               "Node", COLUMN_MESH_FIFTH);
+    GtkCellRenderer *toggleRenderer3 = create_each_toggle_renderer(column_5th, 60, COLUMN_MESH_FIFTH);
 	g_signal_connect(G_OBJECT(toggleRenderer3), "toggled",
 				G_CALLBACK(toggle_draw_ele_grp_node_CB), (gpointer) dummy_entry);
 };

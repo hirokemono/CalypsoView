@@ -17,14 +17,17 @@
 
 #include "draw_map_4_PSF.h"
 #include "draw_coastline.h"
+#include "draw_patches_4_PSF.h"
 
 struct MAP_buffers{
     struct gl_index_buffer   *MAP_solid_index_buf;
     struct gl_strided_buffer *MAP_solid_buf;
     struct gl_strided_buffer *MAP_isoline_buf;
+    struct gl_index_buffer *MAP_isotube_index_buf;
     
     struct gl_strided_buffer *MAP_coast_line_buf;
     struct gl_strided_buffer *MAP_coast_tube_buf;
+    struct gl_index_buffer   *MAP_coast_index_buf;
 };
  
 
@@ -32,7 +35,7 @@ struct MAP_buffers{
 
 struct MAP_buffers * init_MAP_buffers(void);
 void dealloc_MAP_buffers(struct MAP_buffers *MAP_bufs);
-void const_map_buffers(int nthreads, struct kemoview_psf *kemo_psf,
+void const_map_buffers(int nthreads, struct kemoview_mul_psf *kemo_mul_psf,
                        struct mesh_menu_val *mesh_m, struct view_element *view_s,
                        struct gl_strided_buffer *PSF_node_buf, struct MAP_buffers *MAP_bufs);
 

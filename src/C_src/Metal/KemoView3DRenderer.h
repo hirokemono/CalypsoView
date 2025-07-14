@@ -59,11 +59,18 @@ typedef struct
     /*  Vertex buffer for PSF arrows */
     id<MTLBuffer> _Nullable psfArrowVertice;
     NSUInteger numPSFArrowVertice;
+    /*  Index buffer for PSF arrows */
+    id<MTLBuffer> _Nullable psfArrowIndices;
+    NSUInteger numPSFArrowIndices;
+
     /*  Vertex buffer for PSF isolines */
     id<MTLBuffer> _Nullable psfLinesVertice;
     NSUInteger numPSFLinesVertice;
+    /*  Vertex buffer for PSF isotubes */
     id<MTLBuffer> _Nullable psfTubesVertice;
     NSUInteger numPSFTubesVertice;
+    id<MTLBuffer> _Nullable psfTubeIndice;
+    NSUInteger numPSFTubesIndice;
 
     /*  Texure buffer for PSF with texure */
     id<MTLTexture> _Nullable psfSolidTexure;
@@ -72,12 +79,24 @@ typedef struct
     id<MTLTexture> _Nullable psfTransTexure;
     NSUInteger numPSFTransTexurePixsel;
 
+    /*  Vertex buffer for field lines  */
+    id<MTLBuffer> _Nullable fieldLineVertice;
+    NSUInteger numFieldLineVertice;
     /*  Vertex buffer for field lines solid patch */
     id<MTLBuffer> _Nullable fieldTubeVertice;
     NSUInteger numFieldTubeVertice;
-    /*  Vertex buffer for field lines  */
-    id<MTLBuffer> _Nullable fieldLineVertice;
-    NSUInteger numFfieldLineVertice;
+    id<MTLBuffer> _Nullable fieldTubeIndice;
+    NSUInteger numFieldTubeIndice;
+
+    /*  Vertex buffer for tracer dots patch */
+    id<MTLBuffer> _Nullable tracerDotVertice;
+    NSUInteger numTracerDotVertice;
+    /*  Vertex buffer for tracer icosaheron patch */
+    id<MTLBuffer> _Nullable tracerIcoVertice;
+    NSUInteger numTracerIcoVertice;
+    /*  Index buffer for psf solid patch */
+    id<MTLBuffer> _Nullable tracerIcoIndices;
+    NSUInteger numTracerIcoIndices;
 
     /*  Vertex buffer for mesh solid patch */
     id<MTLBuffer> _Nullable meshSolidVertice;
@@ -91,16 +110,23 @@ typedef struct
     /*  Vertex buffer for mesh nodes */
     id<MTLBuffer> _Nullable meshNodeVertice;
     NSUInteger numMeshNodeVertice;
+    /*  Index buffer for mesh nodes */
+    id<MTLBuffer> _Nullable meshNodeIndice;
+    NSUInteger numMeshNodeIndice;
 
     /*  Vertex buffer for Coast lines */
     id<MTLBuffer> _Nullable coastLineVertice;
     NSUInteger numCoastLineVertice;
     id<MTLBuffer> _Nullable coastTubeVertice;
     NSUInteger numCoastTubeVertice;
-    
+    id<MTLBuffer> _Nullable coastTubeIndice;
+    NSUInteger numCoastTubeIndice;
+
     /*  Vertex buffer for axis arrows */
     id<MTLBuffer> _Nullable axisVertice;
     NSUInteger numAxisVertice;
+    id<MTLBuffer> _Nullable axisIndice;
+    NSUInteger numAxisIndice;
 } KemoView3DBuffers;
 
 @interface KemoView3DRenderer : NSObject

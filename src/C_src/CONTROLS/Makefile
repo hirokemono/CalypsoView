@@ -29,11 +29,8 @@ mod_list:
 	@echo   >> $(MAKENAME)
 
 
-module:
-	@cat Makefile.depends >> $(MAKENAME)
-
 depends:
-	@echo 'Construct dependencies in C_src/CONTROLS'
+	@echo 'Construct compile list in C_src/CONTROLS'
 	@echo '#' > $(MAKENAME).tmp
 	@for sources in $(SRC_CTL_C) ; do \
 		( \
@@ -42,7 +39,7 @@ depends:
 		echo '	''$$(CC)' -c '$$(OPTFLAGS) $$(C_INCLUDE) $$<' >> $(MAKENAME).tmp \
 		) \
 	done
-	@sed -e 's@'$(MHDDIR)/C_src'@'$$\(C_SRCDIR\)'@g' $(MAKENAME).tmp > $(CURRENTDIR)/Makefile.depends
+	@sed -e 's@'$(MHDDIR)/C_src'@'$$\(C_SRCDIR\)'@g' $(MAKENAME).tmp >> $(MAKENAME).depends
 	@rm $(MAKENAME).tmp
 
 clean:

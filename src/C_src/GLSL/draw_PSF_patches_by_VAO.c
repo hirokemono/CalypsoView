@@ -54,14 +54,22 @@ void set_PSF_trans_objects_VAO(struct gl_strided_buffer *PSF_node_buf,
 };
 
 void set_PSF_line_objects_VAO(struct PSF_line_buffers *PSF_lines,
-                              struct VAO_ids **psf_solid_VAO,
+                              struct VAO_ids **psf_solid_index_VAO,
+                              struct VAO_ids *psf_lines_VAO,
                               struct VAO_ids *grid_line_VAO,
                               struct VAO_ids *grid_tube_VAO){
-    Const_Phong_VAO(psf_solid_VAO[2], PSF_lines->PSF_isotube_buf);
-    Const_Phong_VAO(psf_solid_VAO[3], PSF_lines->PSF_arrow_buf);
+    Const_Simple_VAO(psf_lines_VAO, PSF_lines->PSF_isoline_buf);
+    Const_VAO_Index_Phong_Texture(psf_solid_index_VAO[4],
+                                  PSF_lines->PSF_isotube_buf,
+                                  PSF_lines->PSF_isotube_index_buf);
+    Const_VAO_Index_Phong_Texture(psf_solid_index_VAO[5],
+                                  PSF_lines->PSF_arrow_buf,
+                                  PSF_lines->PSF_arrow_index_buf);
     
     Const_Simple_VAO(grid_line_VAO, PSF_lines->coast_line_buf);
-    Const_Phong_VAO(grid_tube_VAO,  PSF_lines->coast_tube_buf);
+    Const_VAO_Index_Phong_Texture(grid_tube_VAO,
+                                  PSF_lines->coast_tube_buf,
+                                  PSF_lines->coast_index_buf);
     return;
 };
 
@@ -80,8 +88,8 @@ void draw_PSF_solid_objects_VAO(struct transfer_matrices *matrices,
     drawgl_textured_elements_VAO(&kemo_shaders->texture_name, matrices, lights,
                                  kemo_shaders, psf_solid_index_VAO[1]);
     glDisable(GL_CULL_FACE);
-    drawgl_patch_with_phong(matrices, lights, kemo_shaders, psf_solid_VAO[2]);
-    drawgl_patch_with_phong(matrices, lights, kemo_shaders, psf_solid_VAO[3]);
+    drawgl_elements_with_phong(matrices, lights, kemo_shaders, psf_solid_index_VAO[4]);
+    drawgl_elements_with_phong(matrices, lights, kemo_shaders, psf_solid_index_VAO[5]);
     return;
 };
 

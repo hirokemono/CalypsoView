@@ -37,14 +37,22 @@
 	else if(iflag_datatype==IFLAG_SURFACES) {
 		[_psfController DrawPsfFile:kemoviewOpenFilehead
                            kemoview:kemo_sgl];
-        [_movieMakerController InitEvolutionStepByPSF:kemo_sgl];
-	}
-	else if(iflag_datatype==IFLAG_LINES) {
-		[_flineController OpenFieldlineFile:kemoviewOpenFilehead
+        [_movieMakerController InitEvolutionStepByPSF:SURFACE_RENDERING
+                                             kemoview:kemo_sgl];
+	}else if(iflag_datatype==IFLAG_LINES) {
+        [_flineController OpenFieldlineFile:kemoviewOpenFilehead
                                    kemoview:kemo_sgl];
-        [_movieMakerController InitEvolutionStepByFline:kemo_sgl];
-	};
-	
+        [_movieMakerController InitEvolutionStepByPSF:FIELDLINE_RENDERING
+                                             kemoview:kemo_sgl];
+   }else if(iflag_datatype==IFLAG_POINTS){
+        [_tracerController OpenTracerFile:kemoviewOpenFilehead
+                                 kemoview:kemo_sgl];
+        [_movieMakerController InitEvolutionStepByPSF:TRACER_RENDERING
+                                             kemoview:kemo_sgl];
+    };
+    NSInteger WindowExpandFlag = kemoview_check_all_VIZ_draw_flags(kemo_sgl);
+    [_ElasticControl UpdateWindow:WindowExpandFlag];
+    [_metalView UpdateImage:kemo_sgl];	
 }
 
 - (IBAction) OpenKemoviewerFileByMenu:(id)pId;
@@ -174,5 +182,33 @@
     struct kemoviewer_type * kemo_sgl = [_kmv KemoViewPointer];
     kemoview_set_view_integer(IMAGE_FORMAT_FLAG, (int) ImageFormatFlag, kemo_sgl);
 }
+
+- (IBAction)ColorbarSwitchAction:(id)sender;
+{
+    int ColorbarSwitchFlag;
+    int current_model = [_kemoviewControl CurrentControlModel];
+    if(current_model == TRACER_RENDERING){
+        ColorbarSwitchFlag = [_tracerController TracerColorbarSwitchStatus];
+    }else if(current_model == FIELDLINE_RENDERING){
+        ColorbarSwitchFlag = [_flineController FlineColorbarSwitchStatus];
+    }else{
+        ColorbarSwitchFlag = [_psfController PSFColorbarSwitchStatus];
+    }
+    
+    struct kemoviewer_type *kemo_sgl = [_kmv KemoViewPointer];
+    kemoview_set_colorbar_draw_flag(ColorbarSwitchFlag,
+                                    current_model,
+                                    kemo_sgl);
+
+    ColorbarSwitchFlag = kemoview_get_colorbar_draw_flag(kemo_sgl, TRACER_RENDERING);
+    [_tracerController setTracerColorbarSwitchStatus:ColorbarSwitchFlag];
+    ColorbarSwitchFlag = kemoview_get_colorbar_draw_flag(kemo_sgl, FIELDLINE_RENDERING);
+    [_flineController  setFlineColorbarSwitchStatus:ColorbarSwitchFlag];
+    ColorbarSwitchFlag = kemoview_get_colorbar_draw_flag(kemo_sgl, SURFACE_RENDERING);
+    [_psfController    setPSFColorbarSwitchStatus:ColorbarSwitchFlag];
+    
+    [_metalView UpdateImage:kemo_sgl];
+}
+
 
 @end

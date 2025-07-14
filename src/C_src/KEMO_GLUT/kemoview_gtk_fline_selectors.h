@@ -25,11 +25,16 @@
 
 /*  prototypes */
 
-GtkWidget * fline_draw_field_box(struct kemoviewer_gl_type *kemo_gl,
-                                 GtkWidget *label_tree_field,
-                                 GtkCellRenderer *renderer_field);
+void kemoview_psf_select_CB(GtkComboBox *combobox_psfs, int id_model,
+                            struct kemoviewer_gl_type *kemo_gl);
+void kemoview_field_select_CB(GtkComboBox *combobox_field, int id_model,
+                              struct kemoviewer_gl_type *kemo_gl);
+void kemoview_component_select_CB(GtkComboBox *combobox_comp, int id_model,
+                                  struct kemoviewer_gl_type *kemo_gl);
 
-GtkWidget * fline_draw_component_combobox(struct kemoviewer_gl_type *kemo_gl,
-                                          GtkWidget *label_tree_comp,
-                                          GtkCellRenderer *renderer_comp);
+GtkWidget * draw_current_psf_set_hbox(int id_current_psf,
+                                      struct kemoviewer_gl_type *kemo_gl,
+                                      int *index);
+GtkWidget * draw_viz_field_gtk_box(struct kemoviewer_gl_type *kemo_gl, int id_model);
+GtkWidget * draw_viz_component_gtk_box(struct kemoviewer_gl_type *kemo_gl, int id_model);
 #endif

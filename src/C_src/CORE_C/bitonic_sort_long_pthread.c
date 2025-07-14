@@ -47,9 +47,10 @@ static void * max_Long_Array_each_thread(void *args)
     long hi = ((args_pthread_long_sort *) args)->hi;
     long *lres = ((args_pthread_long_sort *) args)->lres;
     long *lmax = ((args_pthread_long_sort *) args)->lmax;
+    long i;
     
     lmax[id] = lres[lo];
-    for(long i=lo+1;i<hi;i++){
+    for(i=lo+1;i<hi;i++){
         if(lres[i] > lmax[id]){lmax[id] = lres[i];};
     };
     return 0;
@@ -91,7 +92,8 @@ static void * flip_sign_Long_each_thread(void *args)
     long hi =      ((args_pthread_long_sort *) args)->hi;
     long *lres =   ((args_pthread_long_sort *) args)->lres;
     
-    for(int i=lo;i<hi;i++){lres[i] = -lres[i];};
+    int i;
+    for(i=lo;i<hi;i++){lres[i] = -lres[i];};
     return 0;
 }
 

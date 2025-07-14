@@ -34,6 +34,7 @@ USE_glfw='yes'
 USE_libpng='yes'
 with_zlib='yes'
 
+
 # Checks for programs.
 AC_PROG_CC
 AC_PROG_FC
@@ -226,6 +227,32 @@ AC_SUBST(PKGFLAGS_GLFW)
 AC_SUBST(GLFW_CFLAGS)
 AC_SUBST(GLFW_LIBS)
 
+
+
+if test -n "${GL_LIBS}"
+then
+# Check FFMPEG
+	if test ${USE_ffmpeg} = "yes"
+	then
+		PKG_CHECK_MODULES([FFMPEG], libavcodec libavformat libavutil libswscale, have_ffmpeg=yes, AC_MSG_ERROR(Cannot find avcodec, avformat, avutil, or swscale))
+	fi
+	
+	if test ${have_ffmpeg} = "yes"
+	then
+		PKGFLAGS_FFMPEG="libavcodec libavformat libswscale"
+	else
+		PKGFLAGS_FFMPEG=""
+	fi
+else
+	PKGFLAGS_FFMPEG=""
+	FFMPEG_CFLAGS=""
+	FFMPEG_LIBS=""
+fi
+
+AC_SUBST(PKGFLAGS_FFMPEG)
+AC_SUBST(FFMPEG_CFLAGS)
+AC_SUBST(FFMPEG_LIBS)
+
 AC_MSG_RESULT()
 AC_MSG_RESULT(-----   Configuration summary   -------------------------------)
 AC_MSG_RESULT()
@@ -262,6 +289,11 @@ if test -n "${GLFW_LIBS}"; then
         AC_MSG_RESULT(    Use GLFW...           yes)
 else
         AC_MSG_RESULT(    Use GLFW...            no)
+fi
+if test -n "${FFMPEG_LIBS}"; then
+        AC_MSG_RESULT(    Use FFMPEG...         yes)
+else
+        AC_MSG_RESULT(    Use FFMPEG...          no)
 fi
 AC_MSG_RESULT()
 AC_MSG_RESULT(---------------------------------------------------------------)

@@ -18,7 +18,7 @@ void get_gl_buffer_to_bmp(int num_x, int num_y, unsigned char *glimage){
 }
 
 
-static void full_draw_objects(struct kemoview_psf *kemo_psf, struct kemoview_fline *kemo_fline,
+static void full_draw_objects(struct kemoview_mul_psf *kemo_mul_psf, struct kemoview_fline *kemo_fline,
                               struct kemoview_mesh *kemo_mesh, struct view_element *view_s,
                               struct phong_lights *lights, struct kemoview_VAOs *kemo_VAOs,
                               struct kemoview_shaders *kemo_shaders){
@@ -46,18 +46,25 @@ static void full_draw_objects(struct kemoview_psf *kemo_psf, struct kemoview_fli
 
 
         glDisable(GL_CULL_FACE);
-        drawgl_patch_with_phong(view_matrices, lights, kemo_shaders, kemo_VAOs->axis_VAO);
+        drawgl_elements_with_phong(view_matrices, lights, kemo_shaders,
+                                   kemo_VAOs->axis_VAO);
 
-        if(kemo_VAOs->psf_solid_VAO[2]->npoint_draw == 0){
-            drawgl_lines(view_matrices, kemo_VAOs->psf_liness_VAO, kemo_shaders);
+        if(kemo_VAOs->psf_solid_index_VAO[4]->npoint_draw == 0){
+            drawgl_lines(view_matrices, kemo_VAOs->psf_lines_VAO, kemo_shaders);
         };
         if(kemo_VAOs->fline_VAO[0]->npoint_draw == 0){
             drawgl_lines(view_matrices, kemo_VAOs->fline_VAO[1], kemo_shaders);
         };
+        if(kemo_VAOs->tracer_index_VAO->npoint_draw == 0){
+            drawgl_points(view_matrices, kemo_VAOs->tracer_VAO, kemo_shaders);
+        };
 
         glDisable(GL_CULL_FACE);
-        drawgl_patch_with_phong(view_matrices, lights, kemo_shaders, kemo_VAOs->fline_VAO[0]);
-        
+        drawgl_elements_with_phong(view_matrices, lights, kemo_shaders,
+                                   kemo_VAOs->fline_VAO[0]);
+        drawgl_elements_with_phong(view_matrices, lights, kemo_shaders,
+                                   kemo_VAOs->tracer_index_VAO);
+
         draw_PSF_solid_objects_VAO(view_matrices, lights,
                                    kemo_VAOs->psf_solid_VAO,
                                    kemo_VAOs->psf_solid_index_VAO,
@@ -65,13 +72,14 @@ static void full_draw_objects(struct kemoview_psf *kemo_psf, struct kemoview_fli
 
         glDisable(GL_CULL_FACE);
         drawgl_lines(view_matrices, kemo_VAOs->mesh_solid_VAO[1], kemo_shaders);
-        drawgl_patch_with_phong(view_matrices, lights, kemo_shaders,
-                                kemo_VAOs->mesh_solid_VAO[2]);
+        drawgl_elements_with_phong(view_matrices, lights, kemo_shaders,
+                                   kemo_VAOs->mesh_solid_VAO[2]);
         draw_solid_mesh_VAO(kemo_mesh->mesh_m->polygon_mode, view_matrices,
                             lights, kemo_VAOs->mesh_solid_VAO[0], kemo_shaders);
 
 /*  draw coastlines */
-        drawgl_patch_with_phong(view_matrices, lights, kemo_shaders, kemo_VAOs->grid_tube_VAO);
+        drawgl_elements_with_phong(view_matrices, lights, kemo_shaders,
+                                   kemo_VAOs->grid_tube_VAO);
         if(kemo_VAOs->grid_tube_VAO->npoint_draw == 0){
             drawgl_lines(view_matrices, kemo_VAOs->grid_line_VAO, kemo_shaders);
         }
@@ -98,34 +106,42 @@ static void full_draw_objects(struct kemoview_psf *kemo_psf, struct kemoview_fli
     return;
 }
 
-void update_draw_objects_gl(struct kemoview_psf *kemo_psf, struct kemoview_fline *kemo_fline,
-                            struct kemoview_mesh *kemo_mesh, struct view_element *view_s,
+void update_draw_objects_gl(struct kemoview_mul_psf *kemo_mul_psf, 
+                            struct kemoview_fline *kemo_fline,
+                            struct kemoview_tracer *kemo_tracer,
+                            struct kemoview_mesh *kemo_mesh, 
+                            struct view_element *view_s,
                             struct kemoview_buffers *kemo_buffers,
                             struct kemoview_VAOs *kemo_VAOs,
                             struct kemoview_shaders *kemo_shaders){
 /* Set Vertex buffers */
     if(view_s->iflag_draw_mode == MOVIE_DRAW
        && view_s->iflag_view_type != VIEW_MAP){
-        set_fast_buffers(kemo_psf, kemo_fline, kemo_mesh,
+        set_fast_buffers(kemo_mul_psf, kemo_fline, kemo_mesh,
                          view_s, kemo_buffers);
         
-        Const_Phong_VAO(kemo_VAOs->axis_VAO, kemo_buffers->axis_buf);
+        Const_Phong_Index_VAO(kemo_VAOs->axis_VAO, kemo_buffers->axis_buf,
+                              kemo_buffers->axis_index_buf);
         set_transparent_objects_to_VAO(kemo_buffers, kemo_VAOs);
     }else if(view_s->iflag_draw_mode == SIMPLE_DRAW){
-            kemo_VAOs->psf_solid_VAO[2]->npoint_draw =   0;
+            kemo_VAOs->psf_solid_index_VAO[4]->npoint_draw =   0;
+            kemo_VAOs->psf_solid_index_VAO[5]->npoint_draw =   0;
             kemo_VAOs->fline_VAO[0]->npoint_draw =       0;
+//            kemo_VAOs->tracer_index_VAO->npoint_draw =      0;
             kemo_VAOs->grid_tube_VAO->npoint_draw =      0;
             kemo_VAOs->mesh_solid_VAO[2]->npoint_draw =  0;
-            Const_Phong_VAO(kemo_VAOs->axis_VAO, kemo_buffers->axis_buf);
+            Const_Phong_Index_VAO(kemo_VAOs->axis_VAO, kemo_buffers->axis_buf,
+                              kemo_buffers->axis_index_buf);
 
-            set_transparent_buffers(kemo_psf, kemo_mesh, view_s, kemo_buffers);
+            set_transparent_buffers(kemo_mul_psf, kemo_mesh, view_s, kemo_buffers);
             set_transparent_objects_to_VAO(kemo_buffers, kemo_VAOs);
     }else{
-            set_kemoviewer_buffers(kemo_psf, kemo_fline, kemo_mesh, view_s, kemo_buffers);
-            set_draw_objects_to_VAO(kemo_psf, view_s, kemo_buffers,
+            set_kemoviewer_buffers(kemo_mul_psf, kemo_fline, kemo_tracer,
+                                   kemo_mesh, view_s, kemo_buffers);
+            set_draw_objects_to_VAO(kemo_mul_psf, view_s, kemo_buffers,
                                     kemo_VAOs, kemo_shaders);
     }
-    full_draw_objects(kemo_psf, kemo_fline, kemo_mesh, view_s,
+    full_draw_objects(kemo_mul_psf, kemo_fline, kemo_mesh, view_s,
                       kemo_buffers->kemo_lights, kemo_VAOs, kemo_shaders);
 	return;
 }

@@ -55,11 +55,8 @@ mod_list:
 	@echo  $(OBJ_SHADERS)   >> $(MAKENAME)
 	@echo   >> $(MAKENAME)
 
-module:
-	@cat Makefile.depends >> $(MAKENAME)
-
 depends: wrap_shader
-	@echo 'Construct dependencies in C_src/GLSL'
+	@echo 'Construct compile list in C_src/GLSL'
 	@echo '#' > $(MAKENAME).tmp
 	@for sources in $(SRC_GLSL_C) ; do \
 		( \
@@ -68,7 +65,7 @@ depends: wrap_shader
 		echo '	''$$(CC)' -c '$$(OPTFLAGS_GL) $$(C_INCLUDE) $$<' >> $(MAKENAME).tmp \
 		) \
 	done
-	@sed -e 's@'$(MHDDIR)/C_src'@'$$\(C_SRCDIR\)'@g' $(MAKENAME).tmp > $(CURRENTDIR)/Makefile.depends
+	@sed -e 's@'$(MHDDIR)/C_src'@'$$\(C_SRCDIR\)'@g' $(MAKENAME).tmp >> $(MAKENAME).depends
 	@rm $(MAKENAME).tmp
 
 clean:

@@ -34,13 +34,17 @@ typedef struct
     NSUInteger numMapSolidVertice;
     /*  Vertex buffer for Map isolines */
     id<MTLBuffer> _Nullable mapLinesVertice;
-    NSUInteger numMapinesVertice;
+    NSUInteger numMapLinesVertice;
+    id<MTLBuffer> _Nullable mapLinesIndice;
+    NSUInteger numMapLinesIndice;
 
     /*  Vertex buffer for Coast lines */
     id<MTLBuffer> _Nullable coastLineVertice;
     NSUInteger numCoastLineVertice;
     id<MTLBuffer> _Nullable coastTubeVertice;
     NSUInteger numCoastTubeVertice;
+    id<MTLBuffer> _Nullable coastTubeIndice;
+    NSUInteger numCoastTubeIndice;
 } KemoViewMapMetalBuffers;
 
 @interface KemoViewMapRenderer : NSObject

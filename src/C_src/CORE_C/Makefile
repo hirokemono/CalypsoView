@@ -53,6 +53,8 @@ OBJ_KEMO_C = \
  projection_patch_to_map.o \
  set_new_patch_4_map_c.o \
  set_map_data_4_viewer_c.o \
+ cal_viz_field_ranges.o \
+ fline_edge_direction_c.o \
  take_normal_psf_c.o \
  \
  colormap_rainbow_c.o \
@@ -107,11 +109,8 @@ mod_list:
 	@echo   >> $(MAKENAME)
 
 
-module:
-	@cat Makefile.depends >> $(MAKENAME)
-
 depends:
-	@echo 'Construct dependencies in C_src/CORE_C'
+	@echo 'Construct compile list in C_src/CORE_C'
 	@echo '#' > $(MAKENAME).tmp
 	@for sources in $(SRC_KEMO_C) ; do \
 		( \
@@ -120,7 +119,7 @@ depends:
 		echo '	''$$(CC)' -c '$$(OPTFLAGS) $$(C_INCLUDE) $$<' >> $(MAKENAME).tmp \
 		) \
 	done
-	@sed -e 's@'$(MHDDIR)/C_src'@'$$\(C_SRCDIR\)'@g' $(MAKENAME).tmp > $(CURRENTDIR)/Makefile.depends
+	@sed -e 's@'$(MHDDIR)/C_src'@'$$\(C_SRCDIR\)'@g' $(MAKENAME).tmp >> $(MAKENAME).depends
 	@rm $(MAKENAME).tmp
 
 clean:

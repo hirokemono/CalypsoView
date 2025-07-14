@@ -39,29 +39,25 @@ static int read_kemoview_ucd_connect(struct psf_data *viz_s){
 	char celllabel[5];      /* array for cell label */
 	char buf[LENGTHBUF];    /* array for reading line */
 	
-	iflag_datatype = 0;
+	iflag_datatype = -1;
 	fgets(buf, LENGTHBUF, fp_psf);
 	sscanf(buf, "%d %d %4s", &itmp, &itmp, celllabel);
-	if(			   celllabel[0] == 't' 
-				&& celllabel[1] == 'r'
-				&& celllabel[2] == 'i'){
+    if(cmp_no_case_c(celllabel, "tri")){
 		printf("Triangle patch data \n");
 		iflag_datatype = IFLAG_SURFACES;
 		viz_s->nnod_4_ele_viz = 3;
-	} else if(	   celllabel[0] == 'l' 
-				&& celllabel[1] == 'i'
-				&& celllabel[2] == 'n'
-				&& celllabel[3] == 'e'){
+    }else if(cmp_no_case_c(celllabel, "line")){
 		printf("Line data \n");
 		iflag_datatype = IFLAG_LINES;
 		viz_s->nnod_4_ele_viz = 2;
-	} else if(   celllabel[0] == 'q' 
-			  && celllabel[1] == 'u'
-			  && celllabel[2] == 'a'
-			  && celllabel[3] == 'd'){
+    }else if(cmp_no_case_c(celllabel, "quad")){
 		printf("Quad patch data \n");
 		iflag_datatype = IFLAG_SURFACES;
 		viz_s->nnod_4_ele_viz = 4;
+    }else if(cmp_no_case_c(celllabel, "pt")){
+		printf("points data \n");
+		iflag_datatype = IFLAG_POINTS;
+		viz_s->nnod_4_ele_viz = 1;
 	};
 	
 	alloc_viz_ele_s(viz_s);
@@ -75,8 +71,7 @@ static int read_kemoview_ucd_connect(struct psf_data *viz_s){
 			sscanf(buf, "%d %d tri %ld %ld %ld", &itmp, &itmp, 
 					&viz_s->ie_viz[i][0], &viz_s->ie_viz[i][1], &viz_s->ie_viz[i][2]);
 		};
-	}
-	else if(viz_s->nnod_4_ele_viz == 2){
+	}else if(viz_s->nnod_4_ele_viz == 2){
 		sscanf(buf, "%d %d line %ld %ld", &itmp, &itmp,
 				&viz_s->ie_viz[0][0], &viz_s->ie_viz[0][1]);
 		
@@ -85,8 +80,16 @@ static int read_kemoview_ucd_connect(struct psf_data *viz_s){
 			sscanf(buf, "%d %d line %ld %ld", &itmp, &itmp, 
 					&viz_s->ie_viz[i][0], &viz_s->ie_viz[i][1]);
 		}
-	}
-	else if(viz_s->nnod_4_ele_viz == 4){
+	}else if(viz_s->nnod_4_ele_viz == 1){
+		sscanf(buf, "%d %d  pt  %ld", &itmp, &itmp,
+				&viz_s->ie_viz[0][0]);
+		
+		for (i = 1; i < viz_s->nele_viz; i++) {
+			fgets(buf, LENGTHBUF, fp_psf);
+			sscanf(buf, "%d %d  pt  %ld %ld", &itmp, &itmp,
+                &viz_s->ie_viz[i][0]);
+		}
+	}else if(viz_s->nnod_4_ele_viz == 4){
 		sscanf(buf, "%d %d line %ld %ld %ld %ld", &itmp, &itmp,
 			   &viz_s->ie_viz[0][0], &viz_s->ie_viz[0][1],
 			   &viz_s->ie_viz[0][2], &viz_s->ie_viz[0][3]);
@@ -151,7 +154,6 @@ static void read_viz_phys_data(struct psf_data *viz_s){
 	viz_s->ncomptot = viz_s->istack_comp[viz_s->nfield];
 	
     alloc_psf_field_data_c(viz_s);
-	alloc_psf_data_s(viz_s);
 	
 	/* read field name */
 	
@@ -214,8 +216,7 @@ int read_psf_udt(const char *file_name, struct psf_data *viz_s){
 	};
 	
 	read_viz_phys_data(viz_s);
-
-	fclose(fp_psf);
+    fclose(fp_psf);
 	return 0;
 }
 
@@ -234,6 +235,6 @@ int read_kemoview_ucd(const char *file_name, struct psf_data *viz_s){
 	iflag_datatype = read_kemoview_ucd_connect(viz_s);
 	
 	read_viz_phys_data(viz_s);
-	fclose(fp_psf);
-	return iflag_datatype;
+    fclose(fp_psf);
+    return iflag_datatype;
 }

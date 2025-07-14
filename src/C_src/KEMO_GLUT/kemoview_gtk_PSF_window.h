@@ -14,6 +14,7 @@
 #include <string.h>
 
 #include "calypso_GTK.h"
+#include "kemoviewer.h"
 #include "kemoviewer_gl.h"
 #include "m_kemoviewer_data.h"
 #include "tree_views_4_fixed_lists_GTK.h"
@@ -21,15 +22,16 @@
 #include "kemoview_gtk_fileselector.h"
 #include "kemoview_gtk_PSF_menu.h"
 #include "kemoview_gtk_evolution_menu.h"
+#include "kemoview_gtk_fline_selectors.h"
 #include "view_modifier_glfw.h"
 
 #include "view_modifier_glfw.h"
 
 
 /*  prototypes */
-GtkWidget * set_psf_menu_box(struct kemoviewer_gl_type *kemo_gl,
-                             struct psf_gtk_menu *psf_gmenu,
-                             GtkWidget *itemTEvo);
+void replace_psf_menu_frame(struct kemoviewer_gl_type *kemo_gl,
+                            struct psf_gtk_menu *psf_gmenu,
+                            GtkWidget *itemTEvo);
 
 void init_psf_window(struct kemoviewer_gl_type *kemo_gl,
                      struct psf_gtk_menu *psf_gmenu,

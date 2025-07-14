@@ -34,6 +34,17 @@ USE_glfw='yes'
 USE_libpng='yes'
 with_zlib='yes'
 
+AC_ARG_WITH(ffmpeg,
+[  --with-ffmpeg           Use FFMPEG multimedia framework
+   --without-ffmpeg to disable FFMPEG framework],
+[if test "$withval" != no ; then
+  USE_ffmpeg='yes'
+ else
+  USE_ffmpeg='no'
+ fi],
+[USE_ffmpeg='no'])
+
+
 
 # Checks for programs.
 AC_PROG_CC

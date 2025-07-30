@@ -42,7 +42,7 @@ AC_ARG_WITH(ffmpeg,
  else
   USE_ffmpeg='no'
  fi],
-[USE_ffmpeg='no'])
+[USE_ffmpeg='yes'])
 
 
 

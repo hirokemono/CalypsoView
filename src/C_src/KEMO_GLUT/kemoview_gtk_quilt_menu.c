@@ -42,11 +42,12 @@ static void quilt_switch_CB(GObject *switch_bar, GParamSpec *pspec, gpointer dat
 {
     double FoculPoint;
     double eyeAngle, eyeRatio;
-	struct quilt_gtk_menu *quilt_gmenu
-			= (struct quilt_gtk_menu *) g_object_get_data(G_OBJECT(data),  "quilt");
+    struct quilt_gtk_menu *quilt_gmenu
+            = (struct quilt_gtk_menu *) g_object_get_data(G_OBJECT(data),  "quilt");
+	struct view_widgets *view_menu
+			= (struct view_widgets *) g_object_get_data(G_OBJECT(data),  "view");
     struct kemoviewer_type *kemo_sgl
             = (struct kemoviewer_type *) g_object_get_data(G_OBJECT(data), "kemoview");
-    struct view_widgets *view_menu = (struct view_widgets *) data;
     
     
     int istate = gtk_switch_get_state(GTK_SWITCH(switch_bar));
@@ -63,6 +64,7 @@ static void quilt_switch_CB(GObject *switch_bar, GParamSpec *pspec, gpointer dat
         kemoview_set_stereo_parameter(ISET_EYEAGL, eyeAngle, kemo_sgl);
         
         eyeRatio = kemoview_get_view_parameter(kemo_sgl, ISET_EYESEP, 0);
+
         gtk_spin_button_set_value(GTK_SPIN_BUTTON(quilt_gmenu->spin_num_column),
                                   quilt_gmenu->num_column);
         gtk_spin_button_set_value(GTK_SPIN_BUTTON(quilt_gmenu->spin_num_raw),
@@ -116,11 +118,12 @@ GtkWidget * init_quilt_menu_expander(struct kemoviewer_gl_type *kemo_gl,
                                      struct quilt_gtk_menu *quilt_gmenu,
                                      struct view_widgets *view_menu,
                                      GtkWidget *window){
-	GtkWidget *expander_quilt;
+    GtkWidget *expander_quilt;
 	
 	quilt_gmenu->entry_quilt_menu = gtk_entry_new();
 	g_object_set_data(G_OBJECT(quilt_gmenu->entry_quilt_menu), "parent", (gpointer) window);
 	g_object_set_data(G_OBJECT(quilt_gmenu->entry_quilt_menu), "quilt", (gpointer) quilt_gmenu);
+    g_object_set_data(G_OBJECT(quilt_gmenu->entry_quilt_menu), "view", (gpointer)  view_menu);
     g_object_set_data(G_OBJECT(quilt_gmenu->entry_quilt_menu), "kemoview_gl", (gpointer) kemo_gl);
     g_object_set_data(G_OBJECT(quilt_gmenu->entry_quilt_menu),
                       "kemoview", (gpointer) kemo_gl->kemoview_data);
